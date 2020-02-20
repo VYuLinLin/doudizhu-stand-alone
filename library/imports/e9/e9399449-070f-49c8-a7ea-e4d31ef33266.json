@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btn_ traveler",
+    "texture": "d3e16fbd-0426-4ff8-83bc-f4681e084bd9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      397,
+      137
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      397,
+      137
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

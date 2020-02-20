@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "male_landlord_left",
+    "texture": "9023830e-856c-4dcc-8ec9-bdffb129e539",
+    "atlas": "",
+    "rect": [
+      16,
+      2,
+      108,
+      132
+    ],
+    "offset": [
+      1,
+      1
+    ],
+    "originalSize": [
+      138,
+      138
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

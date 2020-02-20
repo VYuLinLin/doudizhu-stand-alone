@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "room_money_frame",
+    "texture": "89096284-e5f8-4982-80ad-57537c7dcecd",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      86,
+      27
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      86,
+      27
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

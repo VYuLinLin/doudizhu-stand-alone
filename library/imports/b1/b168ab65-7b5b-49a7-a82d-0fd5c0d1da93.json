@@ -1,0 +1,77 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "main_scene.plist",
+  "_objFlags": 0,
+  "_native": "",
+  "_spriteFrames": {
+    "bangzhu": {
+      "__uuid__": "2179f6af-dc13-46f6-982d-f5157d2574a7"
+    },
+    "card": {
+      "__uuid__": "d99b69f3-c3c0-4938-9cce-ec67a3be4439"
+    },
+    "chuangjianfang": {
+      "__uuid__": "d6a60f73-5a0a-40b4-bb75-aa73e9fa0ee0"
+    },
+    "chuangjianfangjianxiaochangjing": {
+      "__uuid__": "e06cb7a5-a3cd-4292-9b1c-947f0605c5cc"
+    },
+    "dingbuuibantoumingdi": {
+      "__uuid__": "b4701224-fc01-4499-a7e5-b222ba51ab2c"
+    },
+    "fangkaxiaobeijing": {
+      "__uuid__": "40eba3a0-abb7-42de-89f8-c1e3c48b7993"
+    },
+    "feedback": {
+      "__uuid__": "2cb7dd9f-9c9a-403c-bcc9-9588ff8db97b"
+    },
+    "ffanghuifangj": {
+      "__uuid__": "3dd8d11d-4097-400b-b70d-b0bf14994d28"
+    },
+    "goumaixiaojiahao": {
+      "__uuid__": "be535c49-6cce-4b9b-8c28-a45ed5c76a9f"
+    },
+    "huodong": {
+      "__uuid__": "6e05c591-ea6d-4ae1-b311-715ec74fde12"
+    },
+    "jiaruyouxi": {
+      "__uuid__": "5abbed2e-8987-4bd8-b13d-41cff64408f8"
+    },
+    "jiaruyouxixiaochangjing": {
+      "__uuid__": "14a7107b-ff78-4f5c-b23b-2f231637577d"
+    },
+    "paomadengbeijing": {
+      "__uuid__": "e034dff1-908b-4c38-9676-c76c273f0455"
+    },
+    "share": {
+      "__uuid__": "4d40eebe-91a0-4a03-b783-749fe1ce9f00"
+    },
+    "shezhi": {
+      "__uuid__": "7758406f-95f4-41dc-a840-644e4dcbc253"
+    },
+    "touxing001": {
+      "__uuid__": "a07d8124-47e2-4060-b426-84eda7baf2fc"
+    },
+    "touxingbg001": {
+      "__uuid__": "2207644b-6e3e-4090-92ba-36b8c4a74810"
+    },
+    "wuhanmajiangtitle": {
+      "__uuid__": "c4945652-fffc-4cae-8a50-55fe65ecb6de"
+    },
+    "xiao'xi": {
+      "__uuid__": "b9999892-85c8-41d7-8ae8-e62832b5aa4f"
+    },
+    "xiaolaba": {
+      "__uuid__": "0c69e5b2-b8f9-471f-a41b-d861a4bab9be"
+    },
+    "xixia001": {
+      "__uuid__": "241624de-a971-4de3-bafc-0347546cc0a9"
+    },
+    "zhanji": {
+      "__uuid__": "df0f74f8-e6d7-4351-b4b6-ed7c85ec8d1b"
+    },
+    "zhuziyou": {
+      "__uuid__": "7d73346e-f64c-4abc-9514-342bc3a5d7e8"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "join_youxia",
+    "texture": "6c6d1c43-6208-46f6-9a62-1560b890e579",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      190,
+      90
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      190,
+      90
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

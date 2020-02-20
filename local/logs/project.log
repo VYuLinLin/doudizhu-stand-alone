@@ -1,0 +1,81 @@
+2020-02-19T11:12:46.261Z - normal: Load ~/.CocosCreator/settings.json
+2020-02-19T11:12:46.300Z - normal: Initializing Asset Database
+2020-02-19T11:12:46.302Z - normal: checking language setting...
+2020-02-19T11:12:46.302Z - normal: Language: zh
+2020-02-19T11:12:46.863Z - success: preview server running at http://localhost:7456
+2020-02-19T11:12:46.866Z - success: protocol editor-framework registered
+2020-02-19T11:12:46.867Z - success: protocol app registered
+2020-02-19T11:12:46.867Z - success: protocol theme registered
+2020-02-19T11:12:46.867Z - success: protocol packages registered
+2020-02-19T11:12:46.867Z - success: protocol uuid registerred
+2020-02-19T11:12:46.867Z - success: protocol db registerred
+2020-02-19T11:12:46.867Z - success: protocol thumbnail registerred
+2020-02-19T11:12:46.867Z - success: protocol unpack registerred
+2020-02-19T11:12:46.867Z - success: protocol disable-commonjs registerred
+2020-02-19T11:12:47.152Z - normal: connected!
+2020-02-19T11:12:47.153Z - normal: Check project E:\project\game\ddz_game\ddz_client
+2020-02-19T11:12:47.153Z - normal: Initializing project E:\project\game\ddz_game\ddz_client
+2020-02-19T11:12:47.161Z - success: adapters loaded
+2020-02-19T11:12:47.163Z - success: asset-db-debugger loaded
+2020-02-19T11:12:47.200Z - success: fb-audience-network loaded
+2020-02-19T11:12:47.216Z - success: fb-live-stream loaded
+2020-02-19T11:12:47.217Z - success: google-play-instant loaded
+2020-02-19T11:12:47.217Z - success: huawei-adapter loaded
+2020-02-19T11:12:47.218Z - success: jkw-adapter loaded
+2020-02-19T11:12:47.218Z - success: jsb-adapter loaded
+2020-02-19T11:12:47.218Z - success: oppo-adapter loaded
+2020-02-19T11:12:47.219Z - success: package-manager loaded
+2020-02-19T11:12:47.220Z - success: qtt-adapter loaded
+2020-02-19T11:12:47.221Z - success: runtime-dev-tools loaded
+2020-02-19T11:12:47.224Z - success: sdkbox loaded
+2020-02-19T11:12:47.225Z - success: ui-kit-preview-extra loaded
+2020-02-19T11:12:47.226Z - success: ui-kit-preview loaded
+2020-02-19T11:12:47.226Z - success: vivo-adapter loaded
+2020-02-19T11:12:47.254Z - success: alipay-minigame loaded
+2020-02-19T11:12:47.289Z - success: assets loaded
+2020-02-19T11:12:47.291Z - success: baidugame-opendata loaded
+2020-02-19T11:12:47.292Z - success: baidugame loaded
+2020-02-19T11:12:47.293Z - success: builder loaded
+2020-02-19T11:12:47.379Z - success: cocos-services loaded
+2020-02-19T11:12:47.380Z - success: console loaded
+2020-02-19T11:12:47.381Z - success: curve-editor loaded
+2020-02-19T11:12:47.388Z - success: fb-instant-games loaded
+2020-02-19T11:12:47.389Z - success: game-window loaded
+2020-02-19T11:12:47.390Z - success: google-instant-games loaded
+2020-02-19T11:12:47.391Z - success: hierarchy loaded
+2020-02-19T11:12:47.393Z - success: huawei-runtime loaded
+2020-02-19T11:12:47.394Z - success: inspector loaded
+2020-02-19T11:12:47.434Z - success: cpk-publish loaded
+2020-02-19T11:12:47.434Z - success: keystore loaded
+2020-02-19T11:12:47.437Z - success: node-library loaded
+2020-02-19T11:12:47.438Z - success: open-recent-items loaded
+2020-02-19T11:12:47.440Z - success: oppo-runtime loaded
+2020-02-19T11:12:47.440Z - success: package-asset loaded
+2020-02-19T11:12:47.441Z - success: preferences loaded
+2020-02-19T11:12:47.441Z - success: project-importer loaded
+2020-02-19T11:12:47.442Z - success: project-settings loaded
+2020-02-19T11:12:47.450Z - success: qtt-runtime loaded
+2020-02-19T11:12:47.452Z - success: scene loaded
+2020-02-19T11:12:47.452Z - success: simulator-debugger loaded
+2020-02-19T11:12:47.452Z - success: sprite-editor loaded
+2020-02-19T11:12:47.454Z - success: store loaded
+2020-02-19T11:12:47.455Z - success: timeline loaded
+2020-02-19T11:12:47.457Z - success: vivo-runtime loaded
+2020-02-19T11:12:47.458Z - success: wechatgame-opendata loaded
+2020-02-19T11:12:47.460Z - success: wechatgame loaded
+2020-02-19T11:12:47.462Z - success: xiaomi-runtime loaded
+2020-02-19T11:12:48.272Z - normal: Initializing Cocos2d
+2020-02-19T11:12:48.471Z - normal: Initializing engine extends
+2020-02-19T11:12:50.267Z - info: Cocos Service load base data!
+2020-02-19T11:12:54.111Z - normal: Loading packages
+2020-02-19T11:12:54.113Z - normal: Watching packages
+2020-02-19T11:12:54.397Z - normal: Run Application
+2020-02-19T11:39:14.002Z - info: 只有预制节点 "creatroom_bg" 及其子节点会被保存。
+2020-02-19T19:02:40.384Z - success: oppo-adapter unloaded
+2020-02-19T19:02:40.386Z - success: oppo-adapter loaded
+2020-02-19T19:02:40.386Z - success: adapters unloaded
+2020-02-19T19:02:40.386Z - success: adapters loaded
+2020-02-19T19:02:40.438Z - success: oppo-adapter unloaded
+2020-02-19T19:02:40.438Z - success: oppo-adapter loaded
+2020-02-19T19:02:40.439Z - success: adapters unloaded
+2020-02-19T19:02:40.439Z - success: adapters loaded

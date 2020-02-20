@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "logo_dengdai",
+    "texture": "07c384bc-9a23-4b07-a9ba-9c9387d19e16",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      814,
+      234
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      814,
+      234
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

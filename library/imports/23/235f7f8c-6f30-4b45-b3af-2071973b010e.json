@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "gameplay_OffLine",
+    "texture": "44699673-03f6-4486-95ae-c6a8048053d9",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      78,
+      22
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      78,
+      22
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

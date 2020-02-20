@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btn_tisji",
+    "texture": "df3c42b1-9903-4c9d-a046-23456c2ecd5b",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      212,
+      84
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      212,
+      84
+    ],
+    "capInsets": [
+      45,
+      8,
+      32,
+      22
+    ]
+  }
+}

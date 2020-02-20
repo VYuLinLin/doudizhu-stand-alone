@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "hall_logo_pic",
+    "texture": "33244764-193c-419a-aa43-a687a90a069d",
+    "atlas": "",
+    "rect": [
+      9,
+      4,
+      175,
+      80
+    ],
+    "offset": [
+      1,
+      1.5
+    ],
+    "originalSize": [
+      191,
+      91
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

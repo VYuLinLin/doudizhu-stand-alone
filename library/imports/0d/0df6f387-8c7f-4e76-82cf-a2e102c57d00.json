@@ -1,0 +1,173 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "card.plist",
+  "_objFlags": 0,
+  "_native": "",
+  "_spriteFrames": {
+    "card_1": {
+      "__uuid__": "4e971677-aa90-4723-aa11-89eb13515d12"
+    },
+    "card_10": {
+      "__uuid__": "a9778430-61af-42b8-8f7a-bd1b4691ac0a"
+    },
+    "card_11": {
+      "__uuid__": "2787b9f6-aa76-4f93-82d7-c8b0c09fb6e5"
+    },
+    "card_12": {
+      "__uuid__": "c1798ca9-c48a-461e-8b26-a66214ed23bf"
+    },
+    "card_13": {
+      "__uuid__": "41dc0435-c3ac-42aa-9e35-e530ce501655"
+    },
+    "card_14": {
+      "__uuid__": "623efee5-842e-4f83-a101-f1e0de8f18e6"
+    },
+    "card_15": {
+      "__uuid__": "80780f6b-75d1-405d-9c0c-e9d671e6ed29"
+    },
+    "card_16": {
+      "__uuid__": "41a84708-ccf4-49ca-9a42-66f47db3f31a"
+    },
+    "card_17": {
+      "__uuid__": "ff956524-6623-4f8e-b13d-ccf4cdd6aaec"
+    },
+    "card_18": {
+      "__uuid__": "b98118e9-99a1-4f78-92d7-1678550d688b"
+    },
+    "card_19": {
+      "__uuid__": "28e35f37-cf16-4202-98a6-d18b4825699c"
+    },
+    "card_2": {
+      "__uuid__": "e29574ab-4bff-4fb8-a337-7ae8e6e71505"
+    },
+    "card_20": {
+      "__uuid__": "11b41714-14f0-4b28-ab30-e71e42f5e400"
+    },
+    "card_21": {
+      "__uuid__": "3be6517e-1997-478b-81bf-0c50246e45b1"
+    },
+    "card_22": {
+      "__uuid__": "5694c3c4-021a-46a3-a9dc-822a019f9d98"
+    },
+    "card_23": {
+      "__uuid__": "4f64d57a-8d33-47a8-af80-a371eb81f077"
+    },
+    "card_24": {
+      "__uuid__": "ca6e0eb2-394d-46e6-956f-2a30b776ac6d"
+    },
+    "card_25": {
+      "__uuid__": "7a93dbec-27eb-4724-81a1-9d88336e66c4"
+    },
+    "card_26": {
+      "__uuid__": "3220f08d-bf62-4946-be0b-6051e915cebe"
+    },
+    "card_27": {
+      "__uuid__": "a7296eb0-a264-46f9-afc2-631a0b647233"
+    },
+    "card_28": {
+      "__uuid__": "66b0a44a-dea5-4455-90d1-e15e7233c3fb"
+    },
+    "card_29": {
+      "__uuid__": "cce602ac-28c1-4c72-b3f9-9dbb4f3a5e86"
+    },
+    "card_3": {
+      "__uuid__": "9e6da918-3658-4ed9-b6ad-3b0d131ab39a"
+    },
+    "card_30": {
+      "__uuid__": "0a701b30-c2bb-4557-851c-d5cc4fdbb6c6"
+    },
+    "card_31": {
+      "__uuid__": "f13be822-e27c-4e5f-8397-bca43f42007f"
+    },
+    "card_32": {
+      "__uuid__": "ed26cbea-90a3-45bf-ac04-1ccf4e6b6436"
+    },
+    "card_33": {
+      "__uuid__": "b0f283a4-6470-4d72-87f9-00b6655fa2a9"
+    },
+    "card_34": {
+      "__uuid__": "76645a5f-d0ac-48d9-b7c1-56794b4913eb"
+    },
+    "card_35": {
+      "__uuid__": "2f145e4b-1e35-4f0f-8030-8c839e00f3f3"
+    },
+    "card_36": {
+      "__uuid__": "8d3af968-0440-4e51-90d3-a76cbe5ac8df"
+    },
+    "card_37": {
+      "__uuid__": "65e13ef7-62c0-4702-bf05-f5a660cbe0ac"
+    },
+    "card_38": {
+      "__uuid__": "136f879e-9b1b-4350-9ab5-c92837fe5235"
+    },
+    "card_39": {
+      "__uuid__": "2bbf2258-eb8a-4a5d-ba55-b1ea437e78e9"
+    },
+    "card_4": {
+      "__uuid__": "8838c9a7-2194-4ab2-bc1a-079fca5662f1"
+    },
+    "card_40": {
+      "__uuid__": "d7b593f8-6d7e-4c7d-ab98-1bfb7041f48f"
+    },
+    "card_41": {
+      "__uuid__": "12d1917c-133c-48f2-99a7-d0379eee1366"
+    },
+    "card_42": {
+      "__uuid__": "00a3140b-edd6-4f53-a426-e11a8afaf5d6"
+    },
+    "card_43": {
+      "__uuid__": "9e9633ef-9892-4fb8-8328-eb047e432748"
+    },
+    "card_44": {
+      "__uuid__": "42e03dcb-9cf5-4d4a-b53b-1f437bcb165b"
+    },
+    "card_45": {
+      "__uuid__": "8d8fd971-79a4-46d5-ba39-e6333f668c69"
+    },
+    "card_46": {
+      "__uuid__": "8989899d-990f-4ef9-acf5-0c19235a5e71"
+    },
+    "card_47": {
+      "__uuid__": "1cef859d-4182-4e68-a787-0aac93dfd8d8"
+    },
+    "card_48": {
+      "__uuid__": "11d419aa-2a6b-4e8d-8785-882fda74e299"
+    },
+    "card_49": {
+      "__uuid__": "f652df18-5ba4-4970-a4ef-a7b7873e62aa"
+    },
+    "card_5": {
+      "__uuid__": "ab53499a-4526-45e1-895b-8e2db503f314"
+    },
+    "card_50": {
+      "__uuid__": "e6002c9b-4f81-435a-93c8-852b3914f6c4"
+    },
+    "card_51": {
+      "__uuid__": "42e980ca-1d19-405e-9e96-dc95db1bcef2"
+    },
+    "card_52": {
+      "__uuid__": "1839ee5a-59e0-406f-a72c-e071b77212b6"
+    },
+    "card_53": {
+      "__uuid__": "d0bb8e5d-82b6-4e35-b3ff-4cb9eeaa2eda"
+    },
+    "card_54": {
+      "__uuid__": "f9bafc9f-de87-4659-897b-2cf511292666"
+    },
+    "card_55": {
+      "__uuid__": "92e4f73f-5f56-4650-978b-ea7ee7b64c20"
+    },
+    "card_6": {
+      "__uuid__": "f4ec21ce-2393-450d-a304-681850904f6a"
+    },
+    "card_7": {
+      "__uuid__": "a4293027-de05-461b-89ac-612b5d7b59dd"
+    },
+    "card_8": {
+      "__uuid__": "8c967181-0673-4aac-b09e-62ae64057973"
+    },
+    "card_9": {
+      "__uuid__": "792e3306-e88c-4b74-b40e-e3dafed71521"
+    }
+  }
+}

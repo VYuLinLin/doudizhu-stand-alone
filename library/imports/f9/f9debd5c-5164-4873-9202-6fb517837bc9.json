@@ -1,0 +1,17 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "youqingTip.plist",
+  "_objFlags": 0,
+  "_native": "",
+  "_spriteFrames": {
+    "xiongmao1": {
+      "__uuid__": "582225f9-58c3-46a1-8071-8e013c91794f"
+    },
+    "xiongmao2": {
+      "__uuid__": "1530a470-844d-407c-a67b-ac4b314ad75b"
+    },
+    "xiongmao3": {
+      "__uuid__": "e9ea23c8-e7f8-412c-a194-1445da9733e4"
+    }
+  }
+}

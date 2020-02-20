@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "lobby_pic_logo_xx",
+    "texture": "7cd26c8c-3d74-4c8c-9aa7-cc7299ef0e0d",
+    "atlas": "",
+    "rect": [
+      0,
+      3,
+      442,
+      72
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      442,
+      78
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

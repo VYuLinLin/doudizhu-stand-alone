@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "img_loginlist_login_close",
+    "texture": "374467c4-ecb3-414d-a3af-3e760a1960c9",
+    "atlas": "",
+    "rect": [
+      7,
+      7,
+      65,
+      65
+    ],
+    "offset": [
+      -0.5,
+      0.5
+    ],
+    "originalSize": [
+      80,
+      80
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

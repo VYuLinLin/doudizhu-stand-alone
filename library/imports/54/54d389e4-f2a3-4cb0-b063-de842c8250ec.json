@@ -1,0 +1,53 @@
+{
+  "__type__": "cc.SpriteAtlas",
+  "_name": "public_ui.plist",
+  "_objFlags": 0,
+  "_native": "",
+  "_spriteFrames": {
+    "head_img_female": {
+      "__uuid__": "26f6497e-d037-42a7-bd1e-b2da96097793"
+    },
+    "head_img_male": {
+      "__uuid__": "4ffc4726-6970-406e-b24c-47c360edacb4"
+    },
+    "head_mask": {
+      "__uuid__": "08f1a45f-e786-4b0a-8740-e1c534d6ce37"
+    },
+    "player_info_bg": {
+      "__uuid__": "2446244e-928c-4da8-9b97-ab0a20591fd7"
+    },
+    "public_bar_btm": {
+      "__uuid__": "b3113236-eaed-4676-a594-0af40a23b5ab"
+    },
+    "public_bar_top": {
+      "__uuid__": "633e79e9-d93b-49e0-b73a-65f05c09ccd8"
+    },
+    "public_btn_back": {
+      "__uuid__": "644ec3f4-2d89-4a88-8b9d-89a0cc0cfad9"
+    },
+    "public_btn_cancel": {
+      "__uuid__": "ea0d7f02-e892-4fd0-944f-1935dd640abd"
+    },
+    "public_btn_close": {
+      "__uuid__": "78f2598a-5035-4068-b37c-a7f6e141319c"
+    },
+    "public_btn_ok": {
+      "__uuid__": "f2bd1da8-aab6-4e33-bf46-c8f634136ba5"
+    },
+    "public_frame_a": {
+      "__uuid__": "42ba3d90-f957-4a58-b78f-fa95eafff25c"
+    },
+    "public_frame_b": {
+      "__uuid__": "e203cf19-0c2b-475c-96e5-0076820bfac4"
+    },
+    "public_frame_head": {
+      "__uuid__": "3e5a8f02-c779-4943-8afa-70dd302e34ff"
+    },
+    "sex_female": {
+      "__uuid__": "e92736c7-bb6c-4c11-94d8-13d83358d507"
+    },
+    "sex_male": {
+      "__uuid__": "baeaeb96-6647-461a-96d7-f6c986b66d4b"
+    }
+  }
+}

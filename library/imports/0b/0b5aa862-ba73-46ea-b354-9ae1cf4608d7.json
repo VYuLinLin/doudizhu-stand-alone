@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "joininputBg",
+    "texture": "6f565816-9979-4ee0-a223-3ff124a98d03",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      774,
+      647
+    ],
+    "offset": [
+      0,
+      0.5
+    ],
+    "originalSize": [
+      774,
+      648
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

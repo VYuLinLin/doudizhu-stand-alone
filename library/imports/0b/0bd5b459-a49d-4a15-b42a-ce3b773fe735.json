@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "yonghuxieyi",
+    "texture": "4c27b051-56da-4762-8ed2-dfd7df205412",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      579,
+      43
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      579,
+      43
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

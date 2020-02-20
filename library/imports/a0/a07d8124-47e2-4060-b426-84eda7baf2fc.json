@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "touxing001",
+    "texture": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
+    "atlas": "b168ab65-7b5b-49a7-a82d-0fd5c0d1da93",
+    "rect": [
+      660,
+      917,
+      145,
+      146
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "originalSize": [
+      145,
+      146
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

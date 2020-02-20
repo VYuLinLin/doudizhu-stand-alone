@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btn_bujiao",
+    "texture": "40ce99a2-0922-48ea-b6d4-b2e1b7c45ff7",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      211,
+      84
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      212,
+      84
+    ],
+    "capInsets": [
+      40,
+      12,
+      34,
+      27
+    ]
+  }
+}

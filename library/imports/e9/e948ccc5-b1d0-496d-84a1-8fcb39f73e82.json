@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "btn_chupai",
+    "texture": "2f02030e-2e3b-4600-b44e-db2ace0d3629",
+    "atlas": "",
+    "rect": [
+      0,
+      0,
+      211,
+      84
+    ],
+    "offset": [
+      -0.5,
+      0
+    ],
+    "originalSize": [
+      212,
+      84
+    ],
+    "capInsets": [
+      39,
+      8,
+      36,
+      25
+    ]
+  }
+}
