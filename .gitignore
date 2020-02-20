@@ -1,0 +1,14 @@
+.vscode
+.git
+.idea
+.idea/modules.xml
+.idea/misc.xml
+.idea/.gitignore
+.idea/joy_v_dev.iml
+.idea/vcs.xml
+
+build
+temp
+library
+packages
+local

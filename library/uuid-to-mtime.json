@@ -475,7 +475,7 @@
     "relativePath": "model\\primitives.fbx"
   },
   "0b9e9206-6f53-4270-acd4-352b346889d8": {
-    "asset": 1582110771042,
+    "asset": 1582168568855,
     "meta": 1582110771042,
     "relativePath": "migration"
   },
@@ -485,7 +485,7 @@
     "relativePath": "migration\\use_v2.0.x_cc.Toggle_event.js"
   },
   "ab21ffda-a437-43b0-a010-13619c0be0c1": {
-    "asset": 1582110659027,
+    "asset": 1582168568909,
     "meta": 1582110658948,
     "relativePath": "resources"
   },
@@ -500,7 +500,7 @@
     "relativePath": "resources\\bg2.png"
   },
   "6d7a950f-5478-42a4-b8a6-249043bfea9a": {
-    "asset": 1582110659001,
+    "asset": 1582168568887,
     "meta": 1582110658999,
     "relativePath": "resources\\font"
   },
@@ -550,7 +550,7 @@
     "relativePath": "resources\\mahjong_table.jpg"
   },
   "51ce1f91-376b-4a92-942b-4291568c3f61": {
-    "asset": 1582110659025,
+    "asset": 1582168568907,
     "meta": 1582110659013,
     "relativePath": "resources\\sound"
   },
@@ -615,7 +615,7 @@
     "relativePath": "resources\\table_bg_1.jpg"
   },
   "2ab1d813-9530-4109-b681-27634fbfceaf": {
-    "asset": 1582110658994,
+    "asset": 1582168569019,
     "meta": 1582110658949,
     "relativePath": "resources\\UI"
   },
@@ -675,7 +675,7 @@
     "relativePath": "resources\\UI\\btn_weixin.png"
   },
   "cfe696a4-eac1-4343-ac74-b824d2762c50": {
-    "asset": 1582110658963,
+    "asset": 1582168569013,
     "meta": 1582110658956,
     "relativePath": "resources\\UI\\button"
   },
@@ -740,7 +740,7 @@
     "relativePath": "resources\\UI\\button\\shiwan.png"
   },
   "d59eded9-acfa-4ad9-92f8-5b7d065affc6": {
-    "asset": 1582110658968,
+    "asset": 1582168569018,
     "meta": 1582110658963,
     "relativePath": "resources\\UI\\card"
   },
@@ -780,7 +780,7 @@
     "relativePath": "resources\\UI\\card\\card.png"
   },
   "bd1ce7a4-1f72-43d6-83e4-a19454da308a": {
-    "asset": 1582110658975,
+    "asset": 1582168569032,
     "meta": 1582110658971,
     "relativePath": "resources\\UI\\headimage"
   },
@@ -950,7 +950,7 @@
     "relativePath": "resources\\UI\\yuanbaoIcon.png"
   },
   "a9bfa434-fbdd-4111-8bc3-ec5afe8b0c54": {
-    "asset": 1582110659029,
+    "asset": 1582168569039,
     "meta": 1582110659027,
     "relativePath": "scenes"
   },
@@ -970,12 +970,12 @@
     "relativePath": "scenes\\loginScene.fire"
   },
   "95453cb7-743c-4705-85e0-2923399d767d": {
-    "asset": 1582110659045,
+    "asset": 1582168569093,
     "meta": 1582110659030,
     "relativePath": "scripts"
   },
   "a4c0cd8d-d40e-4feb-bae1-bdf1f5c4a2f0": {
-    "asset": 1582110659031,
+    "asset": 1582168569054,
     "meta": 1582110659030,
     "relativePath": "scripts\\data"
   },
@@ -985,7 +985,7 @@
     "relativePath": "scripts\\data\\player.js"
   },
   "7566b813-99eb-41b8-9285-96f7aa97b816": {
-    "asset": 1582110659035,
+    "asset": 1582168569062,
     "meta": 1582110659032,
     "relativePath": "scripts\\gameScene"
   },
@@ -995,7 +995,7 @@
     "relativePath": "scenes\\hallScene.fire"
   },
   "e1a3d6bf-a571-41ac-8449-e792f4814298": {
-    "asset": 1582110659036,
+    "asset": 1582168569066,
     "meta": 1582110659034,
     "relativePath": "scripts\\gameScene\\prefabs"
   },
@@ -1010,12 +1010,12 @@
     "relativePath": "scripts\\gameScene\\prefabs\\player_node.js"
   },
   "f5099460-483d-4af5-a16d-e74eabc237ac": {
-    "asset": 1582110659037,
+    "asset": 1582168569071,
     "meta": 1582110659036,
     "relativePath": "scripts\\hallscene"
   },
   "c26e5829-2c18-41c3-9d93-6edfe3ba2789": {
-    "asset": 1582110659038,
+    "asset": 1582168569075,
     "meta": 1582110659037,
     "relativePath": "scripts\\hallscene\\prefabs_script"
   },
@@ -1025,7 +1025,7 @@
     "relativePath": "scripts\\hallscene\\prefabs_script\\joinRoom.js"
   },
   "869d288c-be5f-4f6e-80b4-9641a7403daf": {
-    "asset": 1582110659040,
+    "asset": 1582168569079,
     "meta": 1582110659039,
     "relativePath": "scripts\\lib"
   },
@@ -1035,7 +1035,7 @@
     "relativePath": "scripts\\lib\\socket-io.js"
   },
   "df923918-5a67-44dd-8816-dbd7538e3616": {
-    "asset": 1582110659041,
+    "asset": 1582168569082,
     "meta": 1582110659040,
     "relativePath": "scripts\\loginscene"
   },
@@ -1045,7 +1045,7 @@
     "relativePath": "scripts\\mygolbal.js"
   },
   "d003e54a-8869-4764-abae-17a0b798854d": {
-    "asset": 1582110659044,
+    "asset": 1582168569091,
     "meta": 1582110659041,
     "relativePath": "scripts\\prefabs"
   },
@@ -1070,7 +1070,7 @@
     "relativePath": "scripts\\prefabs\\join_bk.prefab"
   },
   "43a59cb6-6a68-4ec3-bb37-5a523d491405": {
-    "asset": 1582110659046,
+    "asset": 1582168569097,
     "meta": 1582110659045,
     "relativePath": "scripts\\util"
   },
@@ -1110,8 +1110,8 @@
     "relativePath": "scripts\\defines.js"
   },
   "34b696ca-dd22-4115-b134-cf3394d57f4c": {
-    "asset": 1582167070639,
-    "meta": 1582167141937,
+    "asset": 1582167234875,
+    "meta": 1582168711317,
     "relativePath": "scripts\\gameScene\\gamebeforeUI.js"
   },
   "fc5fb2db-f8b1-46fa-b088-b75818912557": {
