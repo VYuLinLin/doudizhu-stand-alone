@@ -8,14 +8,19 @@ var _mygolbal = _interopRequireDefault(require("../../mygolbal.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var ddzConstants = require('ddzConstants');
+
+var ddzData = require('ddzData');
+
 cc.Class({
   "extends": cc.Component,
   properties: {
+    headImage: cc.Sprite,
     account_label: cc.Label,
     nickname_label: cc.Label,
-    room_touxiang: cc.Sprite,
+    // room_touxiang: cc.Sprite,
     globalcount_label: cc.Label,
-    headimage: cc.Sprite,
+    // headimage: cc.Sprite,
     readyimage: cc.Node,
     offlineimage: cc.Node,
     card_node: cc.Node,
@@ -34,19 +39,21 @@ cc.Class({
   },
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
-    this.readyimage.active = false;
-    this.offlineimage.active = false; //监听开始游戏事件(客户端发给客户端)
+    var _this = this;
 
-    this.node.on("gamestart_event", function (event) {
-      this.readyimage.active = false;
-    }.bind(this)); //给其他玩家发牌事件
+    this.readyimage.active = ddzData.gameState < ddzConstants.gameState.GAMESTART;
+    this.offlineimage.active = false; //  准备开始
+
+    this.node.on("player_ready_notify", function () {
+      _this.readyimage.active = true;
+    }); // 开始游戏(客户端发给客户端)
+
+    this.node.on("gamestart_event", function () {
+      _this.readyimage.active = false;
+    }); //给其他玩家发牌事件
 
     this.node.on("push_card_event", function (event) {
-      console.log("on push_card_event"); //自己不再发牌
-
-      if (this.accountid == _mygolbal["default"].playerData.accountID) {
-        return;
-      }
+      if (this.seat_index === 0) return; // 自己不再发牌
 
       this.pushCard();
     }.bind(this));
@@ -91,50 +98,40 @@ cc.Class({
   //data玩家节点数据
   //index玩家在房间的位置索引
   init_data: function init_data(data, index) {
-    console.log("init_data:" + JSON.stringify(data)); //data:{"accountid":"2117836","nick_name":"tiny543","avatarUrl":"http://xxx","goldcount":1000}
-
+    // console.log("init_data:" + JSON.stringify(data))
+    //data:{"accountid":"2117836","userName":"tiny543","avatarUrl":"http://xxx","goldcount":1000}
     this.accountid = data.accountid;
     this.account_label.string = data.accountid;
-    this.nickname_label.string = data.nick_name;
+    this.nickname_label.string = data.userName;
     this.globalcount_label.string = data.goldcount;
     this.cardlist_node = [];
     this.seat_index = index;
 
-    if (data.isready == true) {
-      this.readyimage.active = true;
+    if (!index) {
+      this.readyimage.active = false;
     } //网络图片加载
-    //     cc.loader.load({url: data.avatarUrl, type: 'jpg'},  (err, tex)=> {
-    //     //cc.log('Should load a texture from RESTful API by specify the type: ' + (tex instanceof cc.Texture2D));
-    //     let oldWidth = this.headImage.node.width;
-    //     //console.log('old withd' + oldWidth);
-    //     this.room_touxiang.spriteFrame = new cc.SpriteFrame(tex);
-    //     let newWidth = this.headImage.node.width;
-    //     //console.log('old withd' + newWidth);
-    //     this.headImage.node.scale = oldWidth / newWidth;
+    // cc.loader.loadRes(data.avatarUrl, cc.SpriteFrame, (err, tex) => {
+    //   //cc.log('Should load a texture from RESTful API by specify the type: ' + (tex instanceof cc.Texture2D));
+    //   // let oldWidth = this.headImage.node.width;
+    //   //console.log('old withd' + oeldWidth);
+    //   if (err) return console.log(err)
+    //   this.headImage.spriteFrame = tex
+    //   // let newWidth = this.headImage.node.width;
+    //   //console.log('old withd' + newWidth);
+    //   // this.headImage.node.scale = oldWidth / newWidth;
     // });
     //这里根据传入的avarter来获取本地图像
+    //console.log(str)
 
 
-    var str = data.avatarUrl; //console.log(str)
-
-    var head_image_path = "UI/headimage/" + str;
+    var head_image_path = "UI/headimage/" + data.avatarUrl;
     cc.loader.loadRes(head_image_path, cc.SpriteFrame, function (err, spriteFrame) {
       if (err) {
         console.log(err.message || err);
         return;
       }
 
-      this.headimage.spriteFrame = spriteFrame;
-    }.bind(this)); //注册一个player_ready消息
-
-    this.node.on("player_ready_notify", function (event) {
-      console.log("player_ready_notify event", event);
-      var detail = event;
-      console.log("------player_ready_notify detail:" + detail);
-
-      if (detail == this.accountid) {
-        this.readyimage.active = true;
-      }
+      this.headImage.spriteFrame = spriteFrame;
     }.bind(this)); //监听内部随可以抢地主消息,这个消息会发给每个playernode节点
 
     this.node.on("playernode_canrob_event", function (event) {
@@ -146,13 +143,12 @@ cc.Class({
 
         this.time_label.string = "10"; //开启一个定时器
       }
-    }.bind(this)); //?
+    }.bind(this)); // 更改右边机器人的扑克牌位置
 
     if (index == 1) {
-      this.card_node.x = -this.card_node.x - 30;
+      this.card_node.x = -this.card_node.x;
     }
   },
-  // update (dt) {},
   pushCard: function pushCard() {
     this.card_node.active = true;
 
@@ -160,12 +156,10 @@ cc.Class({
       var card = cc.instantiate(this.card_prefab);
       card.scale = 0.6;
       console.log(" this.card_node.parent.parent" + this.card_node.parent.parent.name);
-      card.parent = this.card_node; //card.parent = this.node
-
+      card.parent = this.card_node;
       var height = card.height;
       card.y = (17 - 1) * 0.5 * height * 0.4 * 0.3 - height * 0.4 * 0.3 * i;
-      card.x = 0; //console.log("call pushCard x:"+card.x+" y:"+card.y)
-
+      card.x = 0;
       this.cardlist_node.push(card);
     }
   }

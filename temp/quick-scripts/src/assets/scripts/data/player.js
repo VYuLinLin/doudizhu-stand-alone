@@ -20,17 +20,37 @@ var getRandomStr = function getRandomStr(count) {
 };
 
 var playerData = function playerData() {
-  var that = {}; //that.uniqueID = "200000";
-  //that.uniqueID = "1328014"
+  var userData = JSON.parse(cc.sys.localStorage.getItem('userData'));
+  var that = userData || {
+    userId: '',
+    // 用户id
+    userName: '',
+    // 用户名称，guest_ 开头
+    roomId: '',
+    // 游戏房间id
+    rootList: [{
+      seatindex: 1,
+      "accountid": "2117836",
+      userName: "guest_".concat(getRandomStr(5)),
+      "avatarUrl": "avatar_2",
+      "goldcount": getRandomStr(4)
+    }, {
+      seatindex: 2,
+      "accountid": "2117837",
+      userName: "guest_".concat(getRandomStr(5)),
+      "avatarUrl": "avatar_3",
+      "goldcount": getRandomStr(4)
+    }]
+  }; // that.uniqueID = 1 + getRandomStr(6)
 
-  that.uniqueID = 1 + getRandomStr(6);
-  that.accountID = "2" + getRandomStr(6);
-  that.nickName = "tiny" + getRandomStr(3);
-  var str = "avatar_" + (Math.floor(Math.random() * 3) + 1);
-  that.avatarUrl = str; //随机一个头像
-
-  that.gobal_count = 0;
+  that.gobal_count = cc.sys.localStorage.getItem('user_count');
   that.master_accountid = 0;
+
+  if (!userData) {
+    console.log(userData);
+    cc.sys.localStorage.setItem('userData', JSON.stringify(that));
+  }
+
   return that;
 };
 

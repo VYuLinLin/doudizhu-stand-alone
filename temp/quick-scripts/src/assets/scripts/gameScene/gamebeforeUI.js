@@ -11,56 +11,52 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 cc.Class({
   "extends": cc.Component,
   properties: {
-    btn_ready: cc.Node,
-    btn_gamestart: cc.Node
+    btn_ready: cc.Node // 准备
+    // btn_gamestart: cc.Node, // 开始
+
   },
   // LIFE-CYCLE CALLBACKS:
-  onLoad: function onLoad() {
-    this.btn_gamestart.active = false;
-    this.btn_ready.active = false; //监听本地的发送的消息
-
-    this.node.on("init", function () {
-      console.log("game beforeui init");
-      console.log("myglobal.playerData.housemanageid" + _mygolbal["default"].playerData.housemanageid);
-      console.log("myglobal.playerData.accountID" + _mygolbal["default"].playerData.accountID);
-
-      if (_mygolbal["default"].playerData.housemanageid == _mygolbal["default"].playerData.accountID) {
-        //自己就是房主
-        this.btn_gamestart.active = true;
-        this.btn_ready.active = false;
-      } else {
-        this.btn_gamestart.active = false;
-        this.btn_ready.active = true;
-      }
-    }.bind(this)); //监听服务器发送来的消息
+  onLoad: function onLoad() {// this.btn_gamestart.active = false
+    //监听本地的发送的消息
+    // this.node.on("init", function () {
+    //   console.log("game beforeui init")
+    //   console.log("myglobal.playerData.housemanageid" + myglobal.playerData.housemanageid)
+    //   console.log("myglobal.playerData.userId" + myglobal.playerData.userId)
+    //   if (myglobal.playerData.housemanageid == myglobal.playerData.userId) {
+    //     //自己就是房主
+    //     this.btn_gamestart.active = true
+    //     this.btn_ready.active = false
+    //   } else {
+    //     this.btn_gamestart.active = false
+    //     this.btn_ready.active = true
+    //   }
+    // }.bind(this))
+    //监听服务器发送来的消息
     // myglobal.socket.onGameStart(function(){
     //     console.log("gamebrforeUI onGameStart revice")
     //     this.node.active = false
     // }.bind(this))
-
-    _mygolbal["default"].socket.onChangeHouseManage(function (data) {
-      console.log("gamebrforeUI onChangeHouseManage revice" + JSON.stringify(data));
-      _mygolbal["default"].playerData.housemanageid = data;
-
-      if (_mygolbal["default"].playerData.housemanageid == _mygolbal["default"].playerData.accountID) {
-        //自己就是房主
-        this.btn_gamestart.active = true;
-        this.btn_ready.active = false;
-      } else {
-        this.btn_gamestart.active = false;
-        this.btn_ready.active = true;
-      }
-    }.bind(this));
+    // myglobal.socket.onChangeHouseManage(function (data) {
+    //   console.log("gamebrforeUI onChangeHouseManage revice" + JSON.stringify(data))
+    //   myglobal.playerData.housemanageid = data
+    //   if (myglobal.playerData.housemanageid == myglobal.playerData.userId) {
+    //     //自己就是房主
+    //     this.btn_gamestart.active = true
+    //     this.btn_ready.active = false
+    //   } else {
+    //     this.btn_gamestart.active = false
+    //     this.btn_ready.active = true
+    //   }
+    // }.bind(this))
   },
   start: function start() {},
   // update (dt) {},
   onButtonClick: function onButtonClick(event, customData) {
     switch (customData) {
       case "btn_ready":
-        console.log("btn_ready");
+        console.log("btn_ready"); // myglobal.socket.requestReady()
 
-        _mygolbal["default"].socket.requestReady();
-
+        this.btn_ready.active = false;
         break;
 
       case "btn_start":

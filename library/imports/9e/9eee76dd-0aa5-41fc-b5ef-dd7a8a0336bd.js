@@ -19,8 +19,7 @@ cc.Class({
   },
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
-    this.nickname_label = _mygolbal["default"].playerData.nickName;
-    this.gobal_count.string = ":" + _mygolbal["default"].playerData.gobal_count;
+    this.nickname_label.string = _mygolbal["default"].playerData.userName;
   },
   start: function start() {},
   // update (dt) {},
@@ -41,6 +40,14 @@ cc.Class({
       default:
         break;
     }
+  },
+  onBtnJingdian: function onBtnJingdian() {
+    var creator_Room = cc.instantiate(this.creatroom_prefabs);
+    creator_Room.parent = this.node;
+    creator_Room.zIndex = 100;
+  },
+  onBtnLaizi: function onBtnLaizi() {
+    alert('暂未开放');
   }
 });
 

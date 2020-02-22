@@ -1,72 +1,214 @@
-2020-02-20T03:18:28.160Z - normal: Load ~/.CocosCreator/settings.json
-2020-02-20T03:18:28.200Z - normal: Initializing Asset Database
-2020-02-20T03:18:28.202Z - normal: checking language setting...
-2020-02-20T03:18:28.202Z - normal: Language: zh
-2020-02-20T03:18:28.748Z - success: preview server running at http://localhost:7456
-2020-02-20T03:18:28.754Z - success: protocol editor-framework registered
-2020-02-20T03:18:28.754Z - success: protocol app registered
-2020-02-20T03:18:28.754Z - success: protocol theme registered
-2020-02-20T03:18:28.754Z - success: protocol packages registered
-2020-02-20T03:18:28.754Z - success: protocol uuid registerred
-2020-02-20T03:18:28.754Z - success: protocol db registerred
-2020-02-20T03:18:28.754Z - success: protocol thumbnail registerred
-2020-02-20T03:18:28.754Z - success: protocol unpack registerred
-2020-02-20T03:18:28.754Z - success: protocol disable-commonjs registerred
-2020-02-20T03:18:29.113Z - normal: connected!
-2020-02-20T03:18:29.114Z - normal: Check project E:\project\game\ddz_client_new
-2020-02-20T03:18:29.115Z - normal: Initializing project E:\project\game\ddz_client_new
-2020-02-20T03:18:29.123Z - success: adapters loaded
-2020-02-20T03:18:29.125Z - success: asset-db-debugger loaded
-2020-02-20T03:18:29.164Z - success: fb-audience-network loaded
-2020-02-20T03:18:29.180Z - success: fb-live-stream loaded
-2020-02-20T03:18:29.181Z - success: google-play-instant loaded
-2020-02-20T03:18:29.182Z - success: huawei-adapter loaded
-2020-02-20T03:18:29.182Z - success: jkw-adapter loaded
-2020-02-20T03:18:29.182Z - success: jsb-adapter loaded
-2020-02-20T03:18:29.182Z - success: oppo-adapter loaded
-2020-02-20T03:18:29.353Z - success: package-manager loaded
-2020-02-20T03:18:29.353Z - success: qtt-adapter loaded
-2020-02-20T03:18:29.354Z - success: runtime-dev-tools loaded
-2020-02-20T03:18:29.357Z - success: sdkbox loaded
-2020-02-20T03:18:29.358Z - success: ui-kit-preview-extra loaded
-2020-02-20T03:18:29.359Z - success: ui-kit-preview loaded
-2020-02-20T03:18:29.359Z - success: vivo-adapter loaded
-2020-02-20T03:18:29.387Z - success: alipay-minigame loaded
-2020-02-20T03:18:29.423Z - success: assets loaded
-2020-02-20T03:18:29.424Z - success: baidugame-opendata loaded
-2020-02-20T03:18:29.425Z - success: baidugame loaded
-2020-02-20T03:18:29.427Z - success: builder loaded
-2020-02-20T03:18:29.512Z - success: cocos-services loaded
-2020-02-20T03:18:29.513Z - success: console loaded
-2020-02-20T03:18:29.514Z - success: curve-editor loaded
-2020-02-20T03:18:29.522Z - success: fb-instant-games loaded
-2020-02-20T03:18:29.523Z - success: game-window loaded
-2020-02-20T03:18:29.524Z - success: google-instant-games loaded
-2020-02-20T03:18:29.525Z - success: hierarchy loaded
-2020-02-20T03:18:29.526Z - success: huawei-runtime loaded
-2020-02-20T03:18:29.527Z - success: inspector loaded
-2020-02-20T03:18:29.567Z - success: cpk-publish loaded
-2020-02-20T03:18:29.567Z - success: keystore loaded
-2020-02-20T03:18:29.569Z - success: node-library loaded
-2020-02-20T03:18:29.570Z - success: open-recent-items loaded
-2020-02-20T03:18:29.571Z - success: oppo-runtime loaded
-2020-02-20T03:18:29.572Z - success: package-asset loaded
-2020-02-20T03:18:29.572Z - success: preferences loaded
-2020-02-20T03:18:29.573Z - success: project-importer loaded
-2020-02-20T03:18:29.574Z - success: project-settings loaded
-2020-02-20T03:18:29.583Z - success: qtt-runtime loaded
-2020-02-20T03:18:29.584Z - success: scene loaded
-2020-02-20T03:18:29.584Z - success: simulator-debugger loaded
-2020-02-20T03:18:29.585Z - success: sprite-editor loaded
-2020-02-20T03:18:29.585Z - success: store loaded
-2020-02-20T03:18:29.587Z - success: timeline loaded
-2020-02-20T03:18:29.588Z - success: vivo-runtime loaded
-2020-02-20T03:18:29.590Z - success: wechatgame-opendata loaded
-2020-02-20T03:18:29.591Z - success: wechatgame loaded
-2020-02-20T03:18:29.593Z - success: xiaomi-runtime loaded
-2020-02-20T03:18:30.457Z - normal: Initializing Cocos2d
-2020-02-20T03:18:30.653Z - normal: Initializing engine extends
-2020-02-20T03:18:31.636Z - normal: Loading packages
-2020-02-20T03:18:31.639Z - normal: Watching packages
-2020-02-20T03:18:31.923Z - normal: Run Application
-2020-02-20T03:18:32.249Z - info: Cocos Service load base data!
+2020-02-21T12:55:00.248Z - normal: Load ~/.CocosCreator/settings.json
+2020-02-21T12:55:00.292Z - normal: Initializing Asset Database
+2020-02-21T12:55:00.296Z - normal: checking language setting...
+2020-02-21T12:55:00.296Z - normal: Language: zh
+2020-02-21T12:55:00.937Z - success: preview server running at http://localhost:7456
+2020-02-21T12:55:00.943Z - success: protocol editor-framework registered
+2020-02-21T12:55:00.943Z - success: protocol app registered
+2020-02-21T12:55:00.943Z - success: protocol theme registered
+2020-02-21T12:55:00.943Z - success: protocol packages registered
+2020-02-21T12:55:00.943Z - success: protocol uuid registerred
+2020-02-21T12:55:00.943Z - success: protocol db registerred
+2020-02-21T12:55:00.943Z - success: protocol thumbnail registerred
+2020-02-21T12:55:00.944Z - success: protocol unpack registerred
+2020-02-21T12:55:00.944Z - success: protocol disable-commonjs registerred
+2020-02-21T12:55:01.334Z - normal: connected!
+2020-02-21T12:55:01.335Z - normal: Check project E:\project\game\ddz_client_new
+2020-02-21T12:55:01.336Z - normal: Initializing project E:\project\game\ddz_client_new
+2020-02-21T12:55:01.344Z - success: adapters loaded
+2020-02-21T12:55:01.346Z - success: asset-db-debugger loaded
+2020-02-21T12:55:01.393Z - success: fb-audience-network loaded
+2020-02-21T12:55:01.413Z - success: fb-live-stream loaded
+2020-02-21T12:55:01.415Z - success: google-play-instant loaded
+2020-02-21T12:55:01.415Z - success: huawei-adapter loaded
+2020-02-21T12:55:01.415Z - success: jkw-adapter loaded
+2020-02-21T12:55:01.415Z - success: jsb-adapter loaded
+2020-02-21T12:55:01.416Z - success: oppo-adapter loaded
+2020-02-21T12:55:01.417Z - success: package-manager loaded
+2020-02-21T12:55:01.418Z - success: qtt-adapter loaded
+2020-02-21T12:55:01.419Z - success: runtime-dev-tools loaded
+2020-02-21T12:55:01.422Z - success: sdkbox loaded
+2020-02-21T12:55:01.423Z - success: ui-kit-preview-extra loaded
+2020-02-21T12:55:01.425Z - success: ui-kit-preview loaded
+2020-02-21T12:55:01.425Z - success: vivo-adapter loaded
+2020-02-21T12:55:01.458Z - success: alipay-minigame loaded
+2020-02-21T12:55:01.493Z - success: assets loaded
+2020-02-21T12:55:01.494Z - success: baidugame-opendata loaded
+2020-02-21T12:55:01.495Z - success: baidugame loaded
+2020-02-21T12:55:01.497Z - success: builder loaded
+2020-02-21T12:55:01.604Z - success: cocos-services loaded
+2020-02-21T12:55:01.606Z - success: console loaded
+2020-02-21T12:55:01.607Z - success: curve-editor loaded
+2020-02-21T12:55:01.615Z - success: fb-instant-games loaded
+2020-02-21T12:55:01.616Z - success: game-window loaded
+2020-02-21T12:55:01.617Z - success: google-instant-games loaded
+2020-02-21T12:55:01.618Z - success: hierarchy loaded
+2020-02-21T12:55:01.620Z - success: huawei-runtime loaded
+2020-02-21T12:55:01.621Z - success: inspector loaded
+2020-02-21T12:55:01.669Z - success: cpk-publish loaded
+2020-02-21T12:55:01.670Z - success: keystore loaded
+2020-02-21T12:55:01.672Z - success: node-library loaded
+2020-02-21T12:55:01.672Z - success: open-recent-items loaded
+2020-02-21T12:55:01.674Z - success: oppo-runtime loaded
+2020-02-21T12:55:01.675Z - success: package-asset loaded
+2020-02-21T12:55:01.675Z - success: preferences loaded
+2020-02-21T12:55:01.676Z - success: project-importer loaded
+2020-02-21T12:55:01.677Z - success: project-settings loaded
+2020-02-21T12:55:01.688Z - success: qtt-runtime loaded
+2020-02-21T12:55:01.690Z - success: scene loaded
+2020-02-21T12:55:01.690Z - success: simulator-debugger loaded
+2020-02-21T12:55:01.691Z - success: sprite-editor loaded
+2020-02-21T12:55:01.692Z - success: store loaded
+2020-02-21T12:55:01.693Z - success: timeline loaded
+2020-02-21T12:55:01.695Z - success: vivo-runtime loaded
+2020-02-21T12:55:01.696Z - success: wechatgame-opendata loaded
+2020-02-21T12:55:01.698Z - success: wechatgame loaded
+2020-02-21T12:55:01.703Z - success: xiaomi-runtime loaded
+2020-02-21T12:55:02.640Z - normal: Initializing Cocos2d
+2020-02-21T12:55:02.863Z - normal: Initializing engine extends
+2020-02-21T12:55:03.508Z - failed: [db-task][init] Failed to import asset E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js, message: Compile error: SyntaxError: E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js: Unexpected token (9:12)
+
+   7 |   _player_list: [], // 用户列表
+   8 |   three_cards: [], // 扑克牌列表 [玩家, 机器1, 机器2, 底牌]
+>  9 |   robplayer = [], // 复制一份房间内player,做抢地主操作
+     |             ^
+  10 |   initServer() {
+  11 |     if (!CC_EDITOR) {
+  12 |       ddzData.gameStateNotify.addListener(this.gameStateHandler, this)
+    at Parser.raise (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:7012:17)
+    at Parser.unexpected (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:8405:16)
+    at Parser.parseMaybeAssign (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:9046:12)
+    at Parser.parseVar (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11341:26)
+    at Parser.parseVarStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11160:10)
+    at Parser.parseStatementContent (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10757:21)
+    at Parser.parseStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10690:17)
+    at Parser.parseBlockOrModuleBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11266:25)
+    at Parser.parseBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11253:10)
+    at Parser.parseTopLevel (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10621:10)
+2020-02-21T12:55:04.232Z - normal: Loading packages
+2020-02-21T12:55:04.235Z - normal: Watching packages
+2020-02-21T12:55:04.528Z - normal: Run Application
+2020-02-21T12:55:06.199Z - info: Cocos Service load base data!
+2020-02-21T12:55:08.058Z - failed: load script [ddzServers] failed : Error: Cannot find module 'ddzServers'
+Require stack:
+- D:\software\CocosCreator_2.3.0\resources\app.asar\editor\page\project-scripts.js
+- D:\software\CocosCreator_2.3.0\resources\app.asar\editor\page\scene-utils\lib\sandbox.js
+- D:\software\CocosCreator_2.3.0\resources\app.asar\editor\page\scene-utils\edit-mode\index.js
+- D:\software\CocosCreator_2.3.0\resources\app.asar\editor\page\scene-utils\index.js
+- D:\software\CocosCreator_2.3.0\resources\app.asar\editor-framework\lib\renderer\editor.js
+- D:\software\CocosCreator_2.3.0\resources\app.asar\editor-framework\lib\renderer\index.js
+- D:\software\CocosCreator_2.3.0\resources\app.asar\editor-framework\renderer.js
+- D:\software\CocosCreator_2.3.0\resources\app.asar\editor\index.html
+    at Module._resolveFilename (internal/modules/cjs/loader.js:683:15)
+    at Function.Module._resolveFilename [as _resolveFilenameVendor] (D:\software\CocosCreator_2.3.0\resources\electron.asar\common\reset-search-paths.js:43:12)
+    at Function.s._resolveFilename (D:\software\CocosCreator_2.3.0\resources\app.asar\editor\page\project-scripts.js:1:939)
+    at Function.Module._load (internal/modules/cjs/loader.js:601:27)
+    at Module.require (internal/modules/cjs/loader.js:739:19)
+    at require (internal/modules/cjs/helpers.js:14:16)
+    at Object.cc.require (D:\software\CocosCreator_2.3.0\resources\app.asar\editor\page\project-scripts.js:1:587)
+    at __require (E:\project\game\ddz_client_new\temp\quick-scripts\dst\assets\scripts\start.js:7:35)
+    at __define (E:\project\game\ddz_client_new\temp\quick-scripts\dst\assets\scripts\start.js:26:18)
+    at E:\project\game\ddz_client_new\temp\quick-scripts\dst\assets\scripts\start.js:42:25
+2020-02-21T12:57:17.106Z - failed: [db-task][sync-changes] Failed to import asset E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js, message: Compile error: SyntaxError: E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js: Unexpected token (9:12)
+
+   7 |   _player_list: [], // 用户列表
+   8 |   three_cards: [], // 扑克牌列表 [玩家, 机器1, 机器2, 底牌]
+>  9 |   robplayer = [], // 复制一份房间内player,做抢地主操作
+     |             ^
+  10 |   initServer() {
+  11 |     if (!CC_EDITOR) {
+  12 |       ddzData.gameStateNotify.addListener(this.gameStateHandler, this)
+    at Parser.raise (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:7012:17)
+    at Parser.unexpected (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:8405:16)
+    at Parser.parseMaybeAssign (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:9046:12)
+    at Parser.parseVar (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11341:26)
+    at Parser.parseVarStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11160:10)
+    at Parser.parseStatementContent (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10757:21)
+    at Parser.parseStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10690:17)
+    at Parser.parseBlockOrModuleBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11266:25)
+    at Parser.parseBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11253:10)
+    at Parser.parseTopLevel (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10621:10)
+2020-02-21T12:57:48.071Z - failed: [db-task][sync-changes] Failed to import asset E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js, message: Compile error: SyntaxError: E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js: Unexpected token (9:12)
+
+   7 |   _player_list: [], // 用户列表
+   8 |   three_cards: [], // 扑克牌列表 [玩家, 机器1, 机器2, 底牌]
+>  9 |   robplayer = [], // 复制一份房间内player,做抢地主操作
+     |             ^
+  10 |   initServer() {
+  11 |     if (!CC_EDITOR) {
+  12 |       ddzData.gameStateNotify.addListener(this.gameStateHandler, this)
+    at Parser.raise (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:7012:17)
+    at Parser.unexpected (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:8405:16)
+    at Parser.parseMaybeAssign (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:9046:12)
+    at Parser.parseVar (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11341:26)
+    at Parser.parseVarStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11160:10)
+    at Parser.parseStatementContent (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10757:21)
+    at Parser.parseStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10690:17)
+    at Parser.parseBlockOrModuleBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11266:25)
+    at Parser.parseBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11253:10)
+    at Parser.parseTopLevel (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10621:10)
+2020-02-21T19:42:02.839Z - success: oppo-adapter unloaded
+2020-02-21T19:42:02.839Z - success: oppo-adapter loaded
+2020-02-21T19:42:02.840Z - success: adapters unloaded
+2020-02-21T19:42:02.840Z - success: adapters loaded
+2020-02-21T19:42:02.892Z - success: oppo-adapter unloaded
+2020-02-21T19:42:02.893Z - success: oppo-adapter loaded
+2020-02-21T19:42:02.893Z - success: adapters unloaded
+2020-02-21T19:42:02.893Z - success: adapters loaded
+2020-02-22T01:31:05.337Z - failed: [db-task][sync-changes] Failed to import asset E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js, message: Compile error: SyntaxError: E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js: Unexpected token (9:12)
+
+   7 |   _player_list: [], // 用户列表
+   8 |   three_cards: [], // 扑克牌列表 [玩家, 机器1, 机器2, 底牌]
+>  9 |   robplayer = [], // 复制一份房间内player,做抢地主操作
+     |             ^
+  10 |   initServer() {
+  11 |     if (!CC_EDITOR) {
+  12 |       ddzData.gameStateNotify.addListener(this.gameStateHandler, this)
+    at Parser.raise (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:7012:17)
+    at Parser.unexpected (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:8405:16)
+    at Parser.parseMaybeAssign (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:9046:12)
+    at Parser.parseVar (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11341:26)
+    at Parser.parseVarStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11160:10)
+    at Parser.parseStatementContent (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10757:21)
+    at Parser.parseStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10690:17)
+    at Parser.parseBlockOrModuleBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11266:25)
+    at Parser.parseBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11253:10)
+    at Parser.parseTopLevel (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10621:10)
+2020-02-22T01:31:21.616Z - failed: [db-task][sync-changes] Failed to import asset E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js, message: Compile error: SyntaxError: E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js: Unexpected token (9:12)
+
+   7 |   _player_list: [], // 用户列表
+   8 |   three_cards: [], // 扑克牌列表 [玩家, 机器1, 机器2, 底牌]
+>  9 |   robplayer = [], // 复制一份房间内player,做抢地主操作
+     |             ^
+  10 |   initServer() {
+  11 |     if (!CC_EDITOR) {
+  12 |       ddzData.gameStateNotify.addListener(this.gameStateHandler, this)
+    at Parser.raise (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:7012:17)
+    at Parser.unexpected (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:8405:16)
+    at Parser.parseMaybeAssign (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:9046:12)
+    at Parser.parseVar (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11341:26)
+    at Parser.parseVarStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11160:10)
+    at Parser.parseStatementContent (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10757:21)
+    at Parser.parseStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10690:17)
+    at Parser.parseBlockOrModuleBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11266:25)
+    at Parser.parseBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11253:10)
+    at Parser.parseTopLevel (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10621:10)
+2020-02-22T01:31:40.966Z - failed: [db-task][sync-changes] Failed to import asset E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js, message: Compile error: SyntaxError: E:\project\game\ddz_client_new\assets\servers\ddzServers\ddzServers.js: Unexpected token (9:12)
+
+   7 |   _player_list: [], // 用户列表
+   8 |   three_cards: [], // 扑克牌列表 [玩家, 机器1, 机器2, 底牌]
+>  9 |   robplayer = [], // 复制一份房间内player,做抢地主操作
+     |             ^
+  10 |   initServer() {
+  11 |     // if (!CC_EDITOR) {
+  12 |       ddzData.gameStateNotify.addListener(this.gameStateHandler, this)
+    at Parser.raise (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:7012:17)
+    at Parser.unexpected (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:8405:16)
+    at Parser.parseMaybeAssign (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:9046:12)
+    at Parser.parseVar (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11341:26)
+    at Parser.parseVarStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11160:10)
+    at Parser.parseStatementContent (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10757:21)
+    at Parser.parseStatement (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10690:17)
+    at Parser.parseBlockOrModuleBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11266:25)
+    at Parser.parseBlockBody (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:11253:10)
+    at Parser.parseTopLevel (D:\software\CocosCreator_2.3.0\resources\app.asar\node_modules\@babel\parser\lib\index.js:10621:10)

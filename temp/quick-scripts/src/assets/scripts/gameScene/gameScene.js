@@ -8,26 +8,93 @@ var _mygolbal = _interopRequireDefault(require("../mygolbal.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance"); }
+
+function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) || Object.prototype.toString.call(arr) === "[object Arguments]")) { return; } var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var ddzConstants = require('ddzConstants');
+
+var ddzData = require('ddzData');
+
 cc.Class({
   "extends": cc.Component,
   properties: {
+    bjMusic: {
+      type: cc.AudioClip,
+      // 背景音乐
+      "default": null // object's default value is null
+
+    },
     di_label: cc.Label,
     beishu_label: cc.Label,
     roomid_label: cc.Label,
     player_node_prefabs: cc.Prefab,
+    btn_ready: cc.Node,
+    // 准备按钮
     //绑定玩家座位,下面有3个子节点
-    players_seat_pos: cc.Node
+    players_seat_pos: cc.Node,
+    _selfData: null,
+    _root1: null,
+    _root2: null
   },
-  //本局结束，做状态清除
-  gameEnd: function gameEnd() {},
   onLoad: function onLoad() {
+    console.log(ddzData.gameState);
+
+    if (!CC_EDITOR) {
+      ddzData.gameStateNotify.addListener(this.gameStateHandler, this);
+    }
+
     this.playerNodeList = [];
-    this.di_label.string = "底:" + _mygolbal["default"].playerData.bottom;
-    this.beishu_label.string = "倍数:" + _mygolbal["default"].playerData.rate;
-    this.roomstate = RoomState.ROOM_INVALID; //监听，给其他玩家发牌(内部事件)
+    var roomId = _mygolbal["default"].playerData.roomId;
+
+    var _roomId$split = roomId.split('_'),
+        _roomId$split2 = _slicedToArray(_roomId$split, 2),
+        rate = _roomId$split2[0],
+        bottom = _roomId$split2[1];
+
+    _mygolbal["default"].playerData.rate = rate;
+    _mygolbal["default"].playerData.bottom = bottom;
+    this.roomid_label.string = defines.roomNames[rate - 1];
+    this.beishu_label.string = "倍数：" + rate;
+    this.di_label.string = "底：" + bottom; // this.roomstate = ddzConstants.gameState.ROOM_INVALID
+
+    this.btn_ready.active = ddzData.gameState < ddzConstants.gameState.GAMESTART; // 准备按钮
+
+    if (isopen_sound) {
+      cc.audioEngine.stopAll(); // cc.audioEngine.play(this.bjMusic, true)
+    }
+
+    this._selfData = {
+      seatindex: 0,
+      "accountid": "2117835",
+      userName: _mygolbal["default"].playerData.userName,
+      "avatarUrl": "avatar_1",
+      "goldcount": 1000
+    };
+    this._root1 = {
+      seatindex: 1,
+      "accountid": "2117836",
+      userName: "tiny1",
+      "avatarUrl": "avatar_2",
+      "goldcount": 1000
+    };
+    this._root2 = {
+      seatindex: 2,
+      "accountid": "2117837",
+      userName: "tiny2",
+      "avatarUrl": "avatar_3",
+      "goldcount": 1000
+    };
+    this.addPlayerNode(this._selfData);
+    this.addPlayerNode(this._root1);
+    this.addPlayerNode(this._root2); //监听，给其他玩家发牌(内部事件)
 
     this.node.on("pushcard_other_event", function () {
-      console.log("gamescene pushcard_other_event");
+      console.log('其他玩家发牌');
 
       for (var i = 0; i < this.playerNodeList.length; i++) {
         var node = this.playerNodeList[i];
@@ -37,7 +104,8 @@ cc.Class({
           node.emit("push_card_event");
         }
       }
-    }.bind(this)); //监听房间状态改变事件
+    }.bind(this));
+    return; //监听房间状态改变事件
 
     _mygolbal["default"].socket.onRoomChangeState(function (data) {
       //回调的函数参数是进入房间用户消息
@@ -98,25 +166,20 @@ cc.Class({
         console.log("enter_room_resp err:" + err);
       } else {
         //enter_room成功
-        //notify ={"seatid":1,"playerdata":[{"accountid":"2117836","nick_name":"tiny543","avatarUrl":"http://xxx","goldcount":1000}]}
+        //notify ={"seatid":1,"playerdata":[{"accountid":"2117836","userName":"tiny543","avatarUrl":"http://xxx","goldcount":1000}]}
         var seatid = result.seatindex; //自己在房间里的seatid
 
         this.playerdata_list_pos = []; //3个用户创建一个空用户列表
 
         this.setPlayerSeatPos(seatid);
         var playerdata_list = result.playerdata;
-        var roomid = result.roomid;
-        this.roomid_label.string = "房间号:" + roomid;
+        var roomId = result.roomId;
+        this.roomid_label.string = "房间号:" + roomId;
         _mygolbal["default"].playerData.housemanageid = result.housemanageid;
 
         for (var i = 0; i < playerdata_list.length; i++) {
           //consol.log("this----"+this)
           this.addPlayerNode(playerdata_list[i]);
-        }
-
-        if (isopen_sound) {
-          cc.audioEngine.stopAll();
-          cc.audioEngine.play(cc.url.raw("resources/sound/bg.mp3"), true);
         }
       }
 
@@ -204,50 +267,70 @@ cc.Class({
       gameui_node.emit("show_bottom_card_event", event);
     }.bind(this));
   },
-  //seat_index自己在房间的位置id
-  setPlayerSeatPos: function setPlayerSeatPos(seat_index) {
-    if (seat_index < 1 || seat_index > 3) {
-      console.log("seat_index error" + seat_index);
-      return;
-    }
-
-    console.log("setPlayerSeatPos seat_index:" + seat_index); //界面位置转化成逻辑位置
-
-    switch (seat_index) {
-      case 1:
-        this.playerdata_list_pos[1] = 0;
-        this.playerdata_list_pos[2] = 1;
-        this.playerdata_list_pos[3] = 2;
-        break;
-
-      case 2:
-        this.playerdata_list_pos[2] = 0;
-        this.playerdata_list_pos[3] = 1;
-        this.playerdata_list_pos[1] = 2;
-        break;
-
-      case 3:
-        this.playerdata_list_pos[3] = 0;
-        this.playerdata_list_pos[1] = 1;
-        this.playerdata_list_pos[2] = 2;
-        break;
-
-      default:
-        break;
+  start: function start() {},
+  onDestroy: function onDestroy() {
+    if (!CC_EDITOR) {
+      ddzData.gameStateNotify.removeListener(this.gameStateHandler, this);
     }
   },
+  gameStateHandler: function gameStateHandler(value) {
+    console.log(value);
+  },
+  // 返回大厅
+  onGoback: function onGoback() {
+    ddzData.gameState = ddzConstants.gameState.INVALID;
+    _mygolbal["default"].playerData.roomId = '';
+    cc.sys.localStorage.setItem('userData', JSON.stringify(_mygolbal["default"].playerData));
+    cc.director.loadScene("hallScene");
+  },
+  // 准备
+  onBtnReadey: function onBtnReadey(event) {
+    this.btn_ready.active = false; // this.playerNodeList[0].emit("player_ready_notify")
+
+    this.playerNodeList.forEach(function (node) {
+      node.emit("gamestart_event");
+    });
+    ddzData.gameState = ddzConstants.gameState.GAMESTART;
+  },
+  //seat_index自己在房间的位置id
+  // setPlayerSeatPos(seat_index) {
+  //   if (seat_index < 1 || seat_index > 3) {
+  //     console.log("seat_index error" + seat_index)
+  //     return
+  //   }
+  //   console.log("setPlayerSeatPos seat_index:" + seat_index)
+  //   //界面位置转化成逻辑位置
+  //   switch (seat_index) {
+  //     case 1:
+  //       this.playerdata_list_pos[1] = 0
+  //       this.playerdata_list_pos[2] = 1
+  //       this.playerdata_list_pos[3] = 2
+  //       break
+  //     case 2:
+  //       this.playerdata_list_pos[2] = 0
+  //       this.playerdata_list_pos[3] = 1
+  //       this.playerdata_list_pos[1] = 2
+  //       break
+  //     case 3:
+  //       this.playerdata_list_pos[3] = 0
+  //       this.playerdata_list_pos[1] = 1
+  //       this.playerdata_list_pos[2] = 2
+  //       break
+  //     default:
+  //       break
+  //   }
+  // },
+  // 添加玩家节点
   addPlayerNode: function addPlayerNode(player_data) {
     var playernode_inst = cc.instantiate(this.player_node_prefabs);
     playernode_inst.parent = this.node; //创建的节点存储在gamescene的列表中
 
     this.playerNodeList.push(playernode_inst); //玩家在room里的位置索引(逻辑位置)
 
-    var index = this.playerdata_list_pos[player_data.seatindex];
-    console.log("index " + player_data.seatindex + " " + index);
+    var index = player_data.seatindex;
     playernode_inst.position = this.players_seat_pos.children[index].position;
-    playernode_inst.getComponent("player_node").init_data(player_data, index);
+    playernode_inst.getComponent("player_node").init_data(player_data, index); // myglobal.playerData.playerList[index] = player_data
   },
-  start: function start() {},
 
   /*
    //通过accountid获取用户出牌放在gamescend的位置 

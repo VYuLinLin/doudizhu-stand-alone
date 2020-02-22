@@ -14,14 +14,7 @@ cc.Class({
     wait_node: cc.Node
   },
   // LIFE-CYCLE CALLBACKS:
-  onLoad: function onLoad() {
-    //console.log("qian_state.qian:"+ qian_state.qian)
-    if (isopen_sound) {
-      cc.audioEngine.play(cc.url.raw("resources/sound/login_bg.ogg"), true);
-    }
-
-    _mygolbal["default"].socket.initSocket();
-  },
+  onLoad: function onLoad() {},
   start: function start() {},
   onButtonCilck: function onButtonCilck(event, customData) {
     switch (customData) {
@@ -30,8 +23,8 @@ cc.Class({
 
         _mygolbal["default"].socket.request_wxLogin({
           uniqueID: _mygolbal["default"].playerData.uniqueID,
-          accountID: _mygolbal["default"].playerData.accountID,
-          nickName: _mygolbal["default"].playerData.nickName,
+          // userId: myglobal.playerData.userId,
+          userName: _mygolbal["default"].playerData.userName,
           avatarUrl: _mygolbal["default"].playerData.avatarUrl
         }, function (err, result) {
           //请求返回
@@ -50,7 +43,12 @@ cc.Class({
         break;
 
       case 'guest_login':
-        _mygolbal["default"].playerData.gobal_count = Math.floor(Math.random() * 100000);
+        this.wait_node.active = true;
+        var count = Math.floor(Math.random() * 100000);
+        var userName = "guest_".concat(count);
+        _mygolbal["default"].playerData.userId = count;
+        _mygolbal["default"].playerData.userName = userName;
+        cc.sys.localStorage.setItem('userData', JSON.stringify(_mygolbal["default"].playerData));
         cc.director.loadScene("hallScene");
 
       default:

@@ -35,14 +35,13 @@ cc.Class({
   },
   start: function start() {},
   init_data: function init_data(data) {},
-  // update (dt) {},
   setTouchEvent: function setTouchEvent() {
-    if (this.accountid == _mygolbal["default"].playerData.accountID) {
+    if (this.userId == _mygolbal["default"].playerData.userId) {
       this.node.on(cc.Node.EventType.TOUCH_START, function (event) {
         var gameScene_node = this.node.parent;
         var room_state = gameScene_node.getComponent("gameScene").roomstate;
 
-        if (room_state == RoomState.ROOM_PLAYING) {
+        if (room_state == defines.gameState.ROOM_PLAYING) {
           console.log("TOUCH_START id:" + this.card_id);
 
           if (this.flag == false) {
@@ -64,32 +63,15 @@ cc.Class({
       }.bind(this));
     }
   },
-  showCards: function showCards(card, accountid) {
+  showCards: function showCards(card, userId) {
     //card.index是服务器生成card给对象设置的一副牌里唯一id
     this.card_id = card.index; //传入参数 card={"value":5,"shape":1,"index":20}
 
     this.card_data = card;
 
-    if (accountid) {
-      this.accountid = accountid; //标识card属于的玩家
-    } //this.node.getComponent(cc.Sprite).spriteFrame = 
-    //服务器定义牌的表示
-    // const cardvalue = {
-    //     "A": 12,
-    //     "2": 13,
-    //     "3": 1,
-    //     "4": 2,
-    //     "5": 3,
-    //     "6": 4,
-    //     "7": 5,
-    //     "8": 6,
-    //     "9": 7,
-    //     "10": 8,
-    //     "J": 9,
-    //     "Q": 10,
-    //     "K": 11,
-    // }
-    //服务器返回的是key,value对应的是资源的编号
+    if (userId) {
+      this.userId = userId; //标识card属于的玩家
+    } //服务器返回的是key(A-K),value对应的是资源的编号
 
 
     var CardValue = {
@@ -133,8 +115,7 @@ cc.Class({
       spriteKey = 'card_' + (cardShpae[card.shape] * 13 + CardValue[card.value]);
     } else {
       spriteKey = 'card_' + Kings[card.king];
-    } // console.log("spriteKey"+spriteKey)
-
+    }
 
     this.node.getComponent(cc.Sprite).spriteFrame = this.cards_sprite_atlas.getSpriteFrame(spriteKey);
     this.setTouchEvent();

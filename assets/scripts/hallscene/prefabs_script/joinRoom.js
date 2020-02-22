@@ -35,7 +35,7 @@ cc.Class({
             if(this.joinid.length>=6){
                 //判断加入房间逻辑
                 var room_para = {
-                    roomid:this.joinid,
+                    roomId:this.joinid,
                 }
                 myglobal.socket.request_jion(room_para,function(err,result){
                     if (err){

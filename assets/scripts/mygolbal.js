@@ -6,4 +6,5 @@ const myglobal = {} || myglobal
 myglobal.socket = socketctr()
 myglobal.playerData = playerdata()
 myglobal.eventlister = eventlister({})
+
 export default myglobal

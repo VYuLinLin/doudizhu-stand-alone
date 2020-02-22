@@ -1,12 +1,12 @@
 import eventlister from "../util/event_lister.js"
-
+window.$socket = eventlister({})
 const socketCtr = function(){
     var that = {}
     var respone_map = {} 
     var call_index = 0
 
     var _socket = null
-    var event = eventlister({})
+    // var $socket = eventlister({})
     const _sendmsg = function(cmdtype,req,callindex){
         _socket.emit("notify",{cmd:cmdtype,data:req,callindex:callindex})
     } 
@@ -44,11 +44,11 @@ const socketCtr = function(){
               
                //提交一个监听的事件给监听器
         //  on notify cmd:{"type":"player_joinroom_notify","result":0,"data":
-        //  {"accountid":"2586422","nick_name":"tiny110","avatarUrl":
+        //  {"accountid":"2586422","userName":"tiny110","avatarUrl":
         //  "avatar_3","goldcount":1000,"seatindex":2},"callBackIndex":null}
               //没有找到回到函数，就给事件监听器提交一个事件
               var type = res.type
-              event.fire(type,res.data)
+              $socket.emit(type, res.data)
           // }
            
          }
@@ -88,22 +88,22 @@ const socketCtr = function(){
     }
     //监听其他玩家进入房间消息
     that.onPlayerJoinRoom = function(callback){
-         event.on("player_joinroom_notify",callback)
+         $socket.on("player_joinroom_notify",callback)
     }
 
     that.onPlayerReady = function(callback){
-        event.on("player_ready_notify",callback)
+        $socket.on("player_ready_notify",callback)
     }
 
     that.onGameStart = function(callback){
         if(callback){
-           event.on("gameStart_notify",callback)
+           $socket.on("gameStart_notify",callback)
         }
     }
 
     that.onChangeHouseManage = function(callback){
         if(callback){
-            event.on("changehousemanage_notify",callback)
+            $socket.on("changehousemanage_notify",callback)
         }
     }
     //发送ready消息
@@ -122,54 +122,54 @@ const socketCtr = function(){
     //服务器下发牌通知
     that.onPushCards = function(callback){
         if(callback){
-            event.on("pushcard_notify",callback)
+            $socket.on("pushcard_notify",callback)
          }
     }
 
     //监听服务器通知开始抢地主消息
     that.onCanRobState = function(callback){
         if(callback){
-            event.on("canrob_notify",callback)
+            $socket.on("canrob_notify",callback)
          }
     }
 
     //监听服务器:通知谁抢地主操作消息
     that.onRobState = function(callback){
         if(callback){
-            event.on("canrob_state_notify",callback)
+            $socket.on("canrob_state_notify",callback)
          }
     }
 
     //监听服务器:确定地主消息
     that.onChangeMaster = function(callback){
         if(callback){
-            event.on("change_master_notify",callback)
+            $socket.on("change_master_notify",callback)
          }
     }
 
     //监听服务器:显示底牌消息
     that.onShowBottomCard = function(callback){
         if(callback){
-            event.on("change_showcard_notify",callback)
+            $socket.on("change_showcard_notify",callback)
          }
     }
 
     //监听服务器:可以出牌消息
     that.onCanChuCard = function(callback){
         if(callback){
-            event.on("can_chu_card_notify",callback)
+            $socket.on("can_chu_card_notify",callback)
         }
     }
 
     that.onRoomChangeState = function(callback){
         if(callback){
-            event.on("room_state_notify",callback)
+            $socket.on("room_state_notify",callback)
         }
     }
 
     that.onOtherPlayerChuCard = function(callback){
         if(callback){
-            event.on("other_chucard_notify",callback)
+            $socket.on("other_chucard_notify",callback)
         }
     }
     return that

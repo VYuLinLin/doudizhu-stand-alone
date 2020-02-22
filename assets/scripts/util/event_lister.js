@@ -1,40 +1,49 @@
-const eventLister = function(obj){
-    var register = {}
+const eventLister = function (obj) {
+  var register = {}
 
-    obj.on = function(type,method){
-        if(register.hasOwnProperty(type)){
-            register[type].push(method)
-        }else{
-            register[type] = [method]
+  obj.on = function (type, callback, target) {
+    const listener = {
+      callback,
+      target
+    }
+    if (register.hasOwnProperty(type)) {
+      cc.assert(callback)
+      for (const listener of register[type]) {
+        if (target === listener.target) {
+          return
         }
+      }
+      register[type].push(listener);
+    } else {
+      register[type] = [listener]
     }
-
-    obj.fire = function(type){
-        if(register.hasOwnProperty(type)) {
-            var methodList = register[type]
-            for(var i=0;i<methodList.length;++i){
-                var handle = methodList[i]
-                var args = []
-                for(var i = 1;i<arguments.length;++i){
-                    args.push(arguments[i])
-                }
-
-                //handle.call(this,args)
-                console.log("handle.call(this,args) type:"+type)
-                handle.apply(this,args)
-            } 
+  }
+  obj.emit = function(type) {
+    if (register.hasOwnProperty(type)) {
+      const methodList = register[type]
+      for (var i = 0; i < methodList.length; ++i) {
+        const {callback, target} = methodList[i]
+        const args = []
+        for (let i = 1; i < arguments.length; ++i) {
+          args.push(arguments[i])
         }
+        callback.apply(target, args)
+      }
     }
+    
+  }
+  obj.remove = function (type, target) {
+    register[type] = register[type].filter(e => e.target !== target)
+  }
+  obj.removeLister = function (type) {
+    register[type] = []
+  }
 
-    obj.removeLister = function(type){
-        register[type] = []
-    }
+  obj.removeAllLister = function () {
+    register = {}
+  }
 
-    obj.removeAllLister = function(){
-        register = {}
-    }
-
-    return obj
+  return obj
 }
 
 export default eventLister

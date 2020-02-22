@@ -15,9 +15,14 @@ cc.Class({
     card_prefab: cc.Prefab,
     robUI: cc.Node,
     bottom_card_pos_node: cc.Node,
+    // 底牌节点
     playingUI_node: cc.Node,
-    tipsLabel: cc.Label //玩家出牌不合法的tips
-
+    tipsLabel: cc.Label,
+    //玩家出牌不合法的tips
+    fapai: {
+      type: cc.AudioClip,
+      "default": null
+    }
   },
   onLoad: function onLoad() {
     //自己牌列表 
@@ -33,43 +38,25 @@ cc.Class({
     this.bottom_card_data = [];
     this.choose_card_data = [];
     this.outcar_zone = [];
-    this.push_card_tmp = []; //监听服务器:下发牌消息
-
-    _mygolbal["default"].socket.onPushCards(function (data) {
-      console.log("onPushCards" + JSON.stringify(data));
-      this.card_data = data;
-      this.cur_index_card = data.length - 1;
-      this.pushCard(data);
-
-      if (isopen_sound) {
-        //循环播放发牌音效
-        // this.fapai_audioID = cc.audioEngine.play(cc.url.raw("resources/sound/fapai1.mp3"),true)
-        console.log("start fapai_audioID" + this.fapai_audioID);
-      } //左边移动定时器
-
-
-      this.scheduleOnce(this._runactive_pushcard.bind(this), 0.3);
-      this.node.parent.emit("pushcard_other_event");
-    }.bind(this)); //监听服务器:通知抢地主消息,显示相应的UI
-
+    this.push_card_tmp = []; //监听服务器:通知抢地主消息,显示相应的UI
 
     _mygolbal["default"].socket.onCanRobState(function (data) {
       console.log("onCanRobState" + JSON.stringify(data)); //这里需要2个变量条件：自己是下一个抢地主，2发牌动画结束
 
       this.rob_player_accountid = data;
 
-      if (data == _mygolbal["default"].playerData.accountID && this.fapai_end == true) {
+      if (data == _mygolbal["default"].playerData.userId && this.fapai_end == true) {
         this.robUI.active = true;
       }
     }.bind(this)); //监听服务器可以出牌消息
 
 
     _mygolbal["default"].socket.onCanChuCard(function (data) {
-      console.log("onCanRobState" + JSON.stringify(data)); //判断是不是自己能出牌
+      console.log("onCanChuCard" + JSON.stringify(data)); //判断是不是自己能出牌
 
-      if (data == _mygolbal["default"].playerData.accountID) {
+      if (data == _mygolbal["default"].playerData.userId) {
         //先清理出牌区域
-        this.clearOutZone(_mygolbal["default"].playerData.accountID); //先把自己出牌列表置空
+        this.clearOutZone(_mygolbal["default"].playerData.userId); //先把自己出牌列表置空
         //this.choose_card_data=[]
         //显示可以出牌的UI
 
@@ -94,7 +81,7 @@ cc.Class({
 
       for (var i = 0; i < data.cards.length; i++) {
         var card = cc.instantiate(this.card_prefab);
-        card.getComponent("card").showCards(data.cards[i].card_data, _mygolbal["default"].playerData.accountID);
+        card.getComponent("card").showCards(data.cards[i].card_data, _mygolbal["default"].playerData.userId);
         node_cards.push(card);
       }
 
@@ -125,11 +112,11 @@ cc.Class({
         if (isopen_sound) {
           cc.audioEngine.play(cc.url.raw("resources/sound/start.mp3"));
         }
-      } //this.node.parent.emit("change_room_state_event",RoomState.ROOM_PLAYING)
+      } //this.node.parent.emit("change_room_state_event",defines.gameState.ROOM_PLAYING)
       //如果自己地主，给加上三张底牌
 
 
-      if (_mygolbal["default"].playerData.accountID == _mygolbal["default"].playerData.master_accountid) {
+      if (_mygolbal["default"].playerData.userId == _mygolbal["default"].playerData.master_accountid) {
         this.scheduleOnce(this.pushThreeCard.bind(this), 0.2);
       }
     }.bind(this)); //注册监听一个选择牌消息 
@@ -150,17 +137,31 @@ cc.Class({
       }
     }.bind(this));
   },
-  start: function start() {},
+  start: function start() {
+    //监听服务器:下发牌消息
+    window.$socket.on('pushcard_notify', this.pushCardNotify, this);
+  },
+  onDestroy: function onDestroy() {
+    window.$socket.remove('pushcard_notify', this);
+  },
+  pushCardNotify: function pushCardNotify(data) {
+    console.log("onPushCards" + JSON.stringify(data));
+    this.card_data = data;
+    this.cur_index_card = data.length - 1;
+    this.pushCard(data); //左边移动定时器
+
+    this.scheduleOnce(this._runactive_pushcard.bind(this), 0.3);
+    this.node.parent.emit("pushcard_other_event");
+  },
   //处理发牌的效果
   _runactive_pushcard: function _runactive_pushcard() {
-    //console.log("_runactive_pushcard:"+this.cur_index_card)
     if (this.cur_index_card < 0) {
       console.log("pushcard end"); //发牌动画完成，显示抢地主按钮
       //this.robUI.active = true
 
       this.fapai_end = true;
 
-      if (this.rob_player_accountid == _mygolbal["default"].playerData.accountID) {
+      if (this.rob_player_accountid == _mygolbal["default"].playerData.userId) {
         this.robUI.active = true;
       }
 
@@ -186,7 +187,7 @@ cc.Class({
     var move_node = this.cards_nods[this.cards_nods.length - this.cur_index_card - 1];
     move_node.active = true;
     this.push_card_tmp.push(move_node);
-    this.fapai_audioID = cc.audioEngine.play(cc.url.raw("resources/sound/fapai1.mp3"));
+    this.fapai_audioID = common.audio.PlayEffect(this.fapai);
 
     for (var i = 0; i < this.push_card_tmp.length - 1; i++) {
       var move_node = this.push_card_tmp[i];
@@ -264,13 +265,12 @@ cc.Class({
     for (var i = 0; i < 17; i++) {
       var card = cc.instantiate(this.card_prefab);
       card.scale = 0.8;
-      card.parent = this.node.parent; //card.x = card.width * 0.4 * (17 - 1) * (-0.5) + card.width * 0.4 * 0;
-
+      card.parent = this.node.parent;
       card.x = card.width * 0.4 * -0.5 * -16 + card.width * 0.4 * 0; //这里实现为，每发一张牌，放在已经发的牌最后，然后整体移动
 
       card.y = -250;
       card.active = false;
-      card.getComponent("card").showCards(data[i], _mygolbal["default"].playerData.accountID); //存储牌的信息,用于后面发牌效果
+      card.getComponent("card").showCards(data[i], _mygolbal["default"].playerData.userId); //存储牌的信息,用于后面发牌效果
 
       this.cards_nods.push(card);
       this.card_width = card.width;
@@ -286,9 +286,9 @@ cc.Class({
       //0,和2两张牌左右移动windth*0.4
 
       if (i == 0) {
-        di_card.x = di_card.x - di_card.width * 0.4;
+        di_card.x = di_card.x - di_card.width * 0.5;
       } else if (i == 2) {
-        di_card.x = di_card.x + di_card.width * 0.4;
+        di_card.x = di_card.x + di_card.width * 0.5;
       } //di_card.x = di_card.width-i*di_card.width-20
       //di_card.y=60
 
@@ -321,7 +321,7 @@ cc.Class({
       card.y = -230; //先把底盘放在-230，在设置个定时器下移到-250的位置
       //console.log("pushThreeCard x:"+card.x)
 
-      card.getComponent("card").showCards(this.bottom_card_data[i], _mygolbal["default"].playerData.accountID);
+      card.getComponent("card").showCards(this.bottom_card_data[i], _mygolbal["default"].playerData.userId);
       card.active = true;
       this.cards_nods.push(card);
     }
