@@ -224,6 +224,7 @@ cc.Class({
   onDestroy: function onDestroy() {
     if (!CC_EDITOR) {
       ddzData.gameStateNotify.removeListener(this.gameStateHandler, this);
+      cc.audioEngine.stopAll();
     }
 
     $socket.remove('change_master_notify', this);

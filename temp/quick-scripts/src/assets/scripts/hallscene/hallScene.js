@@ -20,6 +20,7 @@ cc.Class({
   // LIFE-CYCLE CALLBACKS:
   onLoad: function onLoad() {
     this.nickname_label.string = _mygolbal["default"].playerData.userName;
+    cc.director.preloadScene("gameScene");
   },
   start: function start() {},
   // update (dt) {},

@@ -15,6 +15,7 @@ cc.Class({
 
   onLoad() {
     this.nickname_label.string = myglobal.playerData.userName
+    cc.director.preloadScene("gameScene")
   },
 
   start() {

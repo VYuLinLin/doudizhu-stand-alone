@@ -8,7 +8,9 @@ cc.Class({
 
   // LIFE-CYCLE CALLBACKS:
 
-  onLoad() {},
+  onLoad() {
+    cc.director.preloadScene("hallScene")
+  },
 
   start() {},
   onButtonCilck(event, customData) {

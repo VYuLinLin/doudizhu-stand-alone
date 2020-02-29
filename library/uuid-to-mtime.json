@@ -1074,11 +1074,6 @@
     "meta": 1582187503839,
     "relativePath": "scripts\\hallscene\\prefabs_script\\joinRoom.js"
   },
-  "9eee76dd-0aa5-41fc-b5ef-dd7a8a0336bd": {
-    "asset": 1582188073637,
-    "meta": 1582188078877,
-    "relativePath": "scripts\\hallscene\\hallScene.js"
-  },
   "fc93b0e8-b7d9-42c5-829b-2aeb9c5280e6": {
     "asset": 1571659575000,
     "meta": 1582188747082,
@@ -1148,11 +1143,6 @@
     "asset": 1582337312376,
     "meta": 1582337638297,
     "relativePath": "scripts\\gameScene\\gamebeforeUI.js"
-  },
-  "b05a6f20-48ea-415a-bf1d-76f4f4dc9a63": {
-    "asset": 1582354186700,
-    "meta": 1582354197266,
-    "relativePath": "scripts\\loginscene\\loginScene.js"
   },
   "57aa9616-7ca8-4a53-9995-929a2c57899d": {
     "asset": 1582512664769,
@@ -1324,14 +1314,24 @@
     "meta": 1582973603386,
     "relativePath": "scripts\\gameScene\\gameingUI.js"
   },
-  "cf22a7b3-d3fc-4369-a0b5-911ab19ffa70": {
-    "asset": 1582976358268,
-    "meta": 1582976403857,
-    "relativePath": "scripts\\gameScene\\gameScene.js"
-  },
   "a87d01bb-ea44-451e-aeb0-2dd17489b93d": {
     "asset": 1582976583709,
     "meta": 1582976593381,
     "relativePath": "servers\\ddzServers\\ddzServers.js"
+  },
+  "9eee76dd-0aa5-41fc-b5ef-dd7a8a0336bd": {
+    "asset": 1582977371501,
+    "meta": 1582977376355,
+    "relativePath": "scripts\\hallscene\\hallScene.js"
+  },
+  "b05a6f20-48ea-415a-bf1d-76f4f4dc9a63": {
+    "asset": 1582977345160,
+    "meta": 1582977376383,
+    "relativePath": "scripts\\loginscene\\loginScene.js"
+  },
+  "cf22a7b3-d3fc-4369-a0b5-911ab19ffa70": {
+    "asset": 1582977519781,
+    "meta": 1582977524048,
+    "relativePath": "scripts\\gameScene\\gameScene.js"
   }
 }

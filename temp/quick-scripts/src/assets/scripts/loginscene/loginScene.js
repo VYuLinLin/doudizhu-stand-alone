@@ -14,7 +14,9 @@ cc.Class({
     wait_node: cc.Node
   },
   // LIFE-CYCLE CALLBACKS:
-  onLoad: function onLoad() {},
+  onLoad: function onLoad() {
+    cc.director.preloadScene("hallScene");
+  },
   start: function start() {},
   onButtonCilck: function onButtonCilck(event, customData) {
     switch (customData) {

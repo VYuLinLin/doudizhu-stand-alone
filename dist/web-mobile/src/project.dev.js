@@ -2360,6 +2360,7 @@ window.__require = function e(t, n, r) {
       onDestroy: function onDestroy() {
         true;
         ddzData.gameStateNotify.removeListener(this.gameStateHandler, this);
+        cc.audioEngine.stopAll();
         $socket.remove("change_master_notify", this);
       },
       masterNotify: function masterNotify(_ref) {
@@ -2898,6 +2899,7 @@ window.__require = function e(t, n, r) {
       },
       onLoad: function onLoad() {
         this.nickname_label.string = _mygolbal["default"].playerData.userName;
+        cc.director.preloadScene("gameScene");
       },
       start: function start() {},
       onButtonClick: function onButtonClick(event, customData) {
@@ -3048,7 +3050,9 @@ window.__require = function e(t, n, r) {
       properties: {
         wait_node: cc.Node
       },
-      onLoad: function onLoad() {},
+      onLoad: function onLoad() {
+        cc.director.preloadScene("hallScene");
+      },
       start: function start() {},
       onButtonCilck: function onButtonCilck(event, customData) {
         switch (customData) {
