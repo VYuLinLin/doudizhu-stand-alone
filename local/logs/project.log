@@ -945,3 +945,548 @@
 2020-02-29T11:03:39.892Z - normal: Generating main.js from D:\software\CocosCreator_2.3.0\resources\static\build-templates\shares\main.js
 2020-02-29T11:03:39.895Z - normal: Generating html from D:\software\CocosCreator_2.3.0\resources\static\build-templates\web-mobile\template-dev\index.html
 2020-02-29T11:03:39.902Z - normal: Built to "E:\project\game\ddz_client_new\build\web-mobile" successfully
+2020-02-29T11:43:14.561Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "org.cocos2d.ddz_client",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "E:\\project\\game\\ddz_client_new\\build",
+  "buildScriptsOnly": false,
+  "debug": true,
+  "dest": "E:\\project\\game\\ddz_client_new\\build\\web-mobile",
+  "embedWebDebugger": true,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [
+    "Geom Utils",
+    "3D",
+    "3D Primitive",
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle"
+  ],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "mac": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.ddz_client",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+    "1931c8f8-1c0b-4cbf-a901-ead7f03073eb",
+    "347f62d6-8f34-42dc-981d-a0459890e888",
+    "4e766df2-6e55-49e2-b48f-1943368ec005"
+  ],
+  "sourceMaps": true,
+  "startScene": "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+  "template": "link",
+  "title": "ddz_client",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "win32": {},
+  "xxteaKey": "3105dddb-7ad7-4f",
+  "zipCompressJs": true,
+  "project": "E:\\project\\game\\ddz_client_new",
+  "projectName": "ddz_client",
+  "debugBuildWorker": false
+}
+2020-02-29T11:43:14.562Z - normal: Building E:\project\game\ddz_client_new
+2020-02-29T11:43:14.562Z - normal: Destination E:\project\game\ddz_client_new\build\web-mobile
+2020-02-29T11:43:14.562Z - normal: Delete E:\project\game\ddz_client_new\build\web-mobile\subpackages/**/*,E:\project\game\ddz_client_new\build\web-mobile\**\*
+2020-02-29T11:43:18.043Z - normal: Start building assets
+2020-02-29T11:43:18.043Z - normal: Start spawn build-worker
+2020-02-29T11:43:18.454Z - normal: Finish spawn build-worker
+2020-02-29T11:43:18.454Z - normal: Start init build-worker
+2020-02-29T11:43:19.918Z - normal: Finish init build-worker
+2020-02-29T11:43:19.918Z - normal: Start build-assets in worker
+2020-02-29T11:43:20.452Z - normal: Finish build-assets in worker
+2020-02-29T11:43:20.457Z - normal: Finish building assets
+2020-02-29T11:43:20.457Z - normal: Start building plugin scripts
+2020-02-29T11:43:20.465Z - normal: Finish building plugin scripts
+2020-02-29T11:43:20.506Z - normal: Generating main.js from D:\software\CocosCreator_2.3.0\resources\static\build-templates\shares\main.js
+2020-02-29T11:43:20.509Z - normal: Generating html from D:\software\CocosCreator_2.3.0\resources\static\build-templates\web-mobile\template-dev\index.html
+2020-02-29T11:43:20.516Z - normal: Built to "E:\project\game\ddz_client_new\build\web-mobile" successfully
+2020-02-29T11:44:43.310Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "org.cocos2d.ddz_client",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "E:\\project\\game\\ddz_client_new\\dist\\web-mobile",
+  "buildScriptsOnly": false,
+  "debug": true,
+  "dest": "E:\\project\\game\\ddz_client_new\\dist\\web-mobile\\web-mobile",
+  "embedWebDebugger": true,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [
+    "Geom Utils",
+    "3D",
+    "3D Primitive",
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle"
+  ],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "mac": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.ddz_client",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+    "1931c8f8-1c0b-4cbf-a901-ead7f03073eb",
+    "347f62d6-8f34-42dc-981d-a0459890e888",
+    "4e766df2-6e55-49e2-b48f-1943368ec005"
+  ],
+  "sourceMaps": true,
+  "startScene": "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+  "template": "link",
+  "title": "ddz_client",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "win32": {},
+  "xxteaKey": "3105dddb-7ad7-4f",
+  "zipCompressJs": true,
+  "project": "E:\\project\\game\\ddz_client_new",
+  "projectName": "ddz_client",
+  "debugBuildWorker": false
+}
+2020-02-29T11:44:43.310Z - normal: Building E:\project\game\ddz_client_new
+2020-02-29T11:44:43.310Z - normal: Destination E:\project\game\ddz_client_new\dist\web-mobile\web-mobile
+2020-02-29T11:44:43.310Z - normal: Delete E:\project\game\ddz_client_new\dist\web-mobile\web-mobile\subpackages/**/*,E:\project\game\ddz_client_new\dist\web-mobile\web-mobile\**\*
+2020-02-29T11:44:45.615Z - normal: Start building assets
+2020-02-29T11:44:45.615Z - normal: Start spawn build-worker
+2020-02-29T11:44:46.064Z - normal: Finish spawn build-worker
+2020-02-29T11:44:46.064Z - normal: Start init build-worker
+2020-02-29T11:44:47.316Z - normal: Finish init build-worker
+2020-02-29T11:44:47.317Z - normal: Start build-assets in worker
+2020-02-29T11:44:48.147Z - normal: Finish build-assets in worker
+2020-02-29T11:44:48.155Z - normal: Finish building assets
+2020-02-29T11:44:48.155Z - normal: Start building plugin scripts
+2020-02-29T11:44:48.164Z - normal: Finish building plugin scripts
+2020-02-29T11:44:48.214Z - normal: Generating main.js from D:\software\CocosCreator_2.3.0\resources\static\build-templates\shares\main.js
+2020-02-29T11:44:48.216Z - normal: Generating html from D:\software\CocosCreator_2.3.0\resources\static\build-templates\web-mobile\template-dev\index.html
+2020-02-29T11:44:48.225Z - normal: Built to "E:\project\game\ddz_client_new\dist\web-mobile\web-mobile" successfully
+2020-02-29T11:49:57.394Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "org.cocos2d.ddz_client",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "E:\\project\\game\\ddz_client_new\\dist",
+  "buildScriptsOnly": false,
+  "debug": true,
+  "dest": "E:\\project\\game\\ddz_client_new\\dist\\web-mobile",
+  "embedWebDebugger": true,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [
+    "Geom Utils",
+    "3D",
+    "3D Primitive",
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle"
+  ],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "mac": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.ddz_client",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+    "1931c8f8-1c0b-4cbf-a901-ead7f03073eb",
+    "347f62d6-8f34-42dc-981d-a0459890e888",
+    "4e766df2-6e55-49e2-b48f-1943368ec005"
+  ],
+  "sourceMaps": true,
+  "startScene": "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+  "template": "link",
+  "title": "ddz_client",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "win32": {},
+  "xxteaKey": "3105dddb-7ad7-4f",
+  "zipCompressJs": true,
+  "project": "E:\\project\\game\\ddz_client_new",
+  "projectName": "ddz_client",
+  "debugBuildWorker": false
+}
+2020-02-29T11:49:57.394Z - normal: Building E:\project\game\ddz_client_new
+2020-02-29T11:49:57.395Z - normal: Destination E:\project\game\ddz_client_new\dist\web-mobile
+2020-02-29T11:49:57.395Z - normal: Delete E:\project\game\ddz_client_new\dist\web-mobile\subpackages/**/*,E:\project\game\ddz_client_new\dist\web-mobile\**\*
+2020-02-29T11:49:59.287Z - normal: Start building assets
+2020-02-29T11:49:59.287Z - normal: Start spawn build-worker
+2020-02-29T11:49:59.709Z - normal: Finish spawn build-worker
+2020-02-29T11:49:59.709Z - normal: Start init build-worker
+2020-02-29T11:50:00.848Z - normal: Finish init build-worker
+2020-02-29T11:50:00.848Z - normal: Start build-assets in worker
+2020-02-29T11:50:01.356Z - normal: Finish build-assets in worker
+2020-02-29T11:50:01.360Z - normal: Finish building assets
+2020-02-29T11:50:01.360Z - normal: Start building plugin scripts
+2020-02-29T11:50:01.369Z - normal: Finish building plugin scripts
+2020-02-29T11:50:01.408Z - normal: Generating main.js from D:\software\CocosCreator_2.3.0\resources\static\build-templates\shares\main.js
+2020-02-29T11:50:01.410Z - normal: Generating html from D:\software\CocosCreator_2.3.0\resources\static\build-templates\web-mobile\template-dev\index.html
+2020-02-29T11:50:01.417Z - normal: Built to "E:\project\game\ddz_client_new\dist\web-mobile" successfully
+2020-02-29T11:56:17.439Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "org.cocos2d.ddz_client",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "E:\\project\\game\\ddz_client_new\\dist",
+  "buildScriptsOnly": false,
+  "debug": true,
+  "dest": "E:\\project\\game\\ddz_client_new\\dist\\web-mobile",
+  "embedWebDebugger": true,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [
+    "Geom Utils",
+    "3D",
+    "3D Primitive",
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle"
+  ],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "mac": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.ddz_client",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+    "1931c8f8-1c0b-4cbf-a901-ead7f03073eb",
+    "347f62d6-8f34-42dc-981d-a0459890e888",
+    "4e766df2-6e55-49e2-b48f-1943368ec005"
+  ],
+  "sourceMaps": true,
+  "startScene": "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+  "template": "link",
+  "title": "ddz_client",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "win32": {},
+  "xxteaKey": "3105dddb-7ad7-4f",
+  "zipCompressJs": true,
+  "project": "E:\\project\\game\\ddz_client_new",
+  "projectName": "ddz_client",
+  "debugBuildWorker": false
+}
+2020-02-29T11:56:17.439Z - normal: Building E:\project\game\ddz_client_new
+2020-02-29T11:56:17.439Z - normal: Destination E:\project\game\ddz_client_new\dist\web-mobile
+2020-02-29T11:56:17.440Z - normal: Delete E:\project\game\ddz_client_new\dist\web-mobile\subpackages/**/*,E:\project\game\ddz_client_new\dist\web-mobile\**\*
+2020-02-29T11:56:21.191Z - normal: Start building assets
+2020-02-29T11:56:21.191Z - normal: Start spawn build-worker
+2020-02-29T11:56:21.615Z - normal: Finish spawn build-worker
+2020-02-29T11:56:21.615Z - normal: Start init build-worker
+2020-02-29T11:56:22.815Z - normal: Finish init build-worker
+2020-02-29T11:56:22.815Z - normal: Start build-assets in worker
+2020-02-29T11:56:23.511Z - normal: Finish build-assets in worker
+2020-02-29T11:56:23.518Z - normal: Finish building assets
+2020-02-29T11:56:23.518Z - normal: Start building plugin scripts
+2020-02-29T11:56:23.531Z - normal: Finish building plugin scripts
+2020-02-29T11:56:23.581Z - normal: Generating main.js from D:\software\CocosCreator_2.3.0\resources\static\build-templates\shares\main.js
+2020-02-29T11:56:23.584Z - normal: Generating html from D:\software\CocosCreator_2.3.0\resources\static\build-templates\web-mobile\template-dev\index.html
+2020-02-29T11:56:23.597Z - normal: Built to "E:\project\game\ddz_client_new\dist\web-mobile" successfully
+2020-02-29T11:58:44.938Z - normal: Start building with options : {
+  "actualPlatform": "web-mobile",
+  "android": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "android-instant": {
+    "REMOTE_SERVER_ROOT": "",
+    "host": "",
+    "packageName": "org.cocos2d.ddz_client",
+    "pathPattern": "",
+    "recordPath": "",
+    "scheme": "https",
+    "skipRecord": false
+  },
+  "apiLevel": "",
+  "appABIs": [],
+  "appBundle": false,
+  "baidugame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "testappid",
+    "orientation": "portrait",
+    "subContext": ""
+  },
+  "buildPath": "E:\\project\\game\\ddz_client_new\\dist",
+  "buildScriptsOnly": false,
+  "debug": true,
+  "dest": "E:\\project\\game\\ddz_client_new\\dist\\web-mobile",
+  "embedWebDebugger": true,
+  "encryptJs": true,
+  "excludeScenes": [],
+  "excludedModules": [
+    "Geom Utils",
+    "3D",
+    "3D Primitive",
+    "3D Physics/cannon.js",
+    "3D Physics/Builtin",
+    "3D Particle"
+  ],
+  "fb-instant-games": {},
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "ios": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "mac": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.ddz_client",
+  "platform": "web-mobile",
+  "previewHeight": "720",
+  "previewWidth": "1280",
+  "qqplay": {
+    "REMOTE_SERVER_ROOT": "",
+    "orientation": "portrait",
+    "zip": false
+  },
+  "scenes": [
+    "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+    "1931c8f8-1c0b-4cbf-a901-ead7f03073eb",
+    "347f62d6-8f34-42dc-981d-a0459890e888",
+    "4e766df2-6e55-49e2-b48f-1943368ec005"
+  ],
+  "sourceMaps": true,
+  "startScene": "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
+  "template": "link",
+  "title": "ddz_client",
+  "useDebugKeystore": true,
+  "vsVersion": "auto",
+  "webOrientation": "landscape",
+  "wechatgame": {
+    "REMOTE_SERVER_ROOT": "",
+    "appid": "wx6ac3f5090a6b99c5",
+    "orientation": "portrait",
+    "separate_engine": false,
+    "subContext": ""
+  },
+  "win32": {},
+  "xxteaKey": "3105dddb-7ad7-4f",
+  "zipCompressJs": true,
+  "project": "E:\\project\\game\\ddz_client_new",
+  "projectName": "ddz_client",
+  "debugBuildWorker": false
+}
+2020-02-29T11:58:44.938Z - normal: Building E:\project\game\ddz_client_new
+2020-02-29T11:58:44.939Z - normal: Destination E:\project\game\ddz_client_new\dist\web-mobile
+2020-02-29T11:58:44.939Z - normal: Delete E:\project\game\ddz_client_new\dist\web-mobile\subpackages/**/*,E:\project\game\ddz_client_new\dist\web-mobile\**\*
+2020-02-29T11:58:46.977Z - normal: Start building assets
+2020-02-29T11:58:46.978Z - normal: Start spawn build-worker
+2020-02-29T11:58:47.452Z - normal: Finish spawn build-worker
+2020-02-29T11:58:47.452Z - normal: Start init build-worker
+2020-02-29T11:58:48.779Z - normal: Finish init build-worker
+2020-02-29T11:58:48.779Z - normal: Start build-assets in worker
+2020-02-29T11:58:49.462Z - normal: Finish build-assets in worker
+2020-02-29T11:58:49.470Z - normal: Finish building assets
+2020-02-29T11:58:49.470Z - normal: Start building plugin scripts
+2020-02-29T11:58:49.482Z - normal: Finish building plugin scripts
+2020-02-29T11:58:49.532Z - normal: Generating main.js from D:\software\CocosCreator_2.3.0\resources\static\build-templates\shares\main.js
+2020-02-29T11:58:49.535Z - normal: Generating html from D:\software\CocosCreator_2.3.0\resources\static\build-templates\web-mobile\template-dev\index.html
+2020-02-29T11:58:49.546Z - normal: Built to "E:\project\game\ddz_client_new\dist\web-mobile" successfully
