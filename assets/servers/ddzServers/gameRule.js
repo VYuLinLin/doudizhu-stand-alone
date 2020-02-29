@@ -186,7 +186,7 @@ GameRule.prototype.isPlaneWithOne = function (cards) {
   if (threeList.length != threeCount || threeList[0].val === 15) {//检测三根数量和不能为2
     return false;
   }
-  for (i = 0; i < threeList.length; i++) {//检测三根是否连续
+  for (let i = 0; i < threeList.length; i++) {//检测三根是否连续
     if (i != threeList.length - 1 && threeList[i].val - 1 != threeList[i + 1].val) {
       return false;
     }
@@ -213,7 +213,7 @@ GameRule.prototype.isPlaneWithPairs = function (cards) {
   if (threeList.length != groupCount || pairsList.length != groupCount || threeList[0].val === 15) {//检测三根数量和对子数量和不能为2
     return false;
   }
-  for (i = 0; i < threeList.length; i++) {//检测三根是否连续
+  for (let i = 0; i < threeList.length; i++) {//检测三根是否连续
     if (i != threeList.length - 1 && threeList[i].val - 1 != threeList[i + 1].val) {
       return false;
     }

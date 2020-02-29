@@ -205,7 +205,7 @@ const ddzServers = {
       })
       if (result) {
         // 将牌显示到出牌区域上
-        for (i = 0; i < result.cardList.length; i++) {
+        for (let i = 0; i < result.cardList.length; i++) {
           // var c = self.game.add.clone(self.cardPrefab, area);
           // c.getScript('qc.engine.CardUI').show(result.cardList[i], false);
           // c.interactive = false;

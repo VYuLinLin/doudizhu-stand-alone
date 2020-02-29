@@ -295,7 +295,7 @@ cc.Class({
       node_cards.push(card)
     }
     const delay = common.random(0, 10)
-    playerNode = gameScene_script.getUserNodeByAccount(userId)
+    const playerNode = gameScene_script.getUserNodeByAccount(userId)
     if (!playerNode) return
     playerNode.schedulerOnce(() => {
       this.appendOtherCardsToOutZone(outCard_node, node_cards, 0)

@@ -955,8 +955,8 @@
     "relativePath": "scenes"
   },
   "4e766df2-6e55-49e2-b48f-1943368ec005": {
-    "asset": 1582971591619,
-    "meta": 1582971591628,
+    "asset": 1582974145079,
+    "meta": 1582974145092,
     "relativePath": "scenes\\gameScene.fire"
   },
   "80e921f7-2ba9-4618-a6a4-a7b30830e708": {
@@ -1199,20 +1199,10 @@
     "meta": 1582703587929,
     "relativePath": "scripts\\start.js"
   },
-  "24351ca6-43dd-49db-b8e9-0c6c4395accd": {
-    "asset": 1582707050860,
-    "meta": 1582707091231,
-    "relativePath": "servers\\ddzServers\\carder.js"
-  },
   "492f751c-94ed-4899-ad29-485c4e7b03bf": {
     "asset": 1582710421482,
     "meta": 1582717731812,
     "relativePath": "scripts\\data\\ddzConstants.js"
-  },
-  "6b09d9cc-7cac-4695-97ba-85577f4fb6df": {
-    "asset": 1582874132209,
-    "meta": 1582874138539,
-    "relativePath": "servers\\ddzServers\\AILogic.js"
   },
   "692bee91-5fb8-465e-9618-3d4953390435": {
     "asset": 1582881098262,
@@ -1294,11 +1284,6 @@
     "meta": 1582881098386,
     "relativePath": "resources\\Win\\you_win_tex.json"
   },
-  "6c7e6b4d-e2b3-423f-b807-5440f8798cd2": {
-    "asset": 1582954571438,
-    "meta": 1582954578016,
-    "relativePath": "servers\\ddzServers\\gameRule.js"
-  },
   "2afe8af3-f760-4e97-b09b-41f2920a82e1": {
     "asset": 1582957192117,
     "meta": 1582957195062,
@@ -1319,19 +1304,34 @@
     "meta": 1582969195107,
     "relativePath": "scripts\\gameScene\\gameScene.js"
   },
-  "fc5fb2db-f8b1-46fa-b088-b75818912557": {
-    "asset": 1582969742604,
-    "meta": 1582969903368,
-    "relativePath": "scripts\\gameScene\\gameingUI.js"
-  },
-  "a87d01bb-ea44-451e-aeb0-2dd17489b93d": {
-    "asset": 1582971374993,
-    "meta": 1582971409143,
-    "relativePath": "servers\\ddzServers\\ddzServers.js"
-  },
   "aa64a319-8271-487c-bc76-2e68be95bc15": {
     "asset": 1582971558283,
     "meta": 1582971565095,
     "relativePath": "scripts\\gameScene\\prefabs\\player_node.js"
+  },
+  "6b09d9cc-7cac-4695-97ba-85577f4fb6df": {
+    "asset": 1582973414999,
+    "meta": 1582973490218,
+    "relativePath": "servers\\ddzServers\\AILogic.js"
+  },
+  "24351ca6-43dd-49db-b8e9-0c6c4395accd": {
+    "asset": 1582973437009,
+    "meta": 1582973490326,
+    "relativePath": "servers\\ddzServers\\carder.js"
+  },
+  "a87d01bb-ea44-451e-aeb0-2dd17489b93d": {
+    "asset": 1582973459425,
+    "meta": 1582973490408,
+    "relativePath": "servers\\ddzServers\\ddzServers.js"
+  },
+  "6c7e6b4d-e2b3-423f-b807-5440f8798cd2": {
+    "asset": 1582973479697,
+    "meta": 1582973490449,
+    "relativePath": "servers\\ddzServers\\gameRule.js"
+  },
+  "fc5fb2db-f8b1-46fa-b088-b75818912557": {
+    "asset": 1582973597889,
+    "meta": 1582973603386,
+    "relativePath": "scripts\\gameScene\\gameingUI.js"
   }
 }

@@ -316,7 +316,7 @@ cc.Class({
     }
 
     var delay = common.random(0, 10);
-    playerNode = gameScene_script.getUserNodeByAccount(userId);
+    var playerNode = gameScene_script.getUserNodeByAccount(userId);
     if (!playerNode) return;
     playerNode.schedulerOnce(function () {
       _this.appendOtherCardsToOutZone(outCard_node, node_cards, 0);

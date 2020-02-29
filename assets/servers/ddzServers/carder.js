@@ -73,10 +73,10 @@ function carder() {
   const creatleCard = function () {
     that.card_list = []
     //实例化52张牌
-    for (var iv in cardvalue) {
-      for (js in CardShape) {
+    for (const iv in cardvalue) {
+      for (const js in CardShape) {
         //实例化牌对象
-        var card = cardobj(cardvalue[iv], CardShape[js], undefined)
+        const card = cardobj(cardvalue[iv], CardShape[js], undefined)
         card.index = that.card_list.length;
         that.card_list.push(card)
       }
@@ -254,7 +254,7 @@ function carder() {
     console.log("IsPlan keys" + keys)
     if (keys.length == 2) {
       //判断相同牌是否为三张
-      for (key in map) {
+      for (let key in map) {
         if (map[key] != 3) {
           return false
         }

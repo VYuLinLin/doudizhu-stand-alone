@@ -307,25 +307,25 @@ AILogic.prototype.play = function (landlordCardsCnt) {
       }
     }
     //对子里找
-    for (i = 0; i < self._pairs.length; i++) {
+    for (let i = 0; i < self._pairs.length; i++) {
       if (self._pairs[i].val === minCard.val) {
         return self.minCards(self._pairs, G.gameRule.PAIRS);
       }
     }
     //三根里找
-    for (i = 0; i < self._three.length; i++) {
+    for (let i = 0; i < self._three.length; i++) {
       if (self._three[i].val === minCard.val) {
         return self.minCards(self._three, G.gameRule.THREE);
       }
     }
     //炸弹里找
-    for (i = 0; i < self._bomb.length; i++) {
+    for (let i = 0; i < self._bomb.length; i++) {
       if (self._bomb[i].val === minCard.val) {
         return self.minCards(self._bomb, G.gameRule.BOMB);
       }
     }
     //三顺里找
-    for (i = 0; i < self._plane.length; i++) {
+    for (let i = 0; i < self._plane.length; i++) {
       for (var j = 0; j < self._plane[i].cardList.length; j++) {
         if (self._plane[i].cardList[j].val === minCard.val && self._plane[i].cardList[j].shape === minCard.shape) {
           return self.minCards(self._plane, G.gameRule.PLANE);
@@ -333,7 +333,7 @@ AILogic.prototype.play = function (landlordCardsCnt) {
       }
     }
     //顺子里找
-    for (i = 0; i < self._progression.length; i++) {
+    for (let i = 0; i < self._progression.length; i++) {
       for (var j = 0; j < self._progression[i].cardList.length; j++) {
         if (self._progression[i].cardList[j].val === minCard.val && self._progression[i].cardList[j].shape === minCard.shape) {
           return self.minCards(self._progression, G.gameRule.PROGRESSION);
@@ -341,7 +341,7 @@ AILogic.prototype.play = function (landlordCardsCnt) {
       }
     }
     //连对里找
-    for (i = 0; i < self._progressionPairs.length; i++) {
+    for (let i = 0; i < self._progressionPairs.length; i++) {
       for (var j = 0; j < self._progressionPairs[i].cardList.length; j++) {
         if (self._progressionPairs[i].cardList[j].val === minCard.val && self._progressionPairs[i].cardList[j].shape === minCard.shape) {
           return self.minCards(self._progressionPairs, G.gameRule.PROGRESSION_PAIRS);
@@ -573,8 +573,8 @@ AILogic.prototype.prompt = function (winc) {
       }
       st.sort(self.promptSort);
       //加入各个符合值的单牌
-      for (i = 0; i < st.length; i++) {
-        for (j = 0; j < self.cards.length; j++) {
+      for (let i = 0; i < st.length; i++) {
+        for (let j = 0; j < self.cards.length; j++) {
           if (self.cards[j].val === st[i].val) {
             result.push(self.cards.slice(j, j + c));
             break;
@@ -821,7 +821,7 @@ AILogic.prototype.analyse = function () {
   self.judgePlane();
 
   //把三根加回用于判定顺子
-  for (i = 0; i < self._three.length; i++) {
+  for (let i = 0; i < self._three.length; i++) {
     targetWobt = targetWobt.concat(self._three[i].cardList);
   }
   self._three = [];
@@ -837,7 +837,7 @@ AILogic.prototype.analyse = function () {
   self.judgeThree(targetWobp);
   //除去顺子、炸弹、三根后判断对子、单牌
   stat = G.gameRule.valCount(targetWobp);
-  for (i = 0; i < stat.length; i++) {
+  for (let i = 0; i < stat.length; i++) {
     if (stat[i].count === 1) {//单牌
       for (var j = 0; j < targetWobp.length; j++) {
         if (targetWobp[j].val === stat[i].val) {
@@ -862,7 +862,7 @@ AILogic.prototype.analyse = function () {
 AILogic.prototype.judgeThree = function (cards) {
   var self = this,
     stat = G.gameRule.valCount(cards);
-  for (i = 0; i < stat.length; i++) {
+  for (let i = 0; i < stat.length; i++) {
     if (stat[i].count === 3) {
       var list = [];
       self.moveItem(cards, list, stat[i].val);
@@ -879,7 +879,7 @@ AILogic.prototype.judgePlane = function () {
   var self = this;
   if (self._three.length > 1) {
     var proList = [];
-    for (i = 0; i < self._three.length; i++) {//遍历统计结果
+    for (let i = 0; i < self._three.length; i++) {//遍历统计结果
       if (self._three[i].val >= 15) continue;//三顺必须小于2
       if (proList.length == 0) {
         proList.push({ 'obj': self._three[i], 'fromIndex': i });
@@ -986,7 +986,7 @@ AILogic.prototype.joinProgression = function (cards) {
     }
   }
   var temp = self._progression.slice(0);
-  for (i = 0; i < temp.length; i++) {//连接顺子
+  for (let i = 0; i < temp.length; i++) {//连接顺子
     if (i < temp.length - 1 && temp[i].val - temp[i].cardList.length === temp[i + 1].val) {
       self._progression[i].cardList = self._progression[i].cardList.concat(self._progression[i + 1].cardList);
       self._progression.splice(++i, 1);

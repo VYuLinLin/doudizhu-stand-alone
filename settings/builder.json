@@ -22,7 +22,7 @@
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
   "md5Cache": false,
-  "mergeStartScene": true,
+  "mergeStartScene": false,
   "optimizeHotUpdate": false,
   "orientation": {
     "landscapeLeft": true,
@@ -38,7 +38,7 @@
   },
   "startScene": "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
   "title": "ddz_client",
-  "webOrientation": "landscape",
+  "webOrientation": "auto",
   "wechatgame": {
     "REMOTE_SERVER_ROOT": "",
     "appid": "wx6ac3f5090a6b99c5",
