@@ -17,6 +17,8 @@ require('./assets/scripts/gameScene/gamebeforeUI');
 require('./assets/scripts/data/ddzConstants');
 require('./assets/scripts/common/common');
 require('./assets/scripts/common/DataNotify');
+require('./assets/servers/ddzServers/AILogic');
+require('./assets/servers/ddzServers/gameRule');
 require('./assets/scripts/data/ddzData');
 require('./assets/migration/use_v2.0.x_cc.Toggle_event');
 require('./assets/scripts/start');

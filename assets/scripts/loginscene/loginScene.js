@@ -41,7 +41,7 @@ cc.Class({
         this.wait_node.active = true
         const count = Math.floor(Math.random() * 100000)
         const userName = `guest_${count}`
-        myglobal.playerData.userId = count
+        myglobal.playerData.userId = `${count}`
         myglobal.playerData.userName = userName
         cc.sys.localStorage.setItem('userData', JSON.stringify(myglobal.playerData))
         cc.director.loadScene("hallScene")

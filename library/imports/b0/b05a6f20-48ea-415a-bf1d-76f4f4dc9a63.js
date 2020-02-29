@@ -46,7 +46,7 @@ cc.Class({
         this.wait_node.active = true;
         var count = Math.floor(Math.random() * 100000);
         var userName = "guest_".concat(count);
-        _mygolbal["default"].playerData.userId = count;
+        _mygolbal["default"].playerData.userId = "".concat(count);
         _mygolbal["default"].playerData.userName = userName;
         cc.sys.localStorage.setItem('userData', JSON.stringify(_mygolbal["default"].playerData));
         cc.director.loadScene("hallScene");

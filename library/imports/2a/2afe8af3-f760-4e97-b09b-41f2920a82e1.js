@@ -8,6 +8,10 @@ var _mygolbal = _interopRequireDefault(require("../../mygolbal.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+var ddzData = require('ddzData');
+
+var ddzConstants = require('ddzConstants');
+
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -17,14 +21,14 @@ cc.Class({
     this.flag = false;
     this.offset_y = 20;
     this.node.on("reset_card_flag", function (event) {
-      if (this, flag == true) {
-        this, flag = false;
+      if (this.flag) {
+        this.flag = false;
         this.node.y -= this.offset_y;
       }
     }.bind(this)); // this.node.on("chu_card_succ",function(event){
     //    var chu_card_list = event
     //    for(var i=0;i<chu_card_list.length;i++){
-    //     if(chu_card_list[i].card_id==this.card_id){
+    //     if(chu_card_list[i].caardIndex==this.caardIndex){
     //         //this.runToCenter(chu_card_list[i])
     //         //this.node.destory()
     //     }
@@ -38,26 +42,26 @@ cc.Class({
   setTouchEvent: function setTouchEvent() {
     if (this.userId == _mygolbal["default"].playerData.userId) {
       this.node.on(cc.Node.EventType.TOUCH_START, function (event) {
-        var gameScene_node = this.node.parent;
-        var room_state = gameScene_node.getComponent("gameScene").roomstate;
+        // var gameScene_node = this.node.parent
+        // var room_state = gameScene_node.getComponent("gameScene").roomstate
+        if (ddzData.gameState === ddzConstants.gameState.PLAYING) {
+          console.log("TOUCH_START id:" + this.caardIndex);
 
-        if (room_state == defines.gameState.ROOM_PLAYING) {
-          console.log("TOUCH_START id:" + this.card_id);
-
-          if (this.flag == false) {
+          if (!this.flag) {
             this.flag = true;
             this.node.y += this.offset_y; //通知gameui层选定的牌
+            // var carddata = {
+            //   "index": this.caardIndex,
+            //   "card_data": this.card_data,
+            // }
+            // gameScene_node.emit("choose_card_event", this.card_data)
 
-            var carddata = {
-              "cardid": this.card_id,
-              "card_data": this.card_data
-            };
-            gameScene_node.emit("choose_card_event", carddata);
+            $socket.emit('_chooseCard', this.card_data);
           } else {
             this.flag = false;
             this.node.y -= this.offset_y; //通知gameUI取消了那张牌
 
-            gameScene_node.emit("unchoose_card_event", this.card_id);
+            $socket.emit('_unchooseCard', this.caardIndex); // gameScene_node.emit("unchoose_card_event", this.caardIndex)
           }
         }
       }.bind(this));
@@ -65,7 +69,7 @@ cc.Class({
   },
   showCards: function showCards(card, userId) {
     //card.index是服务器生成card给对象设置的一副牌里唯一id
-    this.card_id = card.index; //传入参数 card={"value":5,"shape":1,"index":20}
+    this.caardIndex = card.index; //传入参数 card={"value":5,"shape":1,"index":20}
 
     this.card_data = card;
 
@@ -74,7 +78,7 @@ cc.Class({
     } //服务器返回的是key(A-K),value对应的是资源的编号
 
 
-    var CardValue = {
+    var cardValue = {
       "12": 1,
       "13": 2,
       "1": 3,
@@ -88,10 +92,10 @@ cc.Class({
       "9": 11,
       "10": 12,
       "11": 13
-    }; // 黑桃：spade
-    // 红桃：heart
-    // 梅花：club
-    // 方片：diamond
+    }; // 黑桃： spade
+    // 红桃： heart
+    // 梅花： club
+    // 方片： diamond
     // const CardShape = {
     //     "S": 1,
     //     "H": 2,
@@ -99,22 +103,22 @@ cc.Class({
     //     "D": 4,
     // };
 
-    var cardShpae = {
+    var cardShape = {
       "1": 3,
       "2": 2,
       "3": 1,
       "4": 0
     };
-    var Kings = {
+    var kings = {
       "14": 54,
       "15": 53
     };
     var spriteKey = '';
 
     if (card.shape) {
-      spriteKey = 'card_' + (cardShpae[card.shape] * 13 + CardValue[card.value]);
+      spriteKey = 'card_' + (cardShape[card.shape] * 13 + cardValue[card.value]);
     } else {
-      spriteKey = 'card_' + Kings[card.king];
+      spriteKey = 'card_' + kings[card.king];
     }
 
     this.node.getComponent(cc.Sprite).spriteFrame = this.cards_sprite_atlas.getSpriteFrame(spriteKey);

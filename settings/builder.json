@@ -2,6 +2,7 @@
   "android-instant": {
     "REMOTE_SERVER_ROOT": "",
     "host": "",
+    "packageName": "org.cocos2d.ddz_client",
     "pathPattern": "",
     "recordPath": "",
     "scheme": "https",
@@ -21,7 +22,7 @@
   "inlineSpriteFrames": true,
   "inlineSpriteFrames_native": true,
   "md5Cache": false,
-  "mergeStartScene": false,
+  "mergeStartScene": true,
   "optimizeHotUpdate": false,
   "orientation": {
     "landscapeLeft": true,
@@ -35,9 +36,9 @@
     "orientation": "portrait",
     "zip": false
   },
-  "startScene": "1931c8f8-1c0b-4cbf-a901-ead7f03073eb",
+  "startScene": "6d84f651-3702-4e56-9e11-07e3fb5cf4a3",
   "title": "ddz_client",
-  "webOrientation": "portrait",
+  "webOrientation": "landscape",
   "wechatgame": {
     "REMOTE_SERVER_ROOT": "",
     "appid": "wx6ac3f5090a6b99c5",
@@ -46,5 +47,15 @@
     "subContext": ""
   },
   "xxteaKey": "3105dddb-7ad7-4f",
-  "zipCompressJs": true
+  "zipCompressJs": true,
+  "android": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "ios": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "mac": {
+    "packageName": "org.cocos2d.ddz_client"
+  },
+  "win32": {}
 }

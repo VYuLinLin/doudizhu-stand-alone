@@ -89,7 +89,7 @@ const isopen_sound = 1;
 //exports.roomFullPlayerCount = 3;
 qian_state = {
   "buqiang": 0,
-  "qian": 1,
+  "qiang": 1,
 };
 
 

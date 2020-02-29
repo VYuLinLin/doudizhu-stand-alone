@@ -1,17 +1,20 @@
 //发牌管理器
-const cardobj = function(value,shape,king){
+const cardobj = function (value, shape, king) {
   var that = {}
   that.index = -1
-  if(value){
-     that.value = value
+  if (value) {
+    that.value = value
+    that.val = value + 2 // gameRule使用
   }
- 
-  if(shape){
-     that.shape = shape
+
+  if (shape) {
+    that.shape = shape
   }
-  
-  if(king!=undefined){
-      that.king = king
+
+  if (king != undefined) {
+    that.king = king
+    that.val = king + 2 // gameRule使用
+    that.shape = 0
   }
   return that
 }
@@ -42,15 +45,29 @@ const CardShape = {
   "D": 4,
 };
 
-//大小玩分开写是因为只有一张，并且没有黑桃这些区分
+//大小王分开写是因为只有一张，并且没有黑桃这些区分
 const Kings = {
   "kx": 14, //小王
   "Kd": 15,  //大王
 };
 
-module.exports = function () {
+function carder() {
   var that = {
     card_list: []
+  }
+  const shuffleCard = function () {
+    for (var i = that.card_list.length - 1; i >= 0; i--) {
+      var randomIndex = Math.floor(Math.random() * (i + 1));
+      //随机交换
+      var tmpCard = that.card_list[randomIndex];
+      that.card_list[randomIndex] = that.card_list[i];
+      that.card_list[i] = tmpCard;
+    }
+
+    // for(var i=0;i<that.card_list.length;i++){
+    //     console.log("card value:"+that.card_list[i].value+" shape:"+that.card_list[i].shape+" king"+that.card_list[i].king)
+    // }
+    return that.card_list
   }
   //发牌
   const creatleCard = function () {
@@ -70,26 +87,9 @@ module.exports = function () {
       card.index = that.card_list.length;
       that.card_list.push(card)
     }
-
+    //洗牌
+    shuffleCard()
   }
-
-  const shuffleCard = function () {
-    for (var i = that.card_list.length - 1; i >= 0; i--) {
-      var randomIndex = Math.floor(Math.random() * (i + 1));
-      //随机交换
-      var tmpCard = that.card_list[randomIndex];
-      that.card_list[randomIndex] = that.card_list[i];
-      that.card_list[i] = tmpCard;
-    }
-
-    // for(var i=0;i<that.card_list.length;i++){
-    //     console.log("card value:"+that.card_list[i].value+" shape:"+that.card_list[i].shape+" king"+that.card_list[i].king)
-    // }
-    return that.card_list
-  }
-  //洗牌
-  shuffleCard()
-
   //把牌分成三份和三张带翻的牌
   //每份牌17张
   that.splitThreeCards = function () {
@@ -847,8 +847,8 @@ module.exports = function () {
   }
 
   that.compareWithCard = function (last_cards, current_cards) {
-    //last_cards[{"cardid":3,"card_data":{"index":3,"value":13,"shape":4}},
-    //{"cardid":0,"card_data":{"index":0,"value":13,"shape":1}}]
+    //last_cards[{"index":3,"card_data":{"index":3,"value":13,"shape":4}},
+    //{"index":0,"card_data":{"index":0,"value":13,"shape":1}}]
     console.log("last_cards" + JSON.stringify(last_cards))
     console.log("current_cards" + JSON.stringify(current_cards))
     card_last_value = getCardValue(last_cards)
@@ -944,3 +944,23 @@ module.exports = function () {
 
   return that
 }
+module.exports = carder()
+
+// example
+// [{ index: 7, value: 1, shape: 4 },
+// { index: 15, value: 3, shape: 4 },
+// { index: 0, value: 13, shape: 1 },
+// { index: 20, value: 5, shape: 1 },
+// { index: 5, value: 1, shape: 2 },
+// { index: 40, value: 9, shape: 1 },
+// { index: 37, value: 12, shape: 2 },
+// { index: 27, value: 6, shape: 4 },
+// { index: 14, value: 3, shape: 3 },
+// { index: 39, value: 12, shape: 4 },
+// { index: 2, value: 13, shape: 3 },
+// { index: 28, value: 7, shape: 1 },
+// { index: 35, value: 8, shape: 4 },
+// { index: 6, value: 1, shape: 3 },
+// { index: 42, value: 9, shape: 3 },
+// { index: 30, value: 7, shape: 3 },
+// { index: 43, value: 9, shape: 4 }]

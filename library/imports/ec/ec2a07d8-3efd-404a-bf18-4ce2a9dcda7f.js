@@ -21,6 +21,9 @@ var getRandomStr = function getRandomStr(count) {
 
 var playerData = function playerData() {
   var userData = JSON.parse(cc.sys.localStorage.getItem('userData'));
+  var _ref = [getRandomStr(5), getRandomStr(5)],
+      rootId1 = _ref[0],
+      rootId2 = _ref[1];
   var that = userData || {
     userId: '',
     // 用户id
@@ -28,23 +31,30 @@ var playerData = function playerData() {
     // 用户名称，guest_ 开头
     roomId: '',
     // 游戏房间id
+    seatindex: 0,
+    // 作为id
+    avatarUrl: 'avatar_1',
+    // 头像
+    goldcount: 10000,
+    // 金额
     rootList: [{
       seatindex: 1,
-      "accountid": "2117836",
-      userName: "guest_".concat(getRandomStr(5)),
+      userId: rootId1,
+      userName: "guest_".concat(rootId1),
       "avatarUrl": "avatar_2",
       "goldcount": getRandomStr(4)
     }, {
       seatindex: 2,
-      "accountid": "2117837",
-      userName: "guest_".concat(getRandomStr(5)),
+      userId: rootId2,
+      userName: "guest_".concat(rootId2),
       "avatarUrl": "avatar_3",
       "goldcount": getRandomStr(4)
-    }]
+    }],
+    masterUserId: '' // 地主id
+
   }; // that.uniqueID = 1 + getRandomStr(6)
 
-  that.gobal_count = cc.sys.localStorage.getItem('user_count');
-  that.master_accountid = 0;
+  that.gobal_count = cc.sys.localStorage.getItem('user_count'); // that.master_accountid = 0
 
   if (!userData) {
     console.log(userData);

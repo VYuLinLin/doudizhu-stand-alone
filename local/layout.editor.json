@@ -5,9 +5,9 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 2130,
-      "y": 91,
-      "width": 1522,
+      "x": 458,
+      "y": 23,
+      "width": 1381,
       "height": 928,
       "layout": {
         "children": [
@@ -20,7 +20,7 @@
                 ],
                 "height": 409.984375,
                 "type": "panel",
-                "width": 264
+                "width": 238
               },
               {
                 "active": 0,
@@ -29,12 +29,12 @@
                 ],
                 "height": 397,
                 "type": "panel",
-                "width": 264
+                "width": 238
               }
             ],
             "height": 810,
             "type": "dock-v",
-            "width": 264
+            "width": 238
           },
           {
             "children": [
@@ -45,7 +45,7 @@
                 ],
                 "height": 466.984375,
                 "type": "panel",
-                "width": 831.984375
+                "width": 749.984375
               },
               {
                 "active": 0,
@@ -56,12 +56,12 @@
                 ],
                 "height": 340,
                 "type": "panel",
-                "width": 831.984375
+                "width": 749.984375
               }
             ],
             "height": 810,
             "type": "dock-v",
-            "width": 831.984375
+            "width": 749.984375
           },
           {
             "active": 0,
@@ -71,7 +71,7 @@
             ],
             "height": 810,
             "type": "panel",
-            "width": 404
+            "width": 371
           }
         ],
         "type": "dock-h"
@@ -86,7 +86,9 @@
         "inspector",
         "cocos-services"
       ]
-    }
+    },
+    "window-1582971931732": {},
+    "worker": {}
   },
   "panels": {
     "preferences": {
@@ -100,14 +102,22 @@
       "y": 240,
       "width": 600,
       "height": 565
+    },
+    "builder": {
+      "x": 944,
+      "y": 130,
+      "width": 670,
+      "height": 739
     }
   },
   "panelLabelWidth": {
     "preferences": null,
     "project-settings": null,
-    "inspector": null
+    "inspector": null,
+    "builder": null
   },
   "panelLabelWidth.preferences": null,
   "panelLabelWidth.project-settings": null,
-  "panelLabelWidth.inspector": null
+  "panelLabelWidth.inspector": null,
+  "panelLabelWidth.builder": null
 }

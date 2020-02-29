@@ -8,7 +8,7 @@ cc.Class({
     bjMusic: {
       type: cc.AudioClip, // 背景音乐
       default: null,     // object's default value is null
-    }, 
+    },
     di_label: cc.Label,
     beishu_label: cc.Label,
     roomid_label: cc.Label,
@@ -16,37 +16,31 @@ cc.Class({
     btn_ready: cc.Node, // 准备按钮
     //绑定玩家座位,下面有3个子节点
     players_seat_pos: cc.Node,
-    _selfData: null,
-    _root1: null,
-    _root2: null,
+    gameUiNode: cc.Node
   },
   onLoad() {
-    console.log(ddzData.gameState)
-    if(!CC_EDITOR) {
+    ddzData.gameState = ddzConstants.gameState.WAITREADY
+    if (!CC_EDITOR) {
       ddzData.gameStateNotify.addListener(this.gameStateHandler, this)
     }
     this.playerNodeList = []
-    const { roomId }= myglobal.playerData
+    const { roomId } = myglobal.playerData
     const [rate, bottom] = roomId.split('_')
     myglobal.playerData.rate = rate
     myglobal.playerData.bottom = bottom
-    
+
     this.roomid_label.string = defines.roomNames[rate - 1]
     this.beishu_label.string = "倍数：" + rate
     this.di_label.string = "底：" + bottom
-    
-    // this.roomstate = ddzConstants.gameState.ROOM_INVALID
+
     this.btn_ready.active = ddzData.gameState < ddzConstants.gameState.GAMESTART // 准备按钮
     if (isopen_sound) {
       cc.audioEngine.stopAll()
       // cc.audioEngine.play(this.bjMusic, true)
     }
-    this._selfData = {seatindex: 0, "accountid":"2117835", userName: myglobal.playerData.userName,"avatarUrl":"avatar_1","goldcount":1000}
-    this._root1 = {seatindex: 1, "accountid":"2117836", userName: "tiny1","avatarUrl":"avatar_2","goldcount":1000}
-    this._root2 = {seatindex: 2, "accountid":"2117837", userName: "tiny2","avatarUrl":"avatar_3","goldcount":1000}
-    this.addPlayerNode(this._selfData)
-    this.addPlayerNode(this._root1)
-    this.addPlayerNode(this._root2)
+    this.addPlayerNode(myglobal.playerData)
+    this.addPlayerNode(myglobal.playerData.rootList[0])
+    this.addPlayerNode(myglobal.playerData.rootList[1])
     //监听，给其他玩家发牌(内部事件)
     this.node.on("pushcard_other_event", function () {
       console.log('其他玩家发牌')
@@ -58,47 +52,33 @@ cc.Class({
         }
       }
     }.bind(this))
-    
-    return
+
     //监听房间状态改变事件
-    myglobal.socket.onRoomChangeState(function (data) {
-      //回调的函数参数是进入房间用户消息
-      console.log("onRoomChangeState:" + data)
-      this.roomstate = data
-    }.bind(this))
-    //
-    this.node.on("canrob_event", function (event) {
-      console.log("gamescene canrob_event:" + event)
-      //通知给playernode子节点
-      for (var i = 0; i < this.playerNodeList.length; i++) {
-        var node = this.playerNodeList[i]
-        if (node) {
-          //给playernode节点发送事件
-          node.emit("playernode_canrob_event", event)
-        }
-      }
-    }.bind(this))
+    // myglobal.socket.onRoomChangeState(function (data) {
+    //   //回调的函数参数是进入房间用户消息
+    //   console.log("onRoomChangeState:" + data)
+    //   this.roomstate = data
+    // }.bind(this))
+    // 抢地主
+    // this.node.on("canrob_event", function (event) {
+    //   console.log("gamescene canrob_event:" + event)
+    //   //通知给playernode子节点
+    //   for (var i = 0; i < this.playerNodeList.length; i++) {
+    //     var node = this.playerNodeList[i]
+    //     if (node) {
+    //       //给playernode节点发送事件
+    //       node.emit("playernode_canrob_event", event)
+    //     }
+    //   }
+    // }.bind(this))
 
-    this.node.on("choose_card_event", function (event) {
-      console.log("--------choose_card_event-----------")
-      var gameui_node = this.node.getChildByName("gameingUI")
-      if (gameui_node == null) {
-        console.log("get childer name gameingUI")
-        return
-      }
-      gameui_node.emit("choose_card_event", event)
+    // this.node.on("choose_card_event", function (event) {
+    //   this.gameUiNode.emit("choose_card_event", event)
+    // }.bind(this))
 
-    }.bind(this))
-
-    this.node.on("unchoose_card_event", function (event) {
-      console.log("--------unchoose_card_event-----------")
-      var gameui_node = this.node.getChildByName("gameingUI")
-      if (gameui_node == null) {
-        console.log("get childer name gameingUI")
-        return
-      }
-      gameui_node.emit("unchoose_card_event", event)
-    }.bind(this))
+    // this.node.on("unchoose_card_event", function (event) {
+    //   this.gameUiNode.emit("unchoose_card_event", event)
+    // }.bind(this))
     //监听给玩家添加三张底牌
     // this.node.on("add_three_card",function(event){
     //     console.log("add_three_card:"+event)
@@ -110,6 +90,7 @@ cc.Class({
     //         }
     //     }
     // }.bind(this))
+    return
 
     myglobal.socket.request_enter_room({}, function (err, result) {
       console.log("enter_room_resp" + JSON.stringify(result))
@@ -133,7 +114,7 @@ cc.Class({
           this.addPlayerNode(playerdata_list[i])
         }
 
-        
+
       }
       var gamebefore_node = this.node.getChildByName("gamebeforeUI")
       gamebefore_node.emit("init")
@@ -173,23 +154,23 @@ cc.Class({
     }.bind(this))
 
     //监听服务器玩家抢地主消息
-    myglobal.socket.onRobState(function (event) {
-      console.log("-----onRobState" + JSON.stringify(event))
-      //onRobState{"accountid":"2162866","state":1}
-      for (var i = 0; i < this.playerNodeList.length; i++) {
-        var node = this.playerNodeList[i]
-        if (node) {
-          //给playernode节点发送事件
-          node.emit("playernode_rob_state_event", event)
-        }
-      }
-    }.bind(this))
+    // myglobal.socket.onRobState(function (event) {
+    //   console.log("-----onRobState" + JSON.stringify(event))
+    //   //onRobState{"accountid":"2162866","state":1}
+    //   for (var i = 0; i < this.playerNodeList.length; i++) {
+    //     var node = this.playerNodeList[i]
+    //     if (node) {
+    //       //给playernode节点发送事件
+    //       node.emit("playernode_rob_state_event", event)
+    //     }
+    //   }
+    // }.bind(this))
 
     //注册监听服务器确定地主消息
     myglobal.socket.onChangeMaster(function (event) {
       console.log("onChangeMaster" + event)
       //保存一下地主id
-      myglobal.playerData.master_accountid = event
+      myglobal.playerData.masterUserId = event
       for (var i = 0; i < this.playerNodeList.length; i++) {
         var node = this.playerNodeList[i]
         if (node) {
@@ -200,26 +181,38 @@ cc.Class({
     }.bind(this))
 
     //注册监听服务器显示底牌消息
-    myglobal.socket.onShowBottomCard(function (event) {
-      console.log("onShowBottomCard---------" + event)
-      var gameui_node = this.node.getChildByName("gameingUI")
-      if (gameui_node == null) {
-        console.log("get childer name gameingUI")
-        return
-      }
-      gameui_node.emit("show_bottom_card_event", event)
-    }.bind(this))
+    // myglobal.socket.onShowBottomCard(function (event) {
+    //   console.log("onShowBottomCard---------" + event)
+    //   this.gameUiNode.emit("show_bottom_card_event", event)
+    // }.bind(this))
   },
   start() {
-    
+    $socket.on('change_master_notify', this.masterNotify, this)
   },
   onDestroy() {
     if (!CC_EDITOR) {
       ddzData.gameStateNotify.removeListener(this.gameStateHandler, this)
     }
+    $socket.remove('change_master_notify', this)
   },
-  gameStateHandler(value) {
-    console.log(value)
+  // 通知谁是地主, 并显示底牌
+  masterNotify({ masterId, cards }) {
+    // 必须先设置全局地主id
+    myglobal.playerData.masterUserId = masterId
+    // 显示底牌
+    this.gameUiNode.emit("show_bottom_card_event", cards)
+    for (var i = 0; i < this.playerNodeList.length; i++) {
+      var node = this.playerNodeList[i]
+      if (node) {
+        // 给playernode节点发送事件
+        node.emit("playernode_changemaster_event", masterId)
+      }
+    }
+  },
+  gameStateHandler(state) {
+    if (state === ddzConstants.gameState.WAITREADY) {
+      this.btn_ready.active = true
+    }
   },
   // 返回大厅
   onGoback() {
@@ -231,7 +224,6 @@ cc.Class({
   // 准备
   onBtnReadey(event) {
     this.btn_ready.active = false
-    // this.playerNodeList[0].emit("player_ready_notify")
     this.playerNodeList.forEach(node => {
       node.emit("gamestart_event")
     });
@@ -271,26 +263,25 @@ cc.Class({
   // },
   // 添加玩家节点
   addPlayerNode(player_data) {
+    var index = player_data.seatindex
     var playernode_inst = cc.instantiate(this.player_node_prefabs)
-    playernode_inst.parent = this.node
+    playernode_inst.parent = this.players_seat_pos.children[index]
+    // playernode_inst.parent = this.node
     //创建的节点存储在gamescene的列表中
     this.playerNodeList.push(playernode_inst)
-    
+
     //玩家在room里的位置索引(逻辑位置)
-    var index = player_data.seatindex
-    playernode_inst.position = this.players_seat_pos.children[index].position
+    // playernode_inst.position = this.players_seat_pos.children[index].position
     playernode_inst.getComponent("player_node").init_data(player_data, index)
 
     // myglobal.playerData.playerList[index] = player_data
   },
 
   /*
-   //通过accountid获取用户出牌放在gamescend的位置 
-   做法：先放3个节点在gameacene的场景中cardsoutzone(012)
-         
+   //通过userId获取用户出牌放在gamescend的位置 
+   做法：先放3个节点在gameacene的场景中 cardsoutzone(012)
   */
-  getUserOutCardPosByAccount(accountid) {
-    console.log("getUserOutCardPosByAccount accountid:" + accountid)
+  getUserOutCardPosByAccount(userId) {
     for (var i = 0; i < this.playerNodeList.length; i++) {
       var node = this.playerNodeList[i]
       if (node) {
@@ -298,18 +289,28 @@ cc.Class({
         var node_script = node.getComponent("player_node")
         //如果accountid和player_node节点绑定的accountid相同
         //接获取player_node的子节点
-        if (node_script.accountid === accountid) {
-          var seat_node = this.players_seat_pos.children[node_script.seat_index]
-          var index_name = "cardsoutzone" + node_script.seat_index
-          //console.log("getUserOutCardPosByAccount index_name:"+index_name)
-          var out_card_node = seat_node.getChildByName(index_name)
-          //console.log("OutZone:"+ out_card_node.name)
-          return out_card_node
+        if (node_script.userId === userId) {
+          var seat_node = this.players_seat_pos.children[node_script.seat_index].getChildByName('cardsoutzone')
+          return seat_node
         }
       }
     }
-
     return null
   },
-  // update (dt) {},
+  /**
+    * @description 通过userId获取玩家头像节点 
+    * @param {String} userId 
+    * @returns {cc.Node} 玩家节点
+    */
+  getUserNodeByAccount(userId) {
+    for (let i = 0; i < this.playerNodeList.length; i++) {
+      const node = this.playerNodeList[i]
+      if (node) {
+        //获取节点绑定的组件
+        const playerNode = node.getComponent("player_node")
+        if (playerNode.userId === userId) return playerNode
+      }
+    }
+    return null
+  }
 });
