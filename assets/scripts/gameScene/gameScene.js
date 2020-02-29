@@ -32,11 +32,11 @@ cc.Class({
     this.roomid_label.string = defines.roomNames[rate - 1]
     this.beishu_label.string = "倍数：" + rate
     this.di_label.string = "底：" + bottom
-
+    console.log('重新开始', ddzData.gameState)
     this.btn_ready.active = ddzData.gameState < ddzConstants.gameState.GAMESTART // 准备按钮
     if (isopen_sound) {
       cc.audioEngine.stopAll()
-      // cc.audioEngine.play(this.bjMusic, true)
+      cc.audioEngine.play(this.bjMusic, true)
     }
     this.addPlayerNode(myglobal.playerData)
     this.addPlayerNode(myglobal.playerData.rootList[0])
@@ -210,6 +210,7 @@ cc.Class({
     }
   },
   gameStateHandler(state) {
+    this.btn_ready.active = ddzData.gameState < ddzConstants.gameState.GAMESTART
     if (state === ddzConstants.gameState.WAITREADY) {
       this.btn_ready.active = true
     }

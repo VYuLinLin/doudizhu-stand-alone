@@ -965,8 +965,8 @@
     "relativePath": "resources\\UI\\youqingTip.png"
   },
   "347f62d6-8f34-42dc-981d-a0459890e888": {
-    "asset": 1582188023097,
-    "meta": 1582188023103,
+    "asset": 1582975092969,
+    "meta": 1582975092978,
     "relativePath": "scenes\\loginScene.fire"
   },
   "95453cb7-743c-4705-85e0-2923399d767d": {
@@ -985,8 +985,8 @@
     "relativePath": "scripts\\gameScene"
   },
   "1931c8f8-1c0b-4cbf-a901-ead7f03073eb": {
-    "asset": 1582192285582,
-    "meta": 1582192285588,
+    "asset": 1582975101413,
+    "meta": 1582975101421,
     "relativePath": "scenes\\hallScene.fire"
   },
   "e1a3d6bf-a571-41ac-8449-e792f4814298": {
@@ -1299,11 +1299,6 @@
     "meta": 1582961339533,
     "relativePath": "resources\\font\\font.png"
   },
-  "cf22a7b3-d3fc-4369-a0b5-911ab19ffa70": {
-    "asset": 1582968840375,
-    "meta": 1582969195107,
-    "relativePath": "scripts\\gameScene\\gameScene.js"
-  },
   "aa64a319-8271-487c-bc76-2e68be95bc15": {
     "asset": 1582971558283,
     "meta": 1582971565095,
@@ -1319,11 +1314,6 @@
     "meta": 1582973490326,
     "relativePath": "servers\\ddzServers\\carder.js"
   },
-  "a87d01bb-ea44-451e-aeb0-2dd17489b93d": {
-    "asset": 1582973459425,
-    "meta": 1582973490408,
-    "relativePath": "servers\\ddzServers\\ddzServers.js"
-  },
   "6c7e6b4d-e2b3-423f-b807-5440f8798cd2": {
     "asset": 1582973479697,
     "meta": 1582973490449,
@@ -1333,5 +1323,15 @@
     "asset": 1582973597889,
     "meta": 1582973603386,
     "relativePath": "scripts\\gameScene\\gameingUI.js"
+  },
+  "cf22a7b3-d3fc-4369-a0b5-911ab19ffa70": {
+    "asset": 1582976358268,
+    "meta": 1582976403857,
+    "relativePath": "scripts\\gameScene\\gameScene.js"
+  },
+  "a87d01bb-ea44-451e-aeb0-2dd17489b93d": {
+    "asset": 1582976583709,
+    "meta": 1582976593381,
+    "relativePath": "servers\\ddzServers\\ddzServers.js"
   }
 }

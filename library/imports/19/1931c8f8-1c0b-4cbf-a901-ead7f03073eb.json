@@ -344,7 +344,7 @@
       "array": [
         0,
         0,
-        381.05117766515303,
+        366.32109354593376,
         0,
         0,
         0,
@@ -3383,7 +3383,7 @@
     "_volume": 1,
     "_mute": false,
     "_loop": true,
-    "playOnLoad": false,
+    "playOnLoad": true,
     "preload": true,
     "_id": "1bElIyc0ZBlI/lFPdfXCIg"
   },
