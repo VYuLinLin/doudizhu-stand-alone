@@ -198,6 +198,7 @@
             "__uuid__": "4aTGD5d3JHIad83gElMGdI"
           },
           "_loop": true,
+          "playOnLoad": true,
           "preload": true
         }
       ],
@@ -300,7 +301,7 @@
         "array": [
           0,
           0,
-          381.05117766515303,
+          366.32109354593376,
           0,
           0,
           0,

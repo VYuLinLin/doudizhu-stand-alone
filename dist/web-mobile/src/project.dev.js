@@ -1882,12 +1882,12 @@ window.__require = function e(t, n, r) {
           1 === robNum && (this.landlordId = player1);
           2 === robNum && (player1 === userId ? this.landlordId = state === qian_state.qiang ? player1 : player2 : window.$socket.emit("canrob_notify", player1));
           3 === robNum && (player1 === userId ? state === qian_state.qiang ? this.landlordId = player1 : window.$socket.emit("canrob_notify", player2) : player2 === userId ? this.landlordId = state === qian_state.qiang ? player2 : player3 : window.$socket.emit("canrob_notify", player1));
-        } else {
-          cc.director.loadScene("gameScene");
+        } else cc.director.loadScene("gameScene", function() {
           setTimeout(function() {
+            console.log("\u91cd\u65b0\u5f00\u59cb");
             _this2.setGameState(ddzConstants.gameState.PUSHCARD);
-          }, 600);
-        }
+          }, 0);
+        });
         this.landlordId && this.setGameState(ddzConstants.gameState.SHOWBOTTOMCARD);
       },
       nextPlayerNotify: function nextPlayerNotify(userId) {
@@ -2336,8 +2336,12 @@ window.__require = function e(t, n, r) {
         this.roomid_label.string = defines.roomNames[rate - 1];
         this.beishu_label.string = "\u500d\u6570\uff1a" + rate;
         this.di_label.string = "\u5e95\uff1a" + bottom;
+        console.log("\u91cd\u65b0\u5f00\u59cb", ddzData.gameState);
         this.btn_ready.active = ddzData.gameState < ddzConstants.gameState.GAMESTART;
-        isopen_sound && cc.audioEngine.stopAll();
+        if (isopen_sound) {
+          cc.audioEngine.stopAll();
+          cc.audioEngine.play(this.bjMusic, true);
+        }
         this.addPlayerNode(_mygolbal["default"].playerData);
         this.addPlayerNode(_mygolbal["default"].playerData.rootList[0]);
         this.addPlayerNode(_mygolbal["default"].playerData.rootList[1]);
@@ -2368,6 +2372,7 @@ window.__require = function e(t, n, r) {
         }
       },
       gameStateHandler: function gameStateHandler(state) {
+        this.btn_ready.active = ddzData.gameState < ddzConstants.gameState.GAMESTART;
         state === ddzConstants.gameState.WAITREADY && (this.btn_ready.active = true);
       },
       onGoback: function onGoback() {
