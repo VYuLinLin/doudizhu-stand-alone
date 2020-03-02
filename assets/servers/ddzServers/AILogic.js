@@ -293,6 +293,7 @@ AILogic.prototype.follow = function (winc, isWinnerIsLandlord, winnerCardCount) 
 /**
  * 出牌,默认出包含最小牌的牌
  * @method function
+ * @param {Number} landlordCardsCnt 地主剩余牌的数量
  * @return {array} [description]
  */
 AILogic.prototype.play = function (landlordCardsCnt) {
@@ -353,7 +354,7 @@ AILogic.prototype.play = function (landlordCardsCnt) {
     }
   };
   for (var i = self.cards.length - 1; i >= 0; i--) {
-    var r = cardsWithMin(i);
+    var r = cardsWithMin(i); 
     if (r.cardKind === G.gameRule.ONE) {
       if (self._plane.length > 0) {//三顺
         var plane = self.minCards(self._plane, G.gameRule.PLANE);

@@ -160,13 +160,7 @@ const ddzServers = {
       }
     } else {
       // 无人抢地主,重新开始
-      cc.director.loadScene('gameScene', () => {
-        // 使用setTimeout是要确保状态在执行onLoad之后执行
-        setTimeout(() => {
-          console.log('重新开始')
-          this.setGameState(ddzConstants.gameState.PUSHCARD)
-        }, 0)
-      })
+      this.setGameState(ddzConstants.gameState.GAMESTART)
     }
     // 确定地主后切换游戏状态
     this.landlordId && this.setGameState(ddzConstants.gameState.SHOWBOTTOMCARD)

@@ -20,9 +20,8 @@ cc.Class({
     time_label: cc.Label,
     robimage_sp: cc.SpriteFrame,
     robnoimage_sp: cc.SpriteFrame,
-    robIconSp: cc.Sprite,
-    robIcon_Sp: cc.Node,
-    robnoIcon_Sp: cc.Node,
+    robIcon_Sp: cc.Node, // 抢地主
+    robnoIcon_Sp: cc.Node, // 不抢
     masterIcon: cc.Node, // 地主标识节点
     jiaodizhu: {
       type: cc.AudioClip,
@@ -39,12 +38,11 @@ cc.Class({
     return cc.find('Canvas').getComponent('gameScene')
   },
   onLoad() {
-    this.readyimage.active = ddzData.gameState < ddzConstants.gameState.GAMESTART
     this.masterIcon.active = false
     //  准备开始
-    this.node.on("player_ready_notify", () => {
-      this.readyimage.active = true
-    })
+    // this.node.on("player_ready_notify", () => {
+    //   this.readyimage.active = true
+    // })
     // 开始游戏(客户端发给客户端)
     this.node.on("gamestart_event", () => {
       this.readyimage.active = false
@@ -155,7 +153,10 @@ cc.Class({
       this.cardlist_node = []
       this.card_node.removeAllChildren()
       this.clearOutZone()
-      this.masterIcon.active = false // 隐藏地主标识 
+      this.masterIcon.active = false // 隐藏地主标识
+      this.readyimage.active = false
+      this.robIcon_Sp.active = false
+      this.robnoIcon_Sp.active = false
     }
   },
   // 抢地主通知
