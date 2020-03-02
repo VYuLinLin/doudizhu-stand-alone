@@ -21,7 +21,6 @@ require('./assets/scripts/common/loadingLayer');
 require('./assets/scripts/gameScene/gameScene');
 require('./assets/scripts/util/event_lister');
 require('./assets/scripts/mygolbal');
-require('./assets/scripts/common/api');
 require('./assets/scripts/hallscene/prefabs_script/creatRoom');
 require('./assets/scripts/data/player');
 require('./assets/scripts/gameScene/gameingUI');
