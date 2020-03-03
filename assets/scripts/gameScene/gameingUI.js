@@ -34,7 +34,7 @@ cc.Class({
     },
     buyaoAudio: {
       type: cc.AudioClip,
-      default: null
+      default: []
     },
     chupaiAudio: {
       type: cc.AudioClip,
@@ -44,7 +44,7 @@ cc.Class({
 
   onLoad() {
     //自己牌列表 
-    this.cards_nods = []
+    this.cards_node = []
     this.card_width = 0
     //当前可以抢地主的accountid
     // this.rob_player_accountid = 0
@@ -58,6 +58,9 @@ cc.Class({
     this.outcar_zone = []
 
     this.push_card_tmp = []
+    // 提示牌型
+    this.promptCount = 0
+    this.promptList = []
     //监听服务器可以出牌消息
     // myglobal.socket.onCanChuCard(function (data) {
     //   console.log("onCanChuCard" + JSON.stringify(data))
@@ -123,7 +126,6 @@ cc.Class({
       common.audio.PlayEffect(this.cardsAudio)
       //this.node.parent.emit("change_room_state_event",defines.gameState.ROOM_PLAYING)
       //如果自己地主，给加上三张底牌
-      console.log(myglobal.playerData.userId, myglobal.playerData.masterUserId)
       if (myglobal.playerData.userId === myglobal.playerData.masterUserId) {
         this.scheduleOnce(this.pushThreeCard.bind(this), 0.2)
       }
@@ -186,7 +188,7 @@ cc.Class({
       this.winNode.active = false
       this.loseNode.active = false
       // 清楚桌面上所有的牌
-      this.cards_nods = []
+      this.cards_node = []
       this.bottom_card = []
       this.push_card_tmp = []
       this.cardsNode.removeAllChildren()
@@ -220,7 +222,7 @@ cc.Class({
       return
     }
     //原有逻辑  
-    // var move_node = this.cards_nods[this.cur_index_card]
+    // var move_node = this.cards_node[this.cur_index_card]
     // move_node.active = true
     // var newx = move_node.x + (this.card_width * 0.4*this.cur_index_card) - (this.card_width * 0.4)
     // var action = cc.moveTo(0.1, cc.v2(newx, -250));
@@ -228,7 +230,7 @@ cc.Class({
     // this.cur_index_card--
     // this.scheduleOnce(this._runactive_pushcard.bind(this),0.3)
 
-    var move_node = this.cards_nods[this.cards_nods.length - this.cur_index_card - 1]
+    var move_node = this.cards_node[this.cards_node.length - this.cur_index_card - 1]
     move_node.active = true
     this.push_card_tmp.push(move_node)
     this.fapai_audioID = common.audio.PlayEffect(this.fapaiAudio)
@@ -274,7 +276,10 @@ cc.Class({
   /**
    * @description 出牌
    */
-  selfPlayAHandNotify() {
+  selfPlayAHandNotify(promptList) {
+    console.log('玩家出牌提示', promptList)
+    this.promptCount = 0
+    this.promptList = promptList
     // 先清理出牌区域
     this.clearOutZone(myglobal.playerData.userId)
     // 显示可以出牌的UI
@@ -316,7 +321,7 @@ cc.Class({
   },
   //对牌排序
   sortCard() {
-    this.cards_nods.sort(function (x, y) {
+    this.cards_node.sort(function (x, y) {
       var a = x.getComponent("card").card_data;
       var b = y.getComponent("card").card_data;
 
@@ -333,15 +338,15 @@ cc.Class({
         return b.king - a.king;
       }
     })
-    //这里使用固定坐标，因为取this.cards_nods[0].xk可能排序为完成，导致x错误
+    //这里使用固定坐标，因为取this.cards_node[0].xk可能排序为完成，导致x错误
     //所以做1000毫秒的延时
-    var x = this.cards_nods[0].x;
+    var x = this.cards_node[0].x;
     var timeout = 1000
     setTimeout(function () {
       //var x = -417.6 
       console.log("sort x:" + x)
-      for (let i = 0; i < this.cards_nods.length; i++) {
-        var card = this.cards_nods[i];
+      for (let i = 0; i < this.cards_node.length; i++) {
+        var card = this.cards_node[i];
         card.zIndex = i; //设置牌的叠加次序,zindex越大显示在上面
         card.x = x + card.width * 0.4 * i;
       }
@@ -365,7 +370,7 @@ cc.Class({
       });
     }
     //创建card预制体
-    this.cards_nods = []
+    this.cards_node = []
     for (var i = 0; i < 17; i++) {
 
       var card = cc.instantiate(this.card_prefab)
@@ -379,7 +384,7 @@ cc.Class({
 
       card.getComponent("card").showCards(data[i], myglobal.playerData.userId)
       //存储牌的信息,用于后面发牌效果
-      this.cards_nods.push(card)
+      this.cards_node.push(card)
       this.card_width = card.width
     }
     //创建3张底牌
@@ -405,8 +410,8 @@ cc.Class({
   },
   //给玩家发送三张底牌后，过1s,把牌设置到y=-250位置效果
   schedulePushThreeCard() {
-    for (var i = 0; i < this.cards_nods.length; i++) {
-      var card = this.cards_nods[i]
+    for (var i = 0; i < this.cards_node.length; i++) {
+      var card = this.cards_node[i]
       if (card.y == -230) {
         card.y = -250
       }
@@ -416,7 +421,7 @@ cc.Class({
   //给地主发三张排，并显示在原有牌的后面
   pushThreeCard() {
     //每张牌的其实位置 
-    var last_card_x = this.cards_nods[this.cards_nods.length - 1].x
+    var last_card_x = this.cards_node[this.cards_node.length - 1].x
     for (var i = 0; i < this.bottom_card_data.length; i++) {
       var card = cc.instantiate(this.card_prefab)
       card.scale = 0.8
@@ -429,7 +434,7 @@ cc.Class({
       //console.log("pushThreeCard x:"+card.x)
       card.getComponent("card").showCards(this.bottom_card_data[i], myglobal.playerData.userId)
       card.active = true
-      this.cards_nods.push(card)
+      this.cards_node.push(card)
     }
     this.sortCard()
     //设置一个定时器，在2s后，修改y坐标为-250
@@ -440,7 +445,7 @@ cc.Class({
     if (!choose_card.length) return
     /*出牌逻辑
       1. 将选中的牌 从父节点中移除
-      2. 从this.cards_nods 数组中，删除 选中的牌 
+      2. 从this.cards_node 数组中，删除 选中的牌 
       3. 将 “选中的牌” 添加到出牌区域
           3.1 清空出牌区域
           3.2 添加子节点
@@ -451,13 +456,13 @@ cc.Class({
     //1/2步骤删除自己手上的card节点 
     var destroy_card = []
     for (var i = 0; i < choose_card.length; i++) {
-      for (var j = 0; j < this.cards_nods.length; j++) {
-        var caardIndex = this.cards_nods[j].getComponent("card").caardIndex
+      for (var j = 0; j < this.cards_node.length; j++) {
+        var caardIndex = this.cards_node[j].getComponent("card").caardIndex
         if (caardIndex == choose_card[i].index) {
-          //this.cards_nods[j].destroy()
-          this.cards_nods[j].removeFromParent(true);
-          destroy_card.push(this.cards_nods[j])
-          this.cards_nods.splice(j, 1)
+          //this.cards_node[j].destroy()
+          this.cards_node[j].removeFromParent(true);
+          destroy_card.push(this.cards_node[j])
+          this.cards_node.splice(j, 1)
         }
       }
     }
@@ -507,7 +512,8 @@ cc.Class({
    */
   appendOtherCardsToOutZone(outCard_node, cards, yoffset) {
     if (!cards.length) {
-      common.audio.PlayEffect(this.buyaoAudio)
+      const index = common.random(0, 2)
+      common.audio.PlayEffect(this.buyaoAudio[index])
       return
     }
     common.audio.PlayEffect(this.chupaiAudio)
@@ -542,10 +548,10 @@ cc.Class({
 
   //重新排序手上的牌,并移动
   updateCards() {
-    var zeroPoint = this.cards_nods.length / 2;
-    //var last_card_x = this.cards_nods[this.cards_nods.length-1].x
-    for (var i = 0; i < this.cards_nods.length; i++) {
-      var cardNode = this.cards_nods[i]
+    var zeroPoint = this.cards_node.length / 2;
+    //var last_card_x = this.cards_node[this.cards_node.length-1].x
+    for (var i = 0; i < this.cards_node.length; i++) {
+      var cardNode = this.cards_node[i]
       var x = (i - zeroPoint) * (this.card_width * 0.4) + 50;
       cardNode.setPosition(x, -250);
     }
@@ -567,8 +573,7 @@ cc.Class({
   // update (dt) {},
   onButtonClick(event, customData) {
     switch (customData) {
-      case "btn_qiandz":
-        console.log("btn_qiandz")
+      case "btn_qiandz": // 不抢
         // myglobal.socket.requestRobState(qian_state.qiang)
         window.$socket.emit('canrob_state_notify', {
           userId: myglobal.playerData.userId,
@@ -577,8 +582,7 @@ cc.Class({
         this.robUI.active = false
         common.audio.PlayEffect(this.jiaodizhuAudio)
         break
-      case "btn_buqiandz":
-        console.log("btn_buqiandz")
+      case "btn_buqiandz": // 抢地主
         // myglobal.socket.requestRobState(qian_state.buqiang)
         window.$socket.emit('canrob_state_notify', {
           userId: myglobal.playerData.userId,
@@ -587,15 +591,16 @@ cc.Class({
         this.robUI.active = false
         common.audio.PlayEffect(this.buqiangAudio)
         break
-      case "nopushcard":  //不出牌
+      case "nopushcard":  // 不出牌
         // myglobal.socket.request_buchu_card([], null)
         window.$socket.emit('nextPlayerNotify', myglobal.playerData.userId)
-        common.audio.PlayEffect(this.buyaoAudio)
+        const index = this.promptList.length ? common.random(0, 2) : 3
+        common.audio.PlayEffect(this.buyaoAudio[index])
         this.choose_card_data = []
-        this.cards_nods.map(node => node.emit("reset_card_flag"))
+        this.cards_node.map(node => node.emit("reset_card_flag"))
         this.playingUI_node.active = false
         break
-      case "pushcard":   //出牌
+      case "pushcard":   // 出牌
         //先获取本次出牌数据
         if (this.choose_card_data.length == 0) {
           this.tipsLabel.string = "请选择牌!"
@@ -612,9 +617,9 @@ cc.Class({
             this.playingUI_node.active = false
           } else {
             //出牌失败，把选择的牌归位
-            this.cards_nods.map(node => node.emit("reset_card_flag"))
-            // for (let i = 0; i < this.cards_nods.length; i++) {
-            //   this.cards_nods[i].emit("reset_card_flag")
+            this.cards_node.map(node => node.emit("reset_card_flag"))
+            // for (let i = 0; i < this.cards_node.length; i++) {
+            //   this.cards_node[i].emit("reset_card_flag")
             // }
           }
           this.choose_card_data = []
@@ -630,8 +635,8 @@ cc.Class({
         //       }.bind(this), 2000);
         //     }
         //     //出牌失败，把选择的牌归位
-        //     for (var i = 0; i < this.cards_nods.length; i++) {
-        //       var card = this.cards_nods[i]
+        //     for (var i = 0; i < this.cards_node.length; i++) {
+        //       var card = this.cards_node[i]
         //       card.emit("reset_card_flag")
         //     }
         //     this.choose_card_data = []
@@ -648,7 +653,27 @@ cc.Class({
         //   }
         // }.bind(this))
         break
-      case "tipcard":
+      case "tipcard": // 提示
+        // 已选牌归位
+        this.choose_card_data = []
+        this.cards_node.map(node => node.emit("reset_card_flag"))
+        // 根据提示牌型显示
+        if (this.promptList.length) {
+          const index = this.promptCount % this.promptList.length
+          const promptCards = this.promptList[index]
+          const cardsNode = this.cards_node
+          for (let i = 0; i < promptCards.length; i++) {
+            const card = promptCards[i];
+            for (let j = 0; j < cardsNode.length; j++) {
+              const cardJs = cardsNode[j].getComponent("card");
+              const cardData = cardJs.card_data
+              if (cardData.val === card.val && cardData.shape === card.shape) {
+                cardJs.node.emit(cc.Node.EventType.TOUCH_START)
+              }
+            }
+          }
+        }
+        this.promptCount++
         break
       default:
         break

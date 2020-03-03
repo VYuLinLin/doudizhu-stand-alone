@@ -554,7 +554,7 @@ AILogic.prototype.playOneAtTheEnd = function (landlordCardsCnt) {
 AILogic.prototype.prompt = function (winc) {
   var self = this,
     stat = G.gameRule.valCount(self.cards);
-
+    self.log();
   if (winc) {//跟牌
     var promptList = [];
     /**
@@ -749,14 +749,23 @@ AILogic.prototype.prompt = function (winc) {
     }
     return promptList;
   } else {//出牌
-    var promptList = [];
-    for (var i = stat.length - 1; i >= 0; i--) {
-      if (i != 0) {
-        promptList.push(self.cards.splice(self.cards.length - stat[i].count, self.cards.length - 1));
-      } else {
-        promptList.push(self.cards);
-      }
-    }
+    var promptList = [
+      ...self._one, // 单牌
+      ...self._pairs, // 对子
+      ...self._progressionPairs, // 连对
+      ...self._progression, // 顺子
+      ...self._plane, // 飞机
+      ...self._three, // 三根
+      ...self._bomb, // 炸弹
+      ...self._kingBomb // 王炸
+    ].map(a => a.cardList && a.cardList).filter(a => a);
+    // for (var i = stat.length - 1; i >= 0; i--) {
+    //   if (i != 0) {
+    //     promptList.push(self.cards.splice(self.cards.length - stat[i].count, self.cards.length - 1));
+    //   } else {
+    //     promptList.push(self.cards);
+    //   }
+    // }
     return promptList;
   }
 };
@@ -792,12 +801,12 @@ AILogic.prototype.analyse = function () {
     targetWobp = null,//除去炸弹、顺子之后的牌组
     targetWobpp = null;//除去炸弹、连对之后的牌组
   //定义牌型
-  self._one = [];
-  self._pairs = [];
-  self._kingBomb = [];
-  self._bomb = [];
-  self._three = [];
-  self._plane = [];
+  self._one = []; // 单牌
+  self._pairs = []; // 对子
+  self._kingBomb = []; // 王炸
+  self._bomb = []; // 炸弹
+  self._three = []; // 三张
+  self._plane = []; // 飞机
   self._progression = [];
   self._progressionPairs = [];
   target.sort(G.gameRule.cardSort);
@@ -853,7 +862,15 @@ AILogic.prototype.analyse = function () {
       }
     }
   }
-
+  // 排序
+  self._one.sort((a, b) => a.val - b.val)
+  self._pairs.sort((a, b) => a.val - b.val)
+  self._kingBomb.sort((a, b) => a.val - b.val)
+  self._bomb.sort((a, b) => a.val - b.val)
+  self._three.sort((a, b) => a.val - b.val)
+  self._plane.sort((a, b) => a.val - b.val)
+  self._progression.sort((a, b) => a.val - b.val)
+  self._progressionPairs.sort((a, b) => a.val - b.val)
 };
 
 /**

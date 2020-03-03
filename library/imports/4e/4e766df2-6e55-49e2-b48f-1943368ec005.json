@@ -629,7 +629,7 @@
       "array": [
         0,
         0,
-        366.32109354593376,
+        366.3215640107885,
         0,
         0,
         0,
@@ -3342,9 +3342,20 @@
     "cardsAudio": {
       "__uuid__": "6533952d-904d-4aa1-8663-3f08a976bf07"
     },
-    "buyaoAudio": {
-      "__uuid__": "0c9b547c-f2af-496d-8eb0-ea7723941bfe"
-    },
+    "buyaoAudio": [
+      {
+        "__uuid__": "0c9b547c-f2af-496d-8eb0-ea7723941bfe"
+      },
+      {
+        "__uuid__": "00c315be-1620-45d6-81a2-923a507b5a7b"
+      },
+      {
+        "__uuid__": "a2ae212b-0140-4846-88f5-eeaee9d6fed2"
+      },
+      {
+        "__uuid__": "9657d216-44cd-45fd-ac44-a5c782da1208"
+      }
+    ],
     "chupaiAudio": {
       "__uuid__": "2745a3eb-1220-4293-b325-8c95863e1656"
     },
@@ -4420,7 +4431,7 @@
       "__id__": 79
     },
     "_children": [],
-    "_active": false,
+    "_active": true,
     "_components": [
       {
         "__id__": 89

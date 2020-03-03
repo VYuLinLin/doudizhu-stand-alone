@@ -1620,3 +1620,11 @@
 2020-03-02T06:45:09.755Z - info: 只有预制节点 "player_node" 及其子节点会被保存。
 2020-03-02T06:45:10.006Z - info: 只有预制节点 "player_node" 及其子节点会被保存。
 2020-03-02T06:45:10.579Z - info: 只有预制节点 "player_node" 及其子节点会被保存。
+2020-03-02T20:32:18.967Z - success: oppo-adapter unloaded
+2020-03-02T20:32:18.967Z - success: oppo-adapter loaded
+2020-03-02T20:32:18.968Z - success: adapters unloaded
+2020-03-02T20:32:18.968Z - success: adapters loaded
+2020-03-02T20:32:19.019Z - success: oppo-adapter unloaded
+2020-03-02T20:32:19.019Z - success: oppo-adapter loaded
+2020-03-02T20:32:19.020Z - success: adapters unloaded
+2020-03-02T20:32:19.020Z - success: adapters loaded

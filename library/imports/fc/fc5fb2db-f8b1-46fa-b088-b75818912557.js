@@ -51,7 +51,7 @@ cc.Class({
     },
     buyaoAudio: {
       type: cc.AudioClip,
-      "default": null
+      "default": []
     },
     chupaiAudio: {
       type: cc.AudioClip,
@@ -60,7 +60,7 @@ cc.Class({
   },
   onLoad: function onLoad() {
     //自己牌列表 
-    this.cards_nods = [];
+    this.cards_node = [];
     this.card_width = 0; //当前可以抢地主的accountid
     // this.rob_player_accountid = 0
     //发牌动画是否结束
@@ -72,7 +72,10 @@ cc.Class({
     this.bottom_card_data = [];
     this.choose_card_data = [];
     this.outcar_zone = [];
-    this.push_card_tmp = []; //监听服务器可以出牌消息
+    this.push_card_tmp = []; // 提示牌型
+
+    this.promptCount = 0;
+    this.promptList = []; //监听服务器可以出牌消息
     // myglobal.socket.onCanChuCard(function (data) {
     //   console.log("onCanChuCard" + JSON.stringify(data))
     //   //判断是不是自己能出牌
@@ -127,8 +130,6 @@ cc.Class({
 
       common.audio.PlayEffect(this.cardsAudio); //this.node.parent.emit("change_room_state_event",defines.gameState.ROOM_PLAYING)
       //如果自己地主，给加上三张底牌
-
-      console.log(_mygolbal["default"].playerData.userId, _mygolbal["default"].playerData.masterUserId);
 
       if (_mygolbal["default"].playerData.userId === _mygolbal["default"].playerData.masterUserId) {
         this.scheduleOnce(this.pushThreeCard.bind(this), 0.2);
@@ -195,7 +196,7 @@ cc.Class({
       this.winNode.active = false;
       this.loseNode.active = false; // 清楚桌面上所有的牌
 
-      this.cards_nods = [];
+      this.cards_node = [];
       this.bottom_card = [];
       this.push_card_tmp = [];
       this.cardsNode.removeAllChildren();
@@ -229,7 +230,7 @@ cc.Class({
 
       return;
     } //原有逻辑  
-    // var move_node = this.cards_nods[this.cur_index_card]
+    // var move_node = this.cards_node[this.cur_index_card]
     // move_node.active = true
     // var newx = move_node.x + (this.card_width * 0.4*this.cur_index_card) - (this.card_width * 0.4)
     // var action = cc.moveTo(0.1, cc.v2(newx, -250));
@@ -238,7 +239,7 @@ cc.Class({
     // this.scheduleOnce(this._runactive_pushcard.bind(this),0.3)
 
 
-    var move_node = this.cards_nods[this.cards_nods.length - this.cur_index_card - 1];
+    var move_node = this.cards_node[this.cards_node.length - this.cur_index_card - 1];
     move_node.active = true;
     this.push_card_tmp.push(move_node);
     this.fapai_audioID = common.audio.PlayEffect(this.fapaiAudio);
@@ -290,8 +291,11 @@ cc.Class({
   /**
    * @description 出牌
    */
-  selfPlayAHandNotify: function selfPlayAHandNotify() {
-    // 先清理出牌区域
+  selfPlayAHandNotify: function selfPlayAHandNotify(promptList) {
+    console.log('玩家出牌提示', promptList);
+    this.promptCount = 0;
+    this.promptList = promptList; // 先清理出牌区域
+
     this.clearOutZone(_mygolbal["default"].playerData.userId); // 显示可以出牌的UI
 
     this.playingUI_node.active = true;
@@ -345,7 +349,7 @@ cc.Class({
   },
   //对牌排序
   sortCard: function sortCard() {
-    this.cards_nods.sort(function (x, y) {
+    this.cards_node.sort(function (x, y) {
       var a = x.getComponent("card").card_data;
       var b = y.getComponent("card").card_data;
 
@@ -364,17 +368,17 @@ cc.Class({
       if (a.hasOwnProperty('king') && b.hasOwnProperty('king')) {
         return b.king - a.king;
       }
-    }); //这里使用固定坐标，因为取this.cards_nods[0].xk可能排序为完成，导致x错误
+    }); //这里使用固定坐标，因为取this.cards_node[0].xk可能排序为完成，导致x错误
     //所以做1000毫秒的延时
 
-    var x = this.cards_nods[0].x;
+    var x = this.cards_node[0].x;
     var timeout = 1000;
     setTimeout(function () {
       //var x = -417.6 
       console.log("sort x:" + x);
 
-      for (var i = 0; i < this.cards_nods.length; i++) {
-        var card = this.cards_nods[i];
+      for (var i = 0; i < this.cards_node.length; i++) {
+        var card = this.cards_node[i];
         card.zIndex = i; //设置牌的叠加次序,zindex越大显示在上面
 
         card.x = x + card.width * 0.4 * i;
@@ -403,7 +407,7 @@ cc.Class({
     } //创建card预制体
 
 
-    this.cards_nods = [];
+    this.cards_node = [];
 
     for (var i = 0; i < 17; i++) {
       var card = cc.instantiate(this.card_prefab);
@@ -416,7 +420,7 @@ cc.Class({
       card.active = false;
       card.getComponent("card").showCards(data[i], _mygolbal["default"].playerData.userId); //存储牌的信息,用于后面发牌效果
 
-      this.cards_nods.push(card);
+      this.cards_node.push(card);
       this.card_width = card.width;
     } //创建3张底牌
 
@@ -445,8 +449,8 @@ cc.Class({
   },
   //给玩家发送三张底牌后，过1s,把牌设置到y=-250位置效果
   schedulePushThreeCard: function schedulePushThreeCard() {
-    for (var i = 0; i < this.cards_nods.length; i++) {
-      var card = this.cards_nods[i];
+    for (var i = 0; i < this.cards_node.length; i++) {
+      var card = this.cards_node[i];
 
       if (card.y == -230) {
         card.y = -250;
@@ -458,7 +462,7 @@ cc.Class({
   //给地主发三张排，并显示在原有牌的后面
   pushThreeCard: function pushThreeCard() {
     //每张牌的其实位置 
-    var last_card_x = this.cards_nods[this.cards_nods.length - 1].x;
+    var last_card_x = this.cards_node[this.cards_node.length - 1].x;
 
     for (var i = 0; i < this.bottom_card_data.length; i++) {
       var card = cc.instantiate(this.card_prefab);
@@ -471,7 +475,7 @@ cc.Class({
 
       card.getComponent("card").showCards(this.bottom_card_data[i], _mygolbal["default"].playerData.userId);
       card.active = true;
-      this.cards_nods.push(card);
+      this.cards_node.push(card);
     }
 
     this.sortCard(); //设置一个定时器，在2s后，修改y坐标为-250
@@ -482,7 +486,7 @@ cc.Class({
     if (!choose_card.length) return;
     /*出牌逻辑
       1. 将选中的牌 从父节点中移除
-      2. 从this.cards_nods 数组中，删除 选中的牌 
+      2. 从this.cards_node 数组中，删除 选中的牌 
       3. 将 “选中的牌” 添加到出牌区域
           3.1 清空出牌区域
           3.2 添加子节点
@@ -495,14 +499,14 @@ cc.Class({
     var destroy_card = [];
 
     for (var i = 0; i < choose_card.length; i++) {
-      for (var j = 0; j < this.cards_nods.length; j++) {
-        var caardIndex = this.cards_nods[j].getComponent("card").caardIndex;
+      for (var j = 0; j < this.cards_node.length; j++) {
+        var caardIndex = this.cards_node[j].getComponent("card").caardIndex;
 
         if (caardIndex == choose_card[i].index) {
-          //this.cards_nods[j].destroy()
-          this.cards_nods[j].removeFromParent(true);
-          destroy_card.push(this.cards_nods[j]);
-          this.cards_nods.splice(j, 1);
+          //this.cards_node[j].destroy()
+          this.cards_node[j].removeFromParent(true);
+          destroy_card.push(this.cards_node[j]);
+          this.cards_node.splice(j, 1);
         }
       }
     }
@@ -559,7 +563,8 @@ cc.Class({
    */
   appendOtherCardsToOutZone: function appendOtherCardsToOutZone(outCard_node, cards, yoffset) {
     if (!cards.length) {
-      common.audio.PlayEffect(this.buyaoAudio);
+      var index = common.random(0, 2);
+      common.audio.PlayEffect(this.buyaoAudio[index]);
       return;
     }
 
@@ -596,10 +601,10 @@ cc.Class({
   },
   //重新排序手上的牌,并移动
   updateCards: function updateCards() {
-    var zeroPoint = this.cards_nods.length / 2; //var last_card_x = this.cards_nods[this.cards_nods.length-1].x
+    var zeroPoint = this.cards_node.length / 2; //var last_card_x = this.cards_node[this.cards_node.length-1].x
 
-    for (var i = 0; i < this.cards_nods.length; i++) {
-      var cardNode = this.cards_nods[i];
+    for (var i = 0; i < this.cards_node.length; i++) {
+      var cardNode = this.cards_node[i];
       var x = (i - zeroPoint) * (this.card_width * 0.4) + 50;
       cardNode.setPosition(x, -250);
     }
@@ -626,8 +631,8 @@ cc.Class({
 
     switch (customData) {
       case "btn_qiandz":
-        console.log("btn_qiandz"); // myglobal.socket.requestRobState(qian_state.qiang)
-
+        // 不抢
+        // myglobal.socket.requestRobState(qian_state.qiang)
         window.$socket.emit('canrob_state_notify', {
           userId: _mygolbal["default"].playerData.userId,
           state: qian_state.qiang
@@ -637,8 +642,8 @@ cc.Class({
         break;
 
       case "btn_buqiandz":
-        console.log("btn_buqiandz"); // myglobal.socket.requestRobState(qian_state.buqiang)
-
+        // 抢地主
+        // myglobal.socket.requestRobState(qian_state.buqiang)
         window.$socket.emit('canrob_state_notify', {
           userId: _mygolbal["default"].playerData.userId,
           state: qian_state.buqiang
@@ -648,19 +653,20 @@ cc.Class({
         break;
 
       case "nopushcard":
-        //不出牌
+        // 不出牌
         // myglobal.socket.request_buchu_card([], null)
         window.$socket.emit('nextPlayerNotify', _mygolbal["default"].playerData.userId);
-        common.audio.PlayEffect(this.buyaoAudio);
+        var index = this.promptList.length ? common.random(0, 2) : 3;
+        common.audio.PlayEffect(this.buyaoAudio[index]);
         this.choose_card_data = [];
-        this.cards_nods.map(function (node) {
+        this.cards_node.map(function (node) {
           return node.emit("reset_card_flag");
         });
         this.playingUI_node.active = false;
         break;
 
       case "pushcard":
-        //出牌
+        // 出牌
         //先获取本次出牌数据
         if (this.choose_card_data.length == 0) {
           this.tipsLabel.string = "请选择牌!";
@@ -681,10 +687,10 @@ cc.Class({
             _this2.playingUI_node.active = false;
           } else {
             //出牌失败，把选择的牌归位
-            _this2.cards_nods.map(function (node) {
+            _this2.cards_node.map(function (node) {
               return node.emit("reset_card_flag");
-            }); // for (let i = 0; i < this.cards_nods.length; i++) {
-            //   this.cards_nods[i].emit("reset_card_flag")
+            }); // for (let i = 0; i < this.cards_node.length; i++) {
+            //   this.cards_node[i].emit("reset_card_flag")
             // }
 
           }
@@ -701,8 +707,8 @@ cc.Class({
         //       }.bind(this), 2000);
         //     }
         //     //出牌失败，把选择的牌归位
-        //     for (var i = 0; i < this.cards_nods.length; i++) {
-        //       var card = this.cards_nods[i]
+        //     for (var i = 0; i < this.cards_node.length; i++) {
+        //       var card = this.cards_node[i]
         //       card.emit("reset_card_flag")
         //     }
         //     this.choose_card_data = []
@@ -722,6 +728,34 @@ cc.Class({
         break;
 
       case "tipcard":
+        // 提示
+        // 已选牌归位
+        this.choose_card_data = [];
+        this.cards_node.map(function (node) {
+          return node.emit("reset_card_flag");
+        }); // 根据提示牌型显示
+
+        if (this.promptList.length) {
+          var _index = this.promptCount % this.promptList.length;
+
+          var promptCards = this.promptList[_index];
+          var cardsNode = this.cards_node;
+
+          for (var i = 0; i < promptCards.length; i++) {
+            var card = promptCards[i];
+
+            for (var j = 0; j < cardsNode.length; j++) {
+              var cardJs = cardsNode[j].getComponent("card");
+              var cardData = cardJs.card_data;
+
+              if (cardData.val === card.val && cardData.shape === card.shape) {
+                cardJs.node.emit(cc.Node.EventType.TOUCH_START);
+              }
+            }
+          }
+        }
+
+        this.promptCount++;
         break;
 
       default:

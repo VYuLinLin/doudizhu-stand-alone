@@ -13,6 +13,7 @@ const cardobj = function (value, shape, king) {
 
   if (king != undefined) {
     that.king = king
+    that.value = king
     that.val = king + 2 // gameRule使用
     that.shape = 0
   }

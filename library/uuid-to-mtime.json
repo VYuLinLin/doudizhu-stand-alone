@@ -955,8 +955,8 @@
     "relativePath": "scenes"
   },
   "4e766df2-6e55-49e2-b48f-1943368ec005": {
-    "asset": 1583130666513,
-    "meta": 1583130666527,
+    "asset": 1583211586610,
+    "meta": 1583211586624,
     "relativePath": "scenes\\gameScene.fire"
   },
   "80e921f7-2ba9-4618-a6a4-a7b30830e708": {
@@ -1284,20 +1284,10 @@
     "meta": 1582961339533,
     "relativePath": "resources\\font\\font.png"
   },
-  "24351ca6-43dd-49db-b8e9-0c6c4395accd": {
-    "asset": 1582973437009,
-    "meta": 1582973490326,
-    "relativePath": "servers\\ddzServers\\carder.js"
-  },
   "6c7e6b4d-e2b3-423f-b807-5440f8798cd2": {
     "asset": 1582973479697,
     "meta": 1582973490449,
     "relativePath": "servers\\ddzServers\\gameRule.js"
-  },
-  "fc5fb2db-f8b1-46fa-b088-b75818912557": {
-    "asset": 1582973597889,
-    "meta": 1582973603386,
-    "relativePath": "scripts\\gameScene\\gameingUI.js"
   },
   "9eee76dd-0aa5-41fc-b5ef-dd7a8a0336bd": {
     "asset": 1582977371501,
@@ -1314,19 +1304,29 @@
     "meta": 1582977524048,
     "relativePath": "scripts\\gameScene\\gameScene.js"
   },
-  "6b09d9cc-7cac-4695-97ba-85577f4fb6df": {
-    "asset": 1583128304572,
-    "meta": 1583128339078,
-    "relativePath": "servers\\ddzServers\\AILogic.js"
-  },
-  "a87d01bb-ea44-451e-aeb0-2dd17489b93d": {
-    "asset": 1583130381521,
-    "meta": 1583130617647,
-    "relativePath": "servers\\ddzServers\\ddzServers.js"
-  },
   "aa64a319-8271-487c-bc76-2e68be95bc15": {
     "asset": 1583131624111,
     "meta": 1583131626963,
     "relativePath": "scripts\\gameScene\\prefabs\\player_node.js"
+  },
+  "24351ca6-43dd-49db-b8e9-0c6c4395accd": {
+    "asset": 1583209911353,
+    "meta": 1583209946482,
+    "relativePath": "servers\\ddzServers\\carder.js"
+  },
+  "a87d01bb-ea44-451e-aeb0-2dd17489b93d": {
+    "asset": 1583209550481,
+    "meta": 1583209946558,
+    "relativePath": "servers\\ddzServers\\ddzServers.js"
+  },
+  "6b09d9cc-7cac-4695-97ba-85577f4fb6df": {
+    "asset": 1583211135833,
+    "meta": 1583211145691,
+    "relativePath": "servers\\ddzServers\\AILogic.js"
+  },
+  "fc5fb2db-f8b1-46fa-b088-b75818912557": {
+    "asset": 1583211721110,
+    "meta": 1583211727226,
+    "relativePath": "scripts\\gameScene\\gameingUI.js"
   }
 }

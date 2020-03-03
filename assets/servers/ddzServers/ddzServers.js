@@ -178,12 +178,16 @@ const ddzServers = {
       this.setGameState(ddzConstants.gameState.GAMEEND)
       return
     }
+    const ai = new AILogic(player)
     if (player.userId === mygolbal.playerData.userId) {
+      // 准备要提示的牌
+      const winc = this.roundWinId && this.roundWinId !== player.userId ? this.winCards : null
+      console.log(winc ? '玩家跟牌' : '玩家出牌')
+      const promptList = ai.prompt(winc);
       // 自己出牌
-      window.$socket.emit('selfPlayAHandNotify')
+      window.$socket.emit('selfPlayAHandNotify', promptList)
     } else {
       // 机器出牌
-      const ai = new AILogic(player)
       let result = null
       if (!this.roundWinId || this.roundWinId === player.userId) {
         // 如果本轮出牌赢牌是自己：出牌
