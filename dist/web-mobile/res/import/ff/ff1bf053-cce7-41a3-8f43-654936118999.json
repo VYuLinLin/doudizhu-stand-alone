@@ -1,5 +1,1 @@
-{
-  "__type__": "cc.AudioClip",
-  "_name": "start_a",
-  "_native": ".ogg"
-}
+{"__type__":"cc.AudioClip","_name":"start_a","_native":".ogg"}
