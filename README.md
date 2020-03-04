@@ -35,7 +35,8 @@
 
 预览
 =========================
-[web-mobile版预览地址](https://vyulinlin.github.io/doudizhu-stand-alone/dist/web-mobile/)
+[web-mobile](https://vyulinlin.github.io/doudizhu-stand-alone/dist/web-mobile/)
+[web-desktop](https://vyulinlin.github.io/doudizhu-stand-alone/dist/web-desktop/)
 
 ![](https://raw.githubusercontent.com/vyulinlin/doudizhu-stand-alone/master/image/hall.png)
 ![](https://raw.githubusercontent.com/vyulinlin/doudizhu-stand-alone/master/image/notReady.png)

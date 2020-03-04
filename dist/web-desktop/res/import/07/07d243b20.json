@@ -1,0 +1,1 @@
+[{"__type__":"cc.ParticleAsset","_name":"lose_rain","_native":".plist","spriteFrame":{"__uuid__":"d3q0oQpoNGRaUK1FpmzEi3"}},{"__type__":"cc.SpriteFrame","content":{"name":"lose_rain","texture":"f6YJTIZGtLka0UI8SVvltg","rect":[48,0,4,100],"offset":[0,0],"originalSize":[100,100],"capInsets":[0,0,0,0]}}]
