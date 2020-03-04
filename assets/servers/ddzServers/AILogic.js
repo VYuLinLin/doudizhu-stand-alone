@@ -4,7 +4,7 @@
  */
 const AILogic = function (p) {
   this.player = p;
-  this.cards = p.cardList.slice(0);
+  this.cards = p.cardList.slice(0).sort((a, b) => b.val - a.val);
   this.analyse();
 };
 // ai牌型类
@@ -533,7 +533,7 @@ AILogic.prototype.playOneAtTheEnd = function (landlordCardsCnt) {
     var one = null;
     if ((self.player.isLandlord && (self.player.nextPlayer.cardList.length <= 2 || self.player.nextPlayer.nextPlayer.cardList.length <= 2))
       || (!self.player.isLandlord && landlordCardsCnt <= 2))
-      one = self.cards.slice(self.cards.length - 1, self.cards.length);
+      one = self.cards.slice(-1);
     else
       one = self.cards.slice(0, 1);
     return {
@@ -554,7 +554,7 @@ AILogic.prototype.playOneAtTheEnd = function (landlordCardsCnt) {
 AILogic.prototype.prompt = function (winc) {
   var self = this,
     stat = G.gameRule.valCount(self.cards);
-    self.log();
+    // self.log();
   if (winc) {//跟牌
     var promptList = [];
     /**
@@ -567,7 +567,7 @@ AILogic.prototype.prompt = function (winc) {
     var setPrompt = function (c, winVal, st) {
       var result = [];
       //除去不能大过当前的牌
-      for (var i = st.length - 1; i >= 0; i--) {
+      for (let i = st.length - 1; i >= 0; i--) {
         if (st[i].count < c || st[i].val <= winVal) {
           st.splice(i, 1);
         }
@@ -575,12 +575,19 @@ AILogic.prototype.prompt = function (winc) {
       st.sort(self.promptSort);
       //加入各个符合值的单牌
       for (let i = 0; i < st.length; i++) {
-        for (let j = 0; j < self.cards.length; j++) {
-          if (self.cards[j].val === st[i].val) {
-            result.push(self.cards.slice(j, j + c));
-            break;
+        const val = st[i].val
+        const cards = []
+        const cardList = self.cards
+        for (let j = cardList.length - 1; j >= 0; j--) {
+          if (cardList[j].val === val) {
+            if (cards.length < c) {
+              cards.push(cardList[j])
+            } else {
+              break
+            }
           }
         }
+        cards.length && result.push(cards)
       }
       return result;
     };
@@ -592,7 +599,7 @@ AILogic.prototype.prompt = function (winc) {
     var getPlanePrompt = function (n) {
       var result = [];
       if (winc.val < 14 && self.cards.length >= winc.size) {//不是最大顺子才有的比
-        for (var i = winc.val + 1; i < 15; i++) {
+        for (let i = winc.val + 1; i < 15; i++) {
           var proList = [];
           for (var j = 0; j < self.cards.length; j++) {
             if (self.cards[j].val < i && proList.length === 0) break;
@@ -863,14 +870,14 @@ AILogic.prototype.analyse = function () {
     }
   }
   // 排序
-  self._one.sort((a, b) => a.val - b.val)
-  self._pairs.sort((a, b) => a.val - b.val)
-  self._kingBomb.sort((a, b) => a.val - b.val)
-  self._bomb.sort((a, b) => a.val - b.val)
-  self._three.sort((a, b) => a.val - b.val)
-  self._plane.sort((a, b) => a.val - b.val)
-  self._progression.sort((a, b) => a.val - b.val)
-  self._progressionPairs.sort((a, b) => a.val - b.val)
+  self._one.sort((a, b) => b.val - a.val)
+  self._pairs.sort((a, b) => b.val - a.val)
+  self._kingBomb.sort((a, b) => b.val - a.val)
+  self._bomb.sort((a, b) => b.val - a.val)
+  self._three.sort((a, b) => b.val - a.val)
+  self._plane.sort((a, b) => b.val - a.val)
+  self._progression.sort((a, b) => b.val - a.val)
+  self._progressionPairs.sort((a, b) => b.val - a.val)
 };
 
 /**

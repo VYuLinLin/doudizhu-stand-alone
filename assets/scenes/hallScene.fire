@@ -343,7 +343,7 @@
       "array": [
         0,
         0,
-        366.32109354593376,
+        366.3215640107885,
         0,
         0,
         0,
@@ -1635,7 +1635,7 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 160,
+      "width": 360,
       "height": 50.4
     },
     "_anchorPoint": {
@@ -1686,8 +1686,8 @@
       }
     ],
     "_useOriginalSize": false,
-    "_string": "癞子玩法",
-    "_N$string": "癞子玩法",
+    "_string": "更多玩法，敬请期待",
+    "_N$string": "更多玩法，敬请期待",
     "_fontSize": 40,
     "_lineHeight": 40,
     "_enableWrapText": true,
@@ -1772,7 +1772,7 @@
     "node": {
       "__id__": 33
     },
-    "_enabled": true,
+    "_enabled": false,
     "_normalMaterial": {
       "__uuid__": "eca5d2f2-8ef6-41c2-bbe6-f9c79d09c432"
     },
@@ -2358,7 +2358,7 @@
       "__id__": 2
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 50
@@ -2555,7 +2555,7 @@
       "__id__": 2
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 54
@@ -2752,7 +2752,7 @@
       "__id__": 2
     },
     "_children": [],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 58

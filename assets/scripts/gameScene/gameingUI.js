@@ -512,7 +512,7 @@ cc.Class({
    */
   appendOtherCardsToOutZone(outCard_node, cards, yoffset) {
     if (!cards.length) {
-      const index = common.random(0, 2)
+      const index = common.random(0, 3)
       common.audio.PlayEffect(this.buyaoAudio[index])
       return
     }
@@ -594,7 +594,7 @@ cc.Class({
       case "nopushcard":  // 不出牌
         // myglobal.socket.request_buchu_card([], null)
         window.$socket.emit('nextPlayerNotify', myglobal.playerData.userId)
-        const index = this.promptList.length ? common.random(0, 2) : 3
+        const index = common.random(0, 3)
         common.audio.PlayEffect(this.buyaoAudio[index])
         this.choose_card_data = []
         this.cards_node.map(node => node.emit("reset_card_flag"))
