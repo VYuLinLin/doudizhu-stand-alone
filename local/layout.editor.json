@@ -18,16 +18,17 @@
                 "children": [
                   "hierarchy"
                 ],
-                "height": 409.984375,
+                "height": 381,
                 "type": "panel",
                 "width": 221
               },
               {
                 "active": 0,
                 "children": [
-                  "assets"
+                  "assets",
+                  "cloud-function"
                 ],
-                "height": 397,
+                "height": 426,
                 "type": "panel",
                 "width": 221
               }
@@ -79,6 +80,7 @@
       "panels": [
         "hierarchy",
         "assets",
+        "cloud-function",
         "scene",
         "console",
         "timeline",
@@ -87,7 +89,7 @@
         "cocos-services"
       ]
     },
-    "window-1583291352694": {}
+    "worker": {}
   },
   "panels": {
     "preferences": {
