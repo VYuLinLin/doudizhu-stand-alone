@@ -1,20 +1,8 @@
 # doudizhu-stand-alone
 
-
 [cocos官方主页](https://www.cocos.com/)
 =========================
 
-此项目使用Cocos Creator v2.3 开发
- 
-计划完成单机版斗地主经典模式和癞子模式，目前只完成经典模式。
-
-页面展示使用了作者tingshu开源的[ddz_game](https://github.com/tinyshu/ddz_game)项目的客户端部分。
-
-算法部分借鉴了liyl1991开源的[landlord](https://github.com/liyl1991/landlord)项目中的AILogic.js和GameRule.js。
-
-目前（2020-03-02）上面的两个项目还是有很多坑，不过填坑的过程也是学习的过程，感谢两位大佬的开源精神，让我可以快速开发这个单机小游戏。
-
-网上看到的一个[AI算法设计思想](https://www.iteye.com/blog/programming-1491470)
 
 游戏主要的实现思路
 =========================
@@ -44,6 +32,19 @@
 ![](https://raw.githubusercontent.com/vyulinlin/doudizhu-stand-alone/master/image/lose.png)
 ![](https://raw.githubusercontent.com/vyulinlin/doudizhu-stand-alone/master/image/win.png)
 
+关于
+=========================
+此项目使用Cocos Creator v2.4.2 开发
+ 
+计划完成单机版斗地主经典模式和癞子模式，目前只完成经典模式。
+
+页面展示使用了作者tingshu开源的[ddz_game](https://github.com/tinyshu/ddz_game)项目的客户端部分。
+
+算法部分借鉴了liyl1991开源的[landlord](https://github.com/liyl1991/landlord)项目中的AILogic.js和GameRule.js。
+
+目前（2020-03-02）上面的两个项目还是有很多坑，不过填坑的过程也是学习的过程，感谢两位大佬的开源精神，让我可以快速开发这个单机小游戏。
+
+网上看到的一个[AI算法设计思想](https://www.iteye.com/blog/programming-1491470)
 
 <!-- 打赏作者杯咖啡 -->
 .
