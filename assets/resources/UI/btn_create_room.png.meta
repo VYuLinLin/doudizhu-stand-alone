@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "80ae8cf7-c2e1-40f7-a96b-3c9b7f101f97",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "btn_create_room": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "d48ec9e1-7696-4528-b7f0-0379bbd6a7d0",
+      "importer": "sprite-frame",
       "rawTextureUuid": "80ae8cf7-c2e1-40f7-a96b-3c9b7f101f97",
       "trimType": "auto",
       "trimThreshold": 1,

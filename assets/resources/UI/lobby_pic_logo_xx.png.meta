@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "7cd26c8c-3d74-4c8c-9aa7-cc7299ef0e0d",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "lobby_pic_logo_xx": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "caffea57-3c21-48f8-84a8-a226dd331cc5",
+      "importer": "sprite-frame",
       "rawTextureUuid": "7cd26c8c-3d74-4c8c-9aa7-cc7299ef0e0d",
       "trimType": "auto",
       "trimThreshold": 1,

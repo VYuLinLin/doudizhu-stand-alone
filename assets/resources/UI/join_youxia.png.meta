@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "6c6d1c43-6208-46f6-9a62-1560b890e579",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "join_youxia": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "c30351ac-6560-46f7-ba30-ace7b295a94f",
+      "importer": "sprite-frame",
       "rawTextureUuid": "6c6d1c43-6208-46f6-9a62-1560b890e579",
       "trimType": "auto",
       "trimThreshold": 1,

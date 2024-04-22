@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "df3c42b1-9903-4c9d-a046-23456c2ecd5b",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "btn_tisji": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "1fea9372-e858-440b-93ce-f1638b915a0a",
+      "importer": "sprite-frame",
       "rawTextureUuid": "df3c42b1-9903-4c9d-a046-23456c2ecd5b",
       "trimType": "auto",
       "trimThreshold": 1,

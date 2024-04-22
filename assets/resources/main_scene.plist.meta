@@ -1,6 +1,7 @@
 {
-  "ver": "1.2.4",
+  "ver": "1.2.6",
   "uuid": "b168ab65-7b5b-49a7-a82d-0fd5c0d1da93",
+  "importer": "sprite-atlas",
   "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
   "size": {
     "width": 834,
@@ -9,8 +10,9 @@
   "type": "Texture Packer",
   "subMetas": {
     "bangzhu.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "2179f6af-dc13-46f6-982d-f5157d2574a7",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -31,8 +33,9 @@
       "subMetas": {}
     },
     "card.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "d99b69f3-c3c0-4938-9cce-ec67a3be4439",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -53,8 +56,9 @@
       "subMetas": {}
     },
     "chuangjianfang.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "d6a60f73-5a0a-40b4-bb75-aa73e9fa0ee0",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -75,8 +79,9 @@
       "subMetas": {}
     },
     "chuangjianfangjianxiaochangjing.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "e06cb7a5-a3cd-4292-9b1c-947f0605c5cc",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -97,8 +102,9 @@
       "subMetas": {}
     },
     "dingbuuibantoumingdi.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "b4701224-fc01-4499-a7e5-b222ba51ab2c",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -119,8 +125,9 @@
       "subMetas": {}
     },
     "fangkaxiaobeijing.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "40eba3a0-abb7-42de-89f8-c1e3c48b7993",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -141,8 +148,9 @@
       "subMetas": {}
     },
     "feedback.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "2cb7dd9f-9c9a-403c-bcc9-9588ff8db97b",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -163,8 +171,9 @@
       "subMetas": {}
     },
     "ffanghuifangj.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "3dd8d11d-4097-400b-b70d-b0bf14994d28",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -185,8 +194,9 @@
       "subMetas": {}
     },
     "goumaixiaojiahao.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "be535c49-6cce-4b9b-8c28-a45ed5c76a9f",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -207,8 +217,9 @@
       "subMetas": {}
     },
     "huodong.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "6e05c591-ea6d-4ae1-b311-715ec74fde12",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -229,8 +240,9 @@
       "subMetas": {}
     },
     "jiaruyouxi.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "5abbed2e-8987-4bd8-b13d-41cff64408f8",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -251,8 +263,9 @@
       "subMetas": {}
     },
     "jiaruyouxixiaochangjing.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "14a7107b-ff78-4f5c-b23b-2f231637577d",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -273,8 +286,9 @@
       "subMetas": {}
     },
     "paomadengbeijing.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "e034dff1-908b-4c38-9676-c76c273f0455",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -295,8 +309,9 @@
       "subMetas": {}
     },
     "share.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "4d40eebe-91a0-4a03-b783-749fe1ce9f00",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -317,8 +332,9 @@
       "subMetas": {}
     },
     "shezhi.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "7758406f-95f4-41dc-a840-644e4dcbc253",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -339,8 +355,9 @@
       "subMetas": {}
     },
     "touxing001.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "a07d8124-47e2-4060-b426-84eda7baf2fc",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -361,8 +378,9 @@
       "subMetas": {}
     },
     "touxingbg001.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "2207644b-6e3e-4090-92ba-36b8c4a74810",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -383,8 +401,9 @@
       "subMetas": {}
     },
     "wuhanmajiangtitle.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "c4945652-fffc-4cae-8a50-55fe65ecb6de",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -405,8 +424,9 @@
       "subMetas": {}
     },
     "xiao'xi.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "b9999892-85c8-41d7-8ae8-e62832b5aa4f",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -427,8 +447,9 @@
       "subMetas": {}
     },
     "xiaolaba.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "0c69e5b2-b8f9-471f-a41b-d861a4bab9be",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -449,8 +470,9 @@
       "subMetas": {}
     },
     "xixia001.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "241624de-a971-4de3-bafc-0347546cc0a9",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -471,8 +493,9 @@
       "subMetas": {}
     },
     "zhanji.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "df0f74f8-e6d7-4351-b4b6-ed7c85ec8d1b",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,
@@ -493,8 +516,9 @@
       "subMetas": {}
     },
     "zhuziyou.png": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "7d73346e-f64c-4abc-9514-342bc3a5d7e8",
+      "importer": "sprite-frame",
       "rawTextureUuid": "8a8263be-e6f2-4a67-9be1-becddc2787f2",
       "trimType": "auto",
       "trimThreshold": 1,

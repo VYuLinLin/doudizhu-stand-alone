@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "33244764-193c-419a-aa43-a687a90a069d",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "hall_logo_pic": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "f83f8ec9-c67f-4f14-a9b1-d2643c8a1e58",
+      "importer": "sprite-frame",
       "rawTextureUuid": "33244764-193c-419a-aa43-a687a90a069d",
       "trimType": "auto",
       "trimThreshold": 1,

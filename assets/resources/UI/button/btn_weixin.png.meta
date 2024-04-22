@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "bee5d208-011d-416a-8dce-cff306de87ef",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "btn_weixin": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "21464690-a416-4d5e-abed-a50668afea81",
+      "importer": "sprite-frame",
       "rawTextureUuid": "bee5d208-011d-416a-8dce-cff306de87ef",
       "trimType": "auto",
       "trimThreshold": 1,
